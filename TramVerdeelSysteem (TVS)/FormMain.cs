@@ -26,6 +26,7 @@ namespace TramVerdeelSysteem__TVS_
             admin = new Admin();
             LoadSegments();
 
+            RefreshSegments();
         }
         private void LoadSegments()
         {
@@ -218,10 +219,6 @@ namespace TramVerdeelSysteem__TVS_
             {
                 admin.BlokkeringStatusWijzigen(Convert.ToInt32(TB_spoornummer.Text));
                 RefreshSegments();
-                //if (b.BlokkeringStatusWijzigen(Convert.ToInt32(TB_spoornummer.Text)) == true) //als het statuswijzigen gelukt is dan
-                //{
-
-                //}
 
             }
             else

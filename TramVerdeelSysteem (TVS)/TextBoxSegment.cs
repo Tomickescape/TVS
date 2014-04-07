@@ -43,6 +43,7 @@ namespace TramVerdeelSysteem__TVS_
                 {
                     Enabled = true;
                 }
+                Text = "";
             }
             else
             {

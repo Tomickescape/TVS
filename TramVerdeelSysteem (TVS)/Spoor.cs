@@ -38,7 +38,7 @@ namespace TramVerdeelSysteem__TVS_
             Database db = new Database();
             try
             {
-                db.CreateCommand("UPDATE spoor SET status = :status WHERE spoornummer = :spoornummer");
+                db.CreateCommand("UPDATE spoor SET spoorstatus = :status WHERE spoornummer = :spoornummer");
                 db.AddParameter("status", status);
                 db.AddParameter("spoornummer", Spoornummer);
                 db.Open();

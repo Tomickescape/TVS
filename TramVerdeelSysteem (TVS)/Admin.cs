@@ -51,7 +51,10 @@ namespace TramVerdeelSysteem__TVS_
         public void BlokkeringStatusWijzigen(int spoornummer)
         {
             Spoor spoor = Spoor.GetBySpoornummer(spoornummer);
-            spoor.ChangeStatus(spoor.BlokkeerStatus == "geblokkeerd" ? "vrij" : "geblokkeerd");
+            if (spoor != null)
+            {
+                spoor.ChangeStatus(spoor.BlokkeerStatus == "geblokkeerd" ? "vrij" : "geblokkeerd");
+            }
         }
         public void GeefTrams(List<Tram> trams) //extra controle aub!
         { }

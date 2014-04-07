@@ -46,7 +46,7 @@ namespace TramVerdeelSysteem__TVS_
 
         public void LoadSpoor()
         {
-            return;
+            
             if (Spoor != null)
             {
                 if (spoor.BlokkeerStatus.ToLower() == "geblokkeerd")

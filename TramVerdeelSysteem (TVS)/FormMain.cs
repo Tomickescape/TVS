@@ -204,8 +204,13 @@ namespace TramVerdeelSysteem__TVS_
             try
             {
                 int spoornummer = Convert.ToInt32(TB_spoornummer.Text.Trim());
-                
-                admin.BlokkeringStatusWijzigen(spoornummer);
+                Spoor spoor = Spoor.GetBySpoornummer(spoornummer);
+
+                if (spoor != null)
+                {
+                    spoor.ChangeStatus(spoor.BlokkeerStatus == "geblokkeerd" ? "vrij" : "geblokkeerd");
+                }
+
 
                 RefreshSegments();
                 
@@ -213,17 +218,6 @@ namespace TramVerdeelSysteem__TVS_
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-            }
-
-            if (TB_spoornummer.Text != "")
-            {
-                admin.BlokkeringStatusWijzigen(Convert.ToInt32(TB_spoornummer.Text));
-                RefreshSegments();
-
-            }
-            else
-            {
-                MessageBox.Show("Voer aub een spoornummer in!");
             }
 
         }

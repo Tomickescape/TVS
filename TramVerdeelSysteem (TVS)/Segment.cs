@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
 namespace TramVerdeelSysteem__TVS_
@@ -7,8 +8,11 @@ namespace TramVerdeelSysteem__TVS_
     class Segment
     {
 
-        public Segment(string blokkeerStatus, int segmentnummer, int spoornummer)
+        private int id;
+
+        private Segment(int id, string blokkeerStatus, int segmentnummer, int spoornummer)
         {
+            this.id = id;
             BlokkeerStatus = blokkeerStatus;
             Segmentnummer = segmentnummer;
             Spoornummer = spoornummer;
@@ -25,9 +29,9 @@ namespace TramVerdeelSysteem__TVS_
             Database db = new Database();
             try
             {
-                db.CreateCommand("UPDATE segment SET spoorstatus = :status WHERE segmentnummer = :segmentnummer");
+                db.CreateCommand("UPDATE segment SET spoorstatus = :status WHERE segmentid = :id");
                 db.AddParameter("status", status);
-                db.AddParameter("segmentnummer", Segmentnummer);
+                db.AddParameter("id", id);
                 db.Open();
                 db.Execute();
                 db.Close();
@@ -64,7 +68,7 @@ namespace TramVerdeelSysteem__TVS_
                     dr.Read();
                     string blokkeerStatus = dr.GetValueByColumn<string>("spoorstatus");
 
-                    segment = new Segment(blokkeerStatus, dr.GetValueByColumn<int>("segmentnummer"), spoornummer);
+                    segment = new Segment(dr.GetValueByColumn<int>("segmentid"), blokkeerStatus, dr.GetValueByColumn<int>("segmentnummer"), spoornummer);
                 }
 
             }
@@ -87,16 +91,14 @@ namespace TramVerdeelSysteem__TVS_
 
             try
             {
-                db.CreateCommand("SELECT segment.segmentid AS id FROM segment LEFT JOIN SPOOR ON spoor.spoorID = segment.spoorID WHERE spoor.spoornummer = :spoornummer");
+                db.CreateCommand("SELECT segment.* FROM segment JOIN spoor ON spoor.spoorID = segment.spoorID WHERE spoor.spoornummer = :spoornummer");
                 db.AddParameter("spoornummer", spoornummer);
                 db.Open();
-                db.Execute(); 
-                
+                db.Execute();
                 OracleDataReader dr = db.DataReader;
-                if (dr.HasRows)
+                while(dr.Read())
                 {
-                    dr.Read();
-                    segments.Add(GetBySegmentnummerAndSpoornummer(dr.GetValueByColumn<int>("id"), spoornummer));
+                    segments.Add(GetBySegmentnummerAndSpoornummer(dr.GetValueByColumn<int>("segmentnummer"), spoornummer));
                 }
             }
             catch (Exception ex)

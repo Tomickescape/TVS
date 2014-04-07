@@ -1,4 +1,5 @@
-﻿using Oracle.DataAccess.Client;
+﻿using System.Windows.Forms;
+using Oracle.DataAccess.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,7 @@ namespace TramVerdeelSysteem__TVS_
                 db.Close();
 
                 BlokkeerStatus = status;
+
 
                 foreach (Segment segment in Segments)
                 {

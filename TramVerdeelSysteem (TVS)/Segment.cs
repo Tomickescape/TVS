@@ -25,7 +25,7 @@ namespace TramVerdeelSysteem__TVS_
             Database db = new Database();
             try
             {
-                db.CreateCommand("UPDATE segment SET status = :status WHERE segmentnummer = :segmentnummer");
+                db.CreateCommand("UPDATE segment SET spoorstatus = :status WHERE segmentnummer = :segmentnummer");
                 db.AddParameter("status", status);
                 db.AddParameter("segmentnummer", Segmentnummer);
                 db.Open();

@@ -16,7 +16,7 @@ namespace TramVerdeelSysteem__TVS_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new formInlog());
+            Application.Run(new FormLogin());
         }
     }
 }

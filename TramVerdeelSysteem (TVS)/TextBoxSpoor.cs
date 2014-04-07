@@ -32,7 +32,7 @@ namespace TramVerdeelSysteem__TVS_
 
         public void LoadSpoor()
         {
-            spoor = DatabaseConnectie.GetSpoorBySpoornummer(spoornummer);
+            spoor = Spoor.GetBySpoornummer(spoornummer);
             if (spoor != null)
             {
                 if (spoor.BlokkeerStatus.ToLower() == "geblokkeerd")

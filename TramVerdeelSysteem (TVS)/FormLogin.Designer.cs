@@ -1,6 +1,6 @@
 ﻿namespace TramVerdeelSysteem__TVS_
 {
-    partial class formInlog
+    partial class FormLogin
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formInlog));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.lbGebruikersnaam = new System.Windows.Forms.Label();
             this.lbWachtwoord = new System.Windows.Forms.Label();
             this.tbGebruikersnaam = new System.Windows.Forms.TextBox();
@@ -105,7 +105,7 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDoubleClick_1);
             // 
-            // formInlog
+            // FormLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -120,7 +120,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(316, 240);
-            this.Name = "formInlog";
+            this.Name = "FormLogin";
             this.Text = "GVB - Inloggen";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

@@ -9,7 +9,6 @@ namespace TramVerdeelSysteem__TVS_
 {
     class Admin
     {
-        DatabaseConnectie db;
         List<Spoor> sporen;
         List<Segment> segmenten;
 
@@ -17,7 +16,6 @@ namespace TramVerdeelSysteem__TVS_
         //Mick
         public Admin()
         {
-            db = new DatabaseConnectie();
             sporen = new List<Spoor>();
             trams = new List<Tram>();
             segmenten = new List<Segment>();
@@ -34,7 +32,7 @@ namespace TramVerdeelSysteem__TVS_
                     {
                         if (spoornummer == s.Spoornummer && s.BlokkeerStatus == "Vrij")
                         {
-                            foreach (Segment seg in s.Segmenten)
+                            foreach (Segment seg in s.Segments)
                             {
                                 if (seg.BlokkeerStatus == "Vrij")
                                 {
@@ -52,45 +50,8 @@ namespace TramVerdeelSysteem__TVS_
         // (de-)blokkeerd het meegegeven spoor en daaronder liggende segmenten
         public void BlokkeringStatusWijzigen(int spoornummer)
         {
-            foreach (Spoor s in sporen)
-            {
-                if (s.Spoornummer == spoornummer)
-                {
-                    string NieuweStatus;
-                    if (s.BlokkeerStatus == "vrij")
-                    {
-                        NieuweStatus = "geblokkeerd";
-                        s.BlokkeerStatus = NieuweStatus;
-                        db.VeranderSpoorStatus(NieuweStatus, s.Spoornummer);
-                    }
-                    else if (s.BlokkeerStatus == "geblokkeerd")
-                    {
-                        NieuweStatus = "vrij";
-                        s.BlokkeerStatus = NieuweStatus;
-                        db.VeranderSpoorStatus(NieuweStatus, s.Spoornummer);
-
-                    }
-                    foreach (Segment seg in s.Segmenten)
-                    {
-                        if (seg.BlokkeerStatus == "vrij")
-                        {
-                            NieuweStatus = "geblokkeerd";
-                            seg.BlokkeerStatus = NieuweStatus;
-                            db.VeranderSegmentStatus(NieuweStatus, seg.Segmentnummer);
-                        }
-                        else if (seg.BlokkeerStatus == "geblokkeerd")
-                        {
-                            NieuweStatus = "vrij";
-                            seg.BlokkeerStatus = NieuweStatus;
-                            db.VeranderSegmentStatus(NieuweStatus, seg.Segmentnummer);
-                        }
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Dit spoor bestaat niet!");
-                }
-            }
+            Spoor spoor = Spoor.GetBySpoornummer(spoornummer);
+            spoor.ChangeStatus(spoor.BlokkeerStatus == "geblokkeerd" ? "vrij" : "geblokkeerd");
         }
         public void GeefTrams(List<Tram> trams) //extra controle aub!
         { }

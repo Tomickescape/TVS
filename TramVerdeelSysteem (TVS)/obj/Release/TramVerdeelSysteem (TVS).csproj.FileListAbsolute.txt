@@ -1,0 +1,11 @@
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Release\TramVerdeelSysteem (TVS).exe.config
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Release\TramVerdeelSysteem (TVS).exe
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Release\TramVerdeelSysteem (TVS).pdb
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Release\Oracle.DataAccess.dll
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Release\TramVerdeelSysteem__TVS_.FormMain.resources
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Release\TramVerdeelSysteem__TVS_.FormLogin.resources
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Release\TramVerdeelSysteem__TVS_.Properties.Resources.resources
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Release\TramVerdeelSysteem (TVS).csproj.GenerateResource.Cache
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Release\TramVerdeelSysteem (TVS).exe
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Release\TramVerdeelSysteem (TVS).pdb
+D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Release\TramVerdeelSysteem (TVS).csprojResolveAssemblyReference.cache

@@ -32,7 +32,7 @@ namespace TramVerdeelSysteem__TVS_
 
         public void LoadSegment()
         {
-            segment = DatabaseConnectie.GetBySegmentnummerAndSpoornummer(segmentnummer, spoornummer);
+            segment = Segment.GetBySegmentnummerAndSpoornummer(segmentnummer, spoornummer);
             if (segment != null)
             {
                 if (segment.BlokkeerStatus.ToLower() == "geblokkeerd")

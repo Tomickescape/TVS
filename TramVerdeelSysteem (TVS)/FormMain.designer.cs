@@ -1,6 +1,6 @@
 ﻿namespace TramVerdeelSysteem__TVS_
 {
-    partial class Beheersysteem
+    partial class FormMain
     {
         /// <summary>
         /// Required designer variable.
@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Beheersysteem));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
 
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            //((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.BTN_SpoorBlokkade = new System.Windows.Forms.Button();
             this.BTN_statusOpvragenTrams = new System.Windows.Forms.Button();
             this.BTN_zetTramOpSpoor = new System.Windows.Forms.Button();
@@ -3588,7 +3588,7 @@
             this.GB_Reservering.TabStop = false;
             this.GB_Reservering.Text = "Reserveringen";
             // 
-            // Beheersysteem
+            // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -3849,8 +3849,8 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(1366, 739);
             this.MinimumSize = new System.Drawing.Size(1364, 739);
-            this.Name = "Beheersysteem";
-            this.Text = "GVB - Beheersysteem";
+            this.Name = "FormMain";
+            this.Text = "GVB - FormMain";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.GB_Reservering.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -10,48 +10,55 @@ using System.Windows.Forms;
 
 namespace TramVerdeelSysteem__TVS_
 {
-    public partial class formInlog : Form
+    public partial class FormLogin : Form
     {
-        DatabaseConnectie db; //voor testknop/plaatje
-        Beheersysteem beheersysteem ;
-        Admin b;
-        Gebruiker gebruiker;
+        FormMain formMain;
         
-        public formInlog()
+        public FormLogin()
         {
             InitializeComponent();
-            db = new DatabaseConnectie(); //voor testknop/plaatje
-            b = new Admin();
         }
 
         private void Inloggen()
         {
-            //controle op inloggegevens
-            gebruiker = new Gebruiker();
+            Database db = new Database();
             try
             {
-                if (tbGebruikersnaam.Text != "" && tbWachtwoord.Text != "")
-                {
-                    if (gebruiker.Inlog(tbGebruikersnaam.Text, tbWachtwoord.Text) == true)
-                    {
-                        beheersysteem = new Beheersysteem(this);
-                        beheersysteem.Show();
-                        beheersysteem.FormClosing += beheersysteem_FormClosing;
-                        beheersysteem.btUitloggen.Click += btUitloggen_Click;
-                        this.Hide();
+                string gebruikersnaam = tbGebruikersnaam.Text.Trim().ToLower();
+                string wachtwoord = tbWachtwoord.Text.Trim();
 
-                    }
+                if (gebruikersnaam.Length <= 0 || wachtwoord.Length <= 0)
+                {
+                    throw new Exception("Gebruikersnaam en wachtwoord zijn onbekend.");
+                }
+
+                db.CreateCommand("SELECT * FROM gebruiker where gebruikersnaam = :gebruikersnaam AND wachtwoord = :wachtwoord");
+                db.AddParameter("gebruikersnaam", gebruikersnaam);
+                db.AddParameter("wachtwoord", wachtwoord);
+                db.Open();
+                db.Execute();
+                if (db.DataReader.HasRows)
+                {
+                    formMain = new FormMain();
+                    formMain.Show();
+                    formMain.FormClosing += FormMainFormClosing;
+                    formMain.btUitloggen.Click += btUitloggen_Click;
+                    this.Hide();
                 }
                 else
                 {
-                    MessageBox.Show("Voer de juiste gebruikersnaam en wachtwoord in.", "Foutieve inloggegevens.");
+                    throw new Exception("Gebruikersnaam en wachtwoord zijn onbekend.");
                 }
             }
-            catch (Exception ex)
+            catch(Exception ex)
             {
-
-                MessageBox.Show((ex.Message), "Foutieve inloggegevens");
+                MessageBox.Show(ex.Message);
             }
+            finally
+            {
+                db.Close();
+            }
+
         }
 
 
@@ -60,7 +67,7 @@ namespace TramVerdeelSysteem__TVS_
             Inloggen();
         }
 
-        void beheersysteem_FormClosing(object sender, FormClosingEventArgs e)
+        void FormMainFormClosing(object sender, FormClosingEventArgs e)
         {
             DialogResult result = MessageBox.Show("Weet u zeker dat u dit programma af wilt sluiten?", "Afsluiten", MessageBoxButtons.YesNo);
 
@@ -76,7 +83,7 @@ namespace TramVerdeelSysteem__TVS_
 
         void btUitloggen_Click(object sender, EventArgs e)
         {
-            beheersysteem.Hide();
+            formMain.Hide();
             this.Show();
         }
 
@@ -91,6 +98,7 @@ namespace TramVerdeelSysteem__TVS_
 
         private void pictureBox1_MouseDoubleClick_1(object sender, MouseEventArgs e)
         {
+            /*
             try
             {
                 db.OpenConnection();
@@ -105,6 +113,7 @@ namespace TramVerdeelSysteem__TVS_
                 db.closeConnection();
                 MessageBox.Show("De database connectie is weer gesloten!");
             }
+             */
         }
     }
 }

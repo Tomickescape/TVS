@@ -12,23 +12,19 @@ using System.Windows.Forms;
 namespace TramVerdeelSysteem__TVS_
 {
 
-    public partial class Beheersysteem : Form
+    public partial class FormMain : Form
     {
         private List<TextBoxSegment> segments = new List<TextBoxSegment>();
 
         List<Spoor> sporen;
         List<Tram> trams;
-        Admin a;
-        DatabaseConnectie db;
+        Admin admin;
 
-        public Beheersysteem(formInlog forminlog)
+        public FormMain()
         {
             InitializeComponent();
-            a = new Admin();
-            db = new DatabaseConnectie();
+            //admin = new Admin();
             this.RefreshSegmenten();
-
-
 
         }
         private void RefreshSegmenten()
@@ -206,7 +202,7 @@ namespace TramVerdeelSysteem__TVS_
         {
             if (TB_spoornummer.Text != "")
             {
-                a.BlokkeringStatusWijzigen(Convert.ToInt32(TB_spoornummer.Text));
+                admin.BlokkeringStatusWijzigen(Convert.ToInt32(TB_spoornummer.Text));
                 RefreshSegments();
                 //if (b.BlokkeringStatusWijzigen(Convert.ToInt32(TB_spoornummer.Text)) == true) //als het statuswijzigen gelukt is dan
                 //{
@@ -231,14 +227,14 @@ namespace TramVerdeelSysteem__TVS_
 
         private void btUitloggen_Click(object sender, EventArgs e)
         {
-            formInlog inlogform;
-            inlogform = new formInlog();
+            FormLogin inlogform;
+            inlogform = new FormLogin();
             inlogform.Show();
             this.Close();
         }
         private void TB_statusOpvragenTram_Click(object sender, EventArgs e)
         {
-            //    a.VraagStatussenOp
+            //    admin.VraagStatussenOp
             foreach (Tram t in trams)
             {
                 if (TB_tramnummer.Text != "")
@@ -264,14 +260,14 @@ namespace TramVerdeelSysteem__TVS_
 
         private void btUitloggen_Click_1(object sender, EventArgs e)
         {
-            formInlog inlog = new formInlog();
-            inlog.Show();
+            FormLogin login = new FormLogin();
+            login.Show();
             this.Close();
         }
 
         private void BTN_zetTramOpSpoor_Click(object sender, EventArgs e)
         {
-            a.ZetTramOpSpoor(Convert.ToInt32(TB_tramnummer.Text), Convert.ToInt32(TB_spoornummer.Text));
+            admin.ZetTramOpSpoor(Convert.ToInt32(TB_tramnummer.Text), Convert.ToInt32(TB_spoornummer.Text));
         }
 
         private void BTN_statusOpvragenTrams_Click(object sender, EventArgs e)

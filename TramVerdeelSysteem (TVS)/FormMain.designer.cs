@@ -38,7 +38,6 @@
             this.GB_Reservering.SuspendLayout();
             this.LBL_spoornummer = new System.Windows.Forms.Label();
             this.LBL_tramnummer = new System.Windows.Forms.Label();
-            this.SuspendLayout();
             this.TB_lijn10_1 = new System.Windows.Forms.TextBox();
             this.TB_lijn10_2 = new System.Windows.Forms.TextBox();
             this.TB_lijn13_1 = new System.Windows.Forms.TextBox();
@@ -284,6 +283,7 @@
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.TB_lijn2_1 = new System.Windows.Forms.TextBox();
+            this.SuspendLayout();
             // 
             // TB_lijn2_1
             // 

@@ -55,7 +55,7 @@ namespace TramVerdeelSysteem__TVS_
 
         public bool Execute()
         {
-            if (cmd != null)
+            if (cmd == null)
             {
                 throw new Exception("No command initiated.");
             }

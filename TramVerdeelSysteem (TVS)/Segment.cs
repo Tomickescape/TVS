@@ -12,6 +12,7 @@ namespace TramVerdeelSysteem__TVS_
             BlokkeerStatus = blokkeerStatus;
             Segmentnummer = segmentnummer;
             Spoornummer = spoornummer;
+
         }
 
         public int Segmentnummer { get; set; }
@@ -52,7 +53,7 @@ namespace TramVerdeelSysteem__TVS_
             try
             {
                 db.CreateCommand(
-                    "SELECT segment.* FROM SEGMENT LEFT JOIN SPOOR ON spoor.spoorID = tomick.segment.spoorID WHERE spoor.spoornummer = :spoornummer and tomick.segment.segmentnummer = :segmentnummer");
+                    "SELECT segment.* FROM SEGMENT LEFT JOIN SPOOR ON spoor.spoorID = segment.spoorID WHERE spoor.spoornummer = :spoornummer and segment.segmentnummer = :segmentnummer");
                 db.AddParameter("spoornummer", spoornummer);
                 db.AddParameter("segmentnummer", segmentnummer);
                 db.Open();

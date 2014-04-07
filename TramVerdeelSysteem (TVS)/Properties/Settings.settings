@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="db_user" Type="System.String" Scope="User">
-      <Value Profile="(Default)">rene</Value>
+      <Value Profile="(Default)">Mark</Value>
     </Setting>
     <Setting Name="db_pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">rene</Value>
+      <Value Profile="(Default)">mark</Value>
     </Setting>
     <Setting Name="db_server" Type="System.String" Scope="User">
       <Value Profile="(Default)">127.0.0.1:1521</Value>

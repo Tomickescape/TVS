@@ -23,11 +23,11 @@ namespace TramVerdeelSysteem__TVS_
         public FormMain()
         {
             InitializeComponent();
-            //admin = new Admin();
-            this.RefreshSegmenten();
+            admin = new Admin();
+            LoadSegments();
 
         }
-        private void RefreshSegmenten()
+        private void LoadSegments()
         {
             segments.Add(TB_segment13_1);
             segments.Add(TB_segment14_1);
@@ -200,6 +200,20 @@ namespace TramVerdeelSysteem__TVS_
 
         private void BTN_SpoorBlokkade_Click(object sender, EventArgs e)
         {
+            try
+            {
+                int spoornummer = Convert.ToInt32(TB_spoornummer.Text.Trim());
+                
+                admin.BlokkeringStatusWijzigen(spoornummer);
+
+                RefreshSegments();
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
             if (TB_spoornummer.Text != "")
             {
                 admin.BlokkeringStatusWijzigen(Convert.ToInt32(TB_spoornummer.Text));

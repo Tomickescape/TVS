@@ -11,18 +11,32 @@ namespace TramVerdeelSysteem__TVS_
 {
     class TextBoxSpoor : TextBox
     {
-        private Spoor spoor;
-        private int spoornummer;
 
-     //   public TextBoxSpoor(int segmentnummer, int spoornummer)
+        private bool spoorLoaded = false;
+        private Spoor spoor;
+
         public TextBoxSpoor(int spoornummer)
         {
             this.TextChanged += TextBoxSpoor_TextChanged;
-
- //           this.segmentnummer = segmentnummer;
-            this.spoornummer = spoornummer;
+            Spoornummer = spoornummer;
 
             LoadSpoor();
+        }
+
+        public int Spoornummer { get; set; }
+
+        public Spoor Spoor
+        {
+            get
+            {
+                if (!spoorLoaded)
+                {
+                    spoor = Spoor.GetBySpoornummer(Spoornummer);
+                    spoorLoaded = true;
+                }
+                return spoor;
+            }
+            set { spoor = value; }
         }
 
         void TextBoxSpoor_TextChanged(object sender, EventArgs e)
@@ -32,8 +46,8 @@ namespace TramVerdeelSysteem__TVS_
 
         public void LoadSpoor()
         {
-            spoor = Spoor.GetBySpoornummer(spoornummer);
-            if (spoor != null)
+            return;
+            if (Spoor != null)
             {
                 if (spoor.BlokkeerStatus.ToLower() == "geblokkeerd")
                 {

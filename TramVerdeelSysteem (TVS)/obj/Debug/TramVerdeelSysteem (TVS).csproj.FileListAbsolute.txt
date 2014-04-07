@@ -45,3 +45,14 @@ D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSyste
 D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\TramVerdeelSysteem (TVS).exe
 D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\TramVerdeelSysteem (TVS).pdb
 D:\Rene\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\TramVerdeelSysteem (TVS).exe.config
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).exe
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).pdb
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\TramVerdeelSysteem (TVS).exe
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\TramVerdeelSysteem (TVS).pdb
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).csprojResolveAssemblyReference.cache
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem__TVS_.FormMain.resources
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem__TVS_.FormLogin.resources
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem__TVS_.Properties.Resources.resources
+C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).csproj.GenerateResource.Cache

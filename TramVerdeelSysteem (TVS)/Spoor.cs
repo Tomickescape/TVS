@@ -73,6 +73,7 @@ namespace TramVerdeelSysteem__TVS_
                 db.CreateCommand("SELECT * FROM spoor WHERE spoornummer = :spoornummer");
                 db.AddParameter("spoornummer", spoornummer);
                 db.Open();
+                db.Execute();
                 OracleDataReader dr = db.DataReader;
 
                 if (dr.HasRows)

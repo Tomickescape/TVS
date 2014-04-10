@@ -17,9 +17,8 @@ namespace TramVerdeelSysteem__TVS_
 
         public TextBoxSpoor(int spoornummer)
         {
-            this.TextChanged += TextBoxSpoor_TextChanged;
             Spoornummer = spoornummer;
-
+            Enabled = false;
             LoadSpoor();
         }
 
@@ -39,29 +38,9 @@ namespace TramVerdeelSysteem__TVS_
             set { spoor = value; }
         }
 
-        void TextBoxSpoor_TextChanged(object sender, EventArgs e)
-        {
-            SaveSpoor();
-        }
-
         public void LoadSpoor()
         {
-            
-            if (Spoor != null)
-            {
-                if (spoor.BlokkeerStatus.ToLower() == "geblokkeerd")
-                {
-                    Enabled = false;
-                }
-                else
-                {
-                    Enabled = true;
-                }
-            }
-            else
-            {
-                Text = "";
-            }
+            Text = Spoor.Spoornummer.ToString();
         }
 
         public void SaveSpoor()

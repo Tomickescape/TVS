@@ -208,7 +208,8 @@ namespace TramVerdeelSysteem__TVS_
 
                 if (spoor != null)
                 {
-                    spoor.ChangeStatus(spoor.BlokkeerStatus == "geblokkeerd" ? "vrij" : "geblokkeerd");
+                    MessageBox.Show(spoor.Geblokkeerd.ToString());
+                    spoor.ChangeStatus(!spoor.Geblokkeerd);
                 }
 
 
@@ -272,12 +273,47 @@ namespace TramVerdeelSysteem__TVS_
 
         private void BTN_zetTramOpSpoor_Click(object sender, EventArgs e)
         {
-            admin.ZetTramOpSpoor(Convert.ToInt32(TB_tramnummer.Text), Convert.ToInt32(TB_spoornummer.Text));
+
+            List<TextBoxSegment> segmentCollection = new List<TextBoxSegment>(segments);
+            
+            while (true)
+            {
+                Random rand = new Random();
+                int index = rand.Next(segmentCollection.Count);
+                TextBoxSegment textBox = segmentCollection[index];
+                if (textBox.Segment != null && !textBox.Segment.Geblokkeerd && textBox.Text.Length == 0)
+                {
+                    if (textBox.Segment.Segmentnummer > 1)
+                    {
+                        foreach (TextBoxSegment tbs in segmentCollection.ToList())
+                        {
+                            if (tbs.Segment != null && tbs.Segment.Spoornummer == textBox.Segment.Spoornummer &&
+                                tbs.Segment.Segmentnummer < textBox.Segment.Segmentnummer)
+                            {
+                                if (
+                                    !tbs.Segment.Geblokkeerd && tbs.Text.Length == 0)
+                                {
+                                    textBox = tbs;
+                                }
+                                segmentCollection.Remove(tbs);
+                            }
+                        }
+                    }
+
+                    textBox.Text = "t";
+                    return;
+                }
+
+                segmentCollection.RemoveAt(index);
+            }
+
+
         }
 
         private void BTN_statusOpvragenTrams_Click(object sender, EventArgs e)
         {
-
+            FormTramsOverzicht TramOverzicht = new FormTramsOverzicht();
+            TramOverzicht.Show();
         }
     }
 }

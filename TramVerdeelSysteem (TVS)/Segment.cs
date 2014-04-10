@@ -10,33 +10,34 @@ namespace TramVerdeelSysteem__TVS_
 
         private int id;
 
-        private Segment(int id, string blokkeerStatus, int segmentnummer, int spoornummer)
+        private Segment(int id, bool geblokkeerd, int segmentnummer, int spoornummer, string special)
         {
             this.id = id;
-            BlokkeerStatus = blokkeerStatus;
+            Geblokkeerd = geblokkeerd;
             Segmentnummer = segmentnummer;
             Spoornummer = spoornummer;
-
+            Special = special;
         }
 
         public int Segmentnummer { get; set; }
-        public string BlokkeerStatus { get; set; }
+        public bool Geblokkeerd { get; set; }
         public int Spoornummer { get; private set; }
         public Tram Tram { get; private set; }
+        public string Special { get; private set; }
 
-        public void ChangeStatus(string status)
+        public void ChangeStatus(bool geblokkeerd)
         {
             Database db = new Database();
             try
             {
                 db.CreateCommand("UPDATE segment SET spoorstatus = :status WHERE segmentid = :id");
-                db.AddParameter("status", status);
+                db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
                 db.AddParameter("id", id);
                 db.Open();
                 db.Execute();
                 db.Close();
 
-                BlokkeerStatus = status;
+                Geblokkeerd = geblokkeerd;
             }
             catch (Exception ex)
             {
@@ -66,9 +67,9 @@ namespace TramVerdeelSysteem__TVS_
                 if (dr.HasRows)
                 {
                     dr.Read();
-                    string blokkeerStatus = dr.GetValueByColumn<string>("spoorstatus");
+                    bool blokkeerStatus = dr.GetValueByColumn<string>("spoorstatus") == "geblokkeerd";
 
-                    segment = new Segment(dr.GetValueByColumn<int>("segmentid"), blokkeerStatus, dr.GetValueByColumn<int>("segmentnummer"), spoornummer);
+                    segment = new Segment(dr.GetValueByColumn<int>("segmentid"), blokkeerStatus, dr.GetValueByColumn<int>("segmentnummer"), spoornummer, dr.GetValueByColumn<string>("special"));
                 }
 
             }
@@ -112,5 +113,6 @@ namespace TramVerdeelSysteem__TVS_
 
             return segments;
         }
+        
     }
 }

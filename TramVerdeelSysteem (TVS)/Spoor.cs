@@ -10,11 +10,11 @@ namespace TramVerdeelSysteem__TVS_
 {
     class Spoor
     {
-        private List<Segment> segments = null; 
+        private List<Segment> segments = null;
 
-        public Spoor(string blokkeerStatus, int spoornummer)
+        public Spoor(bool geblokkeerd, int spoornummer)
         {
-            BlokkeerStatus = blokkeerStatus;
+            Geblokkeerd = geblokkeerd;
             Spoornummer = spoornummer;
         }
 
@@ -31,27 +31,24 @@ namespace TramVerdeelSysteem__TVS_
         }
 
 
-        public string BlokkeerStatus { get; set; }
+        public bool Geblokkeerd { get; set; }
         public int Spoornummer { get; set; }
 
-        public void ChangeStatus(string status)
+        public void ChangeStatus(bool geblokkeerd)
         {
             Database db = new Database();
             try
             {
                 db.CreateCommand("UPDATE spoor SET spoorstatus = :status WHERE spoornummer = :spoornummer");
-                db.AddParameter("status", status);
+                db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
                 db.AddParameter("spoornummer", Spoornummer);
                 db.Open();
                 db.Execute();
                 db.Close();
 
-                BlokkeerStatus = status;
-
-
                 foreach (Segment segment in Segments)
                 {
-                    segment.ChangeStatus(BlokkeerStatus);
+                    segment.ChangeStatus(geblokkeerd);
                 }
             }
             catch (Exception ex)
@@ -81,7 +78,7 @@ namespace TramVerdeelSysteem__TVS_
                 if (dr.HasRows)
                 {
                     dr.Read();
-                    string blokkeerStatus = dr.GetValueByColumn<string>("spoorstatus");
+                    bool blokkeerStatus = dr.GetValueByColumn<string>("spoorstatus") == "geblokkeerd";
 
                     spoor = new Spoor(blokkeerStatus, dr.GetValueByColumn<int>("spoornummer"));
                 }

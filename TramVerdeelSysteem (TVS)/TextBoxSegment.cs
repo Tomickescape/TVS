@@ -10,38 +10,35 @@ namespace TramVerdeelSysteem__TVS_
 {
     class TextBoxSegment : TextBox
     {
-        private Segment segment;
 
         private int segmentnummer;
         private int spoornummer;
 
         public TextBoxSegment(int segmentnummer, int spoornummer)
         {
-            this.TextChanged += TextBoxSegment_TextChanged;
+            Enabled = false;
+            Text = "";
 
             this.segmentnummer = segmentnummer;
             this.spoornummer = spoornummer;
-
-            LoadSegment();
         }
 
-        void TextBoxSegment_TextChanged(object sender, EventArgs e)
-        {
-            SaveSegment();
-        }
+        public Segment Segment { get; set; }
 
         public void LoadSegment()
         {
-            segment = Segment.GetBySegmentnummerAndSpoornummer(segmentnummer, spoornummer);
-            if (segment != null)
+            Segment = TramVerdeelSysteem__TVS_.Segment.GetBySegmentnummerAndSpoornummer(segmentnummer, spoornummer);
+            if (Segment != null)
             {
-                if (segment.BlokkeerStatus.ToLower() == "geblokkeerd")
+                BackColor = Color.White;
+
+                if (Segment.Special == "permanent")
                 {
-                    Enabled = false;
+                    BackColor = Color.Black;
                 }
-                else
+                else if (Segment.Geblokkeerd)
                 {
-                    Enabled = true;
+                    BackColor = Color.Gray;
                 }
                 Text = "";
             }
@@ -49,10 +46,6 @@ namespace TramVerdeelSysteem__TVS_
             {
                 Text = "";
             }
-        }
-
-        public void SaveSegment()
-        {
         }
 
     }

@@ -57,3 +57,15 @@ C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramV
 C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).exe
 C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).pdb
 C:\Users\Beheerder\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).csprojResolveAssemblyReference.cache
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\TramVerdeelSysteem (TVS).exe.config
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).exe
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).pdb
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\TramVerdeelSysteem (TVS).exe
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\TramVerdeelSysteem (TVS).pdb
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).csprojResolveAssemblyReference.cache
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem__TVS_.FormMain.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem__TVS_.FormLogin.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem__TVS_.FormTramsOverzicht.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem__TVS_.Properties.Resources.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TramVerdeelSysteem (TVS)\obj\Debug\TramVerdeelSysteem (TVS).csproj.GenerateResource.Cache

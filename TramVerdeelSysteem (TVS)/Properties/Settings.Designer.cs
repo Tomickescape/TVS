@@ -25,7 +25,7 @@ namespace TramVerdeelSysteem__TVS_.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Mark")]
+        [global::System.Configuration.DefaultSettingValueAttribute("tomick")]
         public string db_user {
             get {
                 return ((string)(this["db_user"]));
@@ -37,7 +37,7 @@ namespace TramVerdeelSysteem__TVS_.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("mark")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mick123")]
         public string db_pass {
             get {
                 return ((string)(this["db_pass"]));

@@ -15,11 +15,11 @@ namespace Oracle.DataAccess.Client
             var value = reader.GetValue(index);
 
             if (value is DBNull || value == null)
-            {
+            { 
                 return default(T);
             }
 
-            if (typeof(int) == typeof(T))
+            if (typeof(int) == typeof(T)) //2e x mis
             {
                 return (T)(object)Convert.ToInt32(value);
             }

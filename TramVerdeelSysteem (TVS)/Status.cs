@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace TramVerdeelSysteem__TVS_
 {
-    class Status
-    {
-        enum status { Aanwezig, Afwezig, Defect, Gereed, Onderhoud, Verontreinigd }
-    }
+  
+       public enum Status { Aanwezig, Afwezig, Defect, Gereed, Onderhoud, Verontreinigd }
+    
 }

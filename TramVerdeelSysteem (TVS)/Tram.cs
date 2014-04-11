@@ -10,36 +10,41 @@ namespace TramVerdeelSysteem__TVS_
 {
     class Tram
     {
-        private int segmentId;
+
         private Segment segment;
         private bool isSegmentLoaded = false;
-        
-        private Tram(int tramId, int tramtype, int tramNummer, Status status, string rFIDCode, int lijnID, int remiseID)
+
+
+        private Tram(int tramId, string tramtype, int tramNummer, Status status, string rFIDCode, int lijnnr, int remiseID, int segment, int statusaanwezig)
         {
             this.TramId = tramId;
             this.TramType = tramtype;
             this.TramNummer = tramNummer;
             this.Status = status;
             this.RFIDCode = rFIDCode;
-            this.LijnID = lijnID;
+            this.LijnNR = lijnnr;
             this.RemiseID = remiseID;
+            this.SegmentID = segment;
+            this.StatusAanwezig = statusaanwezig;
         }
 
         public int TramId { get; private set; }
-        public int TramType { get; private set; }
+        public string TramType { get; private set; }
         public int TramNummer { get; private set; }
         public Status Status { get; private set; }
         public string RFIDCode { get; private set; }
-        public int LijnID { get; private set; }
+        public int LijnNR { get; private set; }
         public int RemiseID { get; private set; }
-       
+        public int SegmentID { get; private set; }
+        public int StatusAanwezig { get; private set; }
+
         public Segment Segment
         {
             get
             {
                 if (!isSegmentLoaded)
                 {
-                    segment = TramVerdeelSysteem__TVS_.Segment.GetById(segmentId);
+                    segment = TramVerdeelSysteem__TVS_.Segment.GetById(SegmentID);
                     isSegmentLoaded = true;
                 }
                 return segment;
@@ -59,10 +64,47 @@ namespace TramVerdeelSysteem__TVS_
                 db.Open();
                 db.Execute();
                 OracleDataReader dr = db.DataReader;
+                
                 while (dr.Read())
                 {
-                    tram = new Tram(dr.GetValueByColumn<int>("tramid"), dr.GetValueByColumn<int>("tramtype"), dr.GetValueByColumn<int>("tramnummer"), dr.GetValueByColumn<Status>("status"), dr.GetValueByColumn<string>("rfidcode"), dr.GetValueByColumn<int>("lijnid"), dr.GetValueByColumn<int>("remiseid"));
+                    Status status;
+                    string StringStatus = dr.GetValueByColumn<string>("status");
+                    if (StringStatus == "Aanwezig")
+                    {
+                         status = Status.Aanwezig;
+                    }
+                    else if (StringStatus == "Afwezig")
+                    {
+                         status = Status.Afwezig;
+                    }
+                    else if (StringStatus == "Defect")
+                    {
+                         status = Status.Defect;
+                    }
+                    else if (StringStatus == "Verontreinigf")
+                    {
+                         status = Status.Verontreinigd;
+                    }
+                    else if (StringStatus == "Onderhoud")
+                    {
+                         status = Status.Onderhoud;
+                    }
+                    else 
+                    {
+                         status = Status.Gereed;
+                    }
+                     int tramid = (dr.GetValueByColumn<int>("tramid"));
+                     string tramtype = (dr.GetValueByColumn<string>("tramtype"));
+                     int tramnummer = (dr.GetValueByColumn<int>("tramnummer"));
+                     string rfidcode = (dr.GetValueByColumn<string>("rfidcode"));
+                     int lijnnr = (dr.GetValueByColumn<int>("lijnnr"));
+                     int remiseid = (dr.GetValueByColumn<int>("remiseid"));
+                     int segmentid = (dr.GetValueByColumn<int>("segmentid"));
+                     int statusaanwezig = (dr.GetValueByColumn<int>("statusaanwezig"));
+                     tram = new Tram(tramid, tramtype, tramnummer, status, rfidcode, lijnnr, remiseid, segmentid, statusaanwezig);
+
                 }
+
             }
             catch (Exception ex)
             {

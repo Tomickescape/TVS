@@ -11,47 +11,47 @@ namespace TramVerdeelSysteem__TVS_
     class Tram
     {
 
-        private Segment segment;
-        private bool isSegmentLoaded = false;
+        private int _id;
+        private int _segmentId;
+        private Segment _segment;
+        private bool _isSegmentLoaded = false;
 
 
-        private Tram(int tramId, string tramtype, int tramNummer, Status status, string rFIDCode, int lijnnr, int remiseID, int segment, int statusaanwezig)
+        private Tram(int id, TramType type, int nummer, Status status, string rFIDCode, int lijnnr, int remiseID, int segmentId, bool aanwezig)
         {
-            this.TramId = tramId;
-            this.TramType = tramtype;
-            this.TramNummer = tramNummer;
+            this._id = id;
+            this.Type = type;
+            this.Nummer = nummer;
             this.Status = status;
             this.RFIDCode = rFIDCode;
             this.LijnNR = lijnnr;
             this.RemiseID = remiseID;
-            this.SegmentID = segment;
-            this.StatusAanwezig = statusaanwezig;
+            this._segmentId = segmentId;
+            this.Aanwezig = aanwezig;
         }
 
-        public int TramId { get; private set; }
-        public string TramType { get; private set; }
-        public int TramNummer { get; private set; }
+        public TramType Type { get; private set; }
+        public int Nummer { get; private set; }
         public Status Status { get; private set; }
         public string RFIDCode { get; private set; }
         public int LijnNR { get; private set; }
         public int RemiseID { get; private set; }
-        public int SegmentID { get; private set; }
-        public int StatusAanwezig { get; private set; }
+        public bool Aanwezig { get; private set; }
 
         public Segment Segment
         {
             get
             {
-                if (!isSegmentLoaded)
+                if (!_isSegmentLoaded)
                 {
-                    segment = TramVerdeelSysteem__TVS_.Segment.GetById(SegmentID);
-                    isSegmentLoaded = true;
+                    _segment = TramVerdeelSysteem__TVS_.Segment.GetById(_segmentId);
+                    _isSegmentLoaded = true;
                 }
-                return segment;
+                return _segment;
             }
         }
 
-        public static Tram GetById(int id)
+        public static Tram GetById(int parId)
         {
             Tram tram = null;
 
@@ -60,7 +60,7 @@ namespace TramVerdeelSysteem__TVS_
             try
             {
                 db.CreateCommand("SELECT * FROM tram WHERE tramid = :id");
-                db.AddParameter("id", id);
+                db.AddParameter("id", parId);
                 db.Open();
                 db.Execute();
                 OracleDataReader dr = db.DataReader;
@@ -93,15 +93,15 @@ namespace TramVerdeelSysteem__TVS_
                     {
                          status = Status.Gereed;
                     }
-                     int tramid = (dr.GetValueByColumn<int>("tramid"));
-                     string tramtype = (dr.GetValueByColumn<string>("tramtype"));
-                     int tramnummer = (dr.GetValueByColumn<int>("tramnummer"));
+                     int id = (dr.GetValueByColumn<int>("tramid"));
+                    TramType type = (dr.GetValueByColumn<string>("tramtype")) == "c" ? TramType.Combino : TramType.Combino;
+                     int nummer = (dr.GetValueByColumn<int>("tramnummer"));
                      string rfidcode = (dr.GetValueByColumn<string>("rfidcode"));
                      int lijnnr = (dr.GetValueByColumn<int>("lijnnr"));
                      int remiseid = (dr.GetValueByColumn<int>("remiseid"));
-                     int segmentid = (dr.GetValueByColumn<int>("segmentid"));
-                     int statusaanwezig = (dr.GetValueByColumn<int>("statusaanwezig"));
-                     tram = new Tram(tramid, tramtype, tramnummer, status, rfidcode, lijnnr, remiseid, segmentid, statusaanwezig);
+                     int segmentId = (dr.GetValueByColumn<int>("segmentid"));
+                     bool aanwezig = (dr.GetValueByColumn<int>("statusaanwezig")) > 0;
+                     tram = new Tram(id, type, nummer, status, rfidcode, lijnnr, remiseid, segmentId, aanwezig);
 
                 }
 

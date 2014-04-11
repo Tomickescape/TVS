@@ -8,19 +8,19 @@ namespace TramVerdeelSysteem__TVS_
     class Segment
     {
 
-        private int id;
-        private int tramId;
-        private Tram tram;
+        private int _id;
+        private int _tramId;
+        private Tram _tram;
         private bool isTramLoaded = false;
 
         private Segment(int id, bool geblokkeerd, int segmentnummer, int spoornummer, string special, int tramId)
         {
-            this.id = id;
+            this._id = id;
             Geblokkeerd = geblokkeerd;
             Segmentnummer = segmentnummer;
             Spoornummer = spoornummer;
             Special = special;
-            this.tramId = tramId;
+            this._tramId = tramId;
         }
 
         public int Segmentnummer { get; set; }
@@ -33,10 +33,10 @@ namespace TramVerdeelSysteem__TVS_
             {
                 if (!isTramLoaded)
                 {
-                    tram = Tram.GetById(tramId);
+                    _tram = Tram.GetById(_tramId);
                     isTramLoaded = true;
                 }
-                return tram;
+                return _tram;
             }
         }
 
@@ -49,7 +49,7 @@ namespace TramVerdeelSysteem__TVS_
             {
                 db.CreateCommand("UPDATE segment SET spoorstatus = :status WHERE segmentid = :id");
                 db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
-                db.AddParameter("id", id);
+                db.AddParameter("id", _id);
                 db.Open();
                 db.Execute();
                 db.Close();
@@ -73,7 +73,7 @@ namespace TramVerdeelSysteem__TVS_
             try
             {
                 db.CreateCommand("UPDATE tram SET segmentid = 0 WHERE segmentid = :segmentid");
-                db.AddParameter("segmentid", id);
+                db.AddParameter("segmentid", _id);
                 db.Open();
                 db.Execute();
                 db.Close();
@@ -81,14 +81,14 @@ namespace TramVerdeelSysteem__TVS_
                 if (tram != null)
                 {
                     db.CreateCommand("UPDATE tram SET segmentid = :segmentid WHERE tramid = :tramid");
-                    db.AddParameter("segmentid", id);
-                    db.AddParameter("tramid", tram.TramId);
+                    db.AddParameter("segmentid", _id);
+                    db.AddParameter("tramid", tram.Id);
                     db.Open();
                     db.Execute();
                     db.Close();
                 }
 
-                this.tram = tram;
+                this._tram = tram;
             }
             catch (Exception ex)
             {

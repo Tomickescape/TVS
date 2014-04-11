@@ -244,7 +244,7 @@ namespace TramVerdeelSysteem__TVS_
             {
                 if (TB_tramnummer.Text != "")
                 {
-                    if (t.TramNummer == Convert.ToInt32(TB_tramnummer.Text))
+                    if (t.Nummer == Convert.ToInt32(TB_tramnummer.Text))
                     {
 
 

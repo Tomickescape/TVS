@@ -8,9 +8,10 @@ using System.Threading.Tasks;
 
 namespace TramVerdeelSysteem__TVS_
 {
-    class Spoor
+    public class Spoor
     {
-        private List<Segment> segments = null;
+        private int _id;
+        private List<Segment> _segments = null;
 
         public Spoor(bool geblokkeerd, int spoornummer)
         {
@@ -22,11 +23,11 @@ namespace TramVerdeelSysteem__TVS_
         {
             get
             {
-                if (segments == null)
+                if (_segments == null)
                 {
-                    segments = Segment.GetBySpoornummer(Spoornummer);
+                    _segments = Segment.GetBySpoornummer(Spoornummer);
                 }
-                return segments;
+                return _segments;
             }
         }
 

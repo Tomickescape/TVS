@@ -44,7 +44,7 @@ namespace TramVerdeelSysteem__TVS_
                 Text = "";
                 if (Segment.Tram != null)
                 {
-                    Text = Segment.Tram.TramNummer.ToString();
+                    Text = Segment.Tram.Nummer.ToString();
                 }
                 
             }

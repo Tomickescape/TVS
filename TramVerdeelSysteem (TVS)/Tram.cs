@@ -1,52 +1,108 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing.Text;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Oracle.DataAccess.Client;
 
 namespace TramVerdeelSysteem__TVS_
 {
     class Tram
     {
-        private int tramnummer;
-        private int spoornummer;
-        private int segmentnummer;
-        private Status status;
-        private string rfidCode;
-        //lijnID?
-        //RemisID?
-
-        public int Tramnummer
+        private int segmentId;
+        private Segment segment;
+        private bool isSegmentLoaded = false;
+        
+        private Tram(int tramId, int tramtype, int tramNummer, Status status, string rFIDCode, int lijnID, int remiseID)
         {
-            get { return tramnummer; }
-            set { tramnummer = value; }
-        }
-        public int Spoornummer
-        {
-            get { return spoornummer; }
-            set { spoornummer = value; }
-        }
-        public int Segmentnummer
-        {
-            get { return segmentnummer; }
-            set { segmentnummer = value; }
-        }
-        public Status Status
-        {
-            get { return status; }
-            set { status = value; }
+            this.TramId = tramId;
+            this.TramType = tramtype;
+            this.TramNummer = tramNummer;
+            this.Status = status;
+            this.RFIDCode = rFIDCode;
+            this.LijnID = lijnID;
+            this.RemiseID = remiseID;
         }
 
-        public string RFIDCode
+        public int TramId { get; private set; }
+        public int TramType { get; private set; }
+        public int TramNummer { get; private set; }
+        public Status Status { get; private set; }
+        public string RFIDCode { get; private set; }
+        public int LijnID { get; private set; }
+        public int RemiseID { get; private set; }
+       
+        public Segment Segment
         {
-            get { return rfidCode; }
-            set { rfidCode = value; }
+            get
+            {
+                if (!isSegmentLoaded)
+                {
+                    segment = TramVerdeelSysteem__TVS_.Segment.GetById(segmentId);
+                    isSegmentLoaded = true;
+                }
+                return segment;
+            }
         }
 
-
-        public override string ToString()
+        public static Tram GetById(int id)
         {
-            return "RFIDCode" + RFIDCode + "Tramnummer: " + tramnummer + "|| Spoornummer: " + segmentnummer + "|| Status: " + status; //+ "|| Tramlengte: " + tramlengte;
+            Tram tram = null;
+
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("SELECT * FROM tram WHERE tramid = :id");
+                db.AddParameter("id", id);
+                db.Open();
+                db.Execute();
+                OracleDataReader dr = db.DataReader;
+                while (dr.Read())
+                {
+                    tram = new Tram(dr.GetValueByColumn<int>("tramid"), dr.GetValueByColumn<int>("tramtype"), dr.GetValueByColumn<int>("tramnummer"), dr.GetValueByColumn<Status>("status"), dr.GetValueByColumn<string>("rfidcode"), dr.GetValueByColumn<int>("lijnid"), dr.GetValueByColumn<int>("remiseid"));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return tram;
+        }
+
+        public static List<Tram> GetAll()
+        {
+            List<Tram> trams = new List<Tram>();
+
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("SELECT tramid FROM tram");
+                db.Open();
+                db.Execute();
+                OracleDataReader dr = db.DataReader;
+                while (dr.Read())
+                {
+                    trams.Add(GetById(dr.GetValueByColumn<int>("tramid")));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return trams;
         }
     }
 }

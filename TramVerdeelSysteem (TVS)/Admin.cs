@@ -23,32 +23,6 @@ namespace TramVerdeelSysteem__TVS_
         }
 
 
-        public Boolean ZetTramOpSpoor(int tramnummer, int spoornummer)
-        {
-            foreach (Tram t in trams)
-            {
-                if (tramnummer == t.Tramnummer)
-                {
-                    foreach (Spoor s in sporen)
-                    {
-                        if (spoornummer == s.Spoornummer && !s.Geblokkeerd)
-                        {
-                            foreach (Segment seg in s.Segments)
-                            {
-                                if (!seg.Geblokkeerd)
-                                {
-                                    t.Spoornummer = spoornummer;
-                                    t.Segmentnummer = seg.Segmentnummer;
-                                    return true;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-            return false;
-        }
-
         // (de-)blokkeerd het meegegeven spoor en daaronder liggende segmenten
         public void BlokkeringStatusWijzigen(int spoornummer)
         {

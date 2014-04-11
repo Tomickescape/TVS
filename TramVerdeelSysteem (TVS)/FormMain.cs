@@ -24,12 +24,9 @@ namespace TramVerdeelSysteem__TVS_
         {
             InitializeComponent();
             admin = new Admin();
-            LoadSegments();
 
-            RefreshSegments();
-        }
-        private void LoadSegments()
-        {
+            trams = Tram.GetAll();
+
             segments.Add(TB_segment13_1);
             segments.Add(TB_segment14_1);
             segments.Add(TB_segment15_1);
@@ -197,6 +194,8 @@ namespace TramVerdeelSysteem__TVS_
             segments.Add(TB_segment38_1);
             segments.Add(TB_segment38_2);
             segments.Add(TB_segment38_3);
+
+            RefreshSegments();
         }
 
         private void BTN_SpoorBlokkade_Click(object sender, EventArgs e)
@@ -245,7 +244,7 @@ namespace TramVerdeelSysteem__TVS_
             {
                 if (TB_tramnummer.Text != "")
                 {
-                    if (t.Tramnummer == Convert.ToInt32(TB_tramnummer.Text))
+                    if (t.TramNummer == Convert.ToInt32(TB_tramnummer.Text))
                     {
 
 
@@ -300,7 +299,8 @@ namespace TramVerdeelSysteem__TVS_
                         }
                     }
 
-                    textBox.Text = "t";
+                    textBox.Segment.ChangeTram(trams[rand.Next(trams.Count)]);
+                    textBox.LoadSegment();
                     return;
                 }
 

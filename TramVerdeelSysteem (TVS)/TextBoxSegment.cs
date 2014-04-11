@@ -40,7 +40,13 @@ namespace TramVerdeelSysteem__TVS_
                 {
                     BackColor = Color.Gray;
                 }
+
                 Text = "";
+                if (Segment.Tram != null)
+                {
+                    Text = Segment.Tram.TramNummer.ToString();
+                }
+                
             }
             else
             {

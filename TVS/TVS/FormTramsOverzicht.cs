@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TramVerdeelSysteem__TVS_
+namespace TVS
 {
     public partial class FormTramsOverzicht : Form
     {

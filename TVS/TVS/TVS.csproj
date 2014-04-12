@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{28C836E7-84BE-40DE-9B39-9F1D51488E81}</ProjectGuid>
+    <ProjectGuid>{8C76E65F-A5AA-418B-ABC4-03001545DD87}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TramVerdeelSysteem__TVS_</RootNamespace>
-    <AssemblyName>TramVerdeelSysteem %28TVS%29</AssemblyName>
+    <RootNamespace>TVS</RootNamespace>
+    <AssemblyName>TVS</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -16,7 +16,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
+    <Optimize>true</Optimize>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
@@ -32,10 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Oracle.DataAccess, Version=2.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86" />
-    <Reference Include="Phidget21.NET, Version=2.1.8.173, Culture=neutral, PublicKeyToken=c2b1f2a3594bce52, processorArchitecture=MSIL">
+    <Reference Include="Oracle.DataAccess, Version=4.121.1.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=x86">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files\Phidgets\Phidget21.NET.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\app\Rene\product\12.1.0\client_4\odp.net\bin\4\Oracle.DataAccess.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,19 +48,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormMain.cs">
-      <SubType>Form</SubType>
+    <Compile Include="Classes\Database.cs" />
+    <Compile Include="Classes\DataReaderExtensions.cs" />
+    <Compile Include="Classes\Model\Lijn.cs" />
+    <Compile Include="Classes\Model\Remise.cs" />
+    <Compile Include="Classes\Model\RFID.cs" />
+    <Compile Include="Classes\Model\Segment.cs" />
+    <Compile Include="Classes\Model\Spoor.cs" />
+    <Compile Include="Classes\Model\Tram.cs" />
+    <Compile Include="Classes\Status.cs" />
+    <Compile Include="Classes\TextBox\TextBoxLijn.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="FormMain.designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
+    <Compile Include="Classes\TextBox\TextBoxSegment.cs">
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Database.cs" />
-    <Compile Include="DataReaderExtensions.cs" />
+    <Compile Include="Classes\TextBox\TextBoxSpoor.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTramsOverzicht.cs">
       <SubType>Form</SubType>
@@ -69,28 +84,13 @@
     <Compile Include="FormTramsOverzicht.Designer.cs">
       <DependentUpon>FormTramsOverzicht.cs</DependentUpon>
     </Compile>
-    <Compile Include="Lijn.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Remise.cs" />
-    <Compile Include="RFID.cs" />
-    <Compile Include="Segment.cs" />
-    <Compile Include="Spoor.cs" />
-    <Compile Include="TextBoxLijn.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TextBoxSegment.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="TextBoxSpoor.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Tram.cs" />
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTramsOverzicht.resx">
       <DependentUpon>FormTramsOverzicht.cs</DependentUpon>
@@ -114,13 +114,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="Status.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resources\Achtergrond.jpg" />
+    <None Include="Resources\Achtergrond.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

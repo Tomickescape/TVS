@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TramVerdeelSysteem__TVS_
+namespace TVS
 {
 
     public partial class FormMain : Form
@@ -224,7 +224,7 @@ namespace TramVerdeelSysteem__TVS_
         {
             foreach (TextBoxSegment segment in segments)
             {
-                segment.LoadSegment();
+                segment.Reload();
             }
         }
 
@@ -298,7 +298,7 @@ namespace TramVerdeelSysteem__TVS_
                     }
 
                     textBox.Segment.ChangeTram(trams[rand.Next(trams.Count)]);
-                    textBox.LoadSegment();
+                    textBox.Reload();
                     return;
                 }
 

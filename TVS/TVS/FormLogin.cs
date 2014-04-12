@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace TramVerdeelSysteem__TVS_
+namespace TVS
 {
     public partial class FormLogin : Form
     {
@@ -36,12 +36,12 @@ namespace TramVerdeelSysteem__TVS_
                 db.AddParameter("gebruikersnaam", gebruikersnaam);
                 db.AddParameter("wachtwoord", wachtwoord);
 
-                if (db.Read())
+                if (db.DataReader.Read())
                 {
-                    //formMain = new FormMain();
-                    //formMain.Show();
-                    //formMain.FormClosing += FormMainFormClosing;
-                    //formMain.btUitloggen.Click += btUitloggen_Click;
+                    formMain = new FormMain();
+                    formMain.Show();
+                    formMain.FormClosing += FormMainFormClosing;
+                    formMain.btUitloggen.Click += btUitloggen_Click;
                     this.Hide();
                 }
                 else
@@ -63,7 +63,7 @@ namespace TramVerdeelSysteem__TVS_
 
         private void btInloggen_Click(object sender, EventArgs e)
         {
-            Inloggen();
+            //Inloggen();
         }
 
         void FormMainFormClosing(object sender, FormClosingEventArgs e)

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 
-namespace TramVerdeelSysteem__TVS_
+namespace TVS
 {
     public class Lijn
     {
@@ -46,6 +46,32 @@ namespace TramVerdeelSysteem__TVS_
 
             return lijn;
         }
+        public Lijn GetByNummer(int nummer)
+        {
+            Lijn lijn = null;
 
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("SELECT * FROM lijn WHERE nummer = :nummer");
+                db.AddParameter("nummer", nummer);
+
+                while (db.Read())
+                {
+                    lijn = new Lijn(db.GetValueByColumn<int>("id"), db.GetValueByColumn<int>("nummer"));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return lijn;
+        }
     }
 }

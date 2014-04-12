@@ -1,4 +1,4 @@
-﻿namespace TramVerdeelSysteem__TVS_
+﻿namespace TVS
 {
     partial class FormLogin
     {

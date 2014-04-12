@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace TramVerdeelSysteem__TVS_
+namespace TVS
 {
     public class Spoor
     {

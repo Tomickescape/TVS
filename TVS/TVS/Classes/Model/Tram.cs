@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Oracle.DataAccess.Client;
 
-namespace TramVerdeelSysteem__TVS_
+namespace TVS
 {
     public class Tram
     {
@@ -60,7 +60,7 @@ namespace TramVerdeelSysteem__TVS_
             {
                 if (!_isSegmentLoaded)
                 {
-                    _segment = TramVerdeelSysteem__TVS_.Segment.GetById(_segmentId);
+                    _segment = Segment.GetById(_segmentId);
                     _isSegmentLoaded = true;
                 }
                 return _segment;

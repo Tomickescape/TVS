@@ -3,7 +3,7 @@ using System.Data;
 // Database
 using Oracle.DataAccess.Client;
 
-namespace TramVerdeelSysteem__TVS_
+namespace TVS
 {
     /// <summary>
     /// Class used for the database interaction in the application.
@@ -16,7 +16,18 @@ namespace TramVerdeelSysteem__TVS_
 
         public Database()
         {
-            conn = new OracleConnection("User Id=" + Properties.Settings.Default.db_user + ";Password=" + Properties.Settings.Default.db_pass + ";Data Source=" + "//" + Properties.Settings.Default.db_server + "/" + Properties.Settings.Default.db_name + ";");
+            try
+            {
+                conn = new OracleConnection();
+                conn.ConnectionString = "User Id=" + Properties.Settings.Default.db_user + ";Password=" +
+                                        Properties.Settings.Default.db_pass + ";Data Source=" + "//" +
+                                        Properties.Settings.Default.db_server + "/" +
+                                        Properties.Settings.Default.db_name + ";";
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.Write(ex.Message);
+            }
         }
 
         public bool HasRows { get { return DataReader.HasRows; } }

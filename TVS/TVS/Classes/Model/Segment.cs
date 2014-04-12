@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Windows.Forms;
 using Oracle.DataAccess.Client;
 
-namespace TramVerdeelSysteem__TVS_
+namespace TVS
 {
     public class Segment
     {
@@ -30,7 +30,7 @@ namespace TramVerdeelSysteem__TVS_
             {
                 if (_spoor == null)
                 {
-                    _spoor = TramVerdeelSysteem__TVS_.Spoor.GetById(_spoorId);
+                    _spoor = Spoor.GetById(_spoorId);
                 }
                 return _spoor;
             }
@@ -42,7 +42,7 @@ namespace TramVerdeelSysteem__TVS_
             {
                 Database db = new Database();
 
-                TramVerdeelSysteem__TVS_.Tram tram = null;
+                Tram tram = null;
 
                 try
                 {
@@ -50,7 +50,7 @@ namespace TramVerdeelSysteem__TVS_
                     db.AddParameter("id", Id);
                     if (db.Read())
                     {
-                        tram = TramVerdeelSysteem__TVS_.Tram.GetById(db.GetValueByColumn<int>("id"));
+                        tram = Tram.GetById(db.GetValueByColumn<int>("id"));
                     }
                 }
                 catch (Exception ex)

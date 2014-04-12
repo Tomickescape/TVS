@@ -1,4 +1,4 @@
-﻿namespace TramVerdeelSysteem__TVS_
+﻿namespace TVS
 {
     partial class FormMain
     {
@@ -2648,7 +2648,6 @@
             this.TB_segment61_2.MaxLength = 4;
             this.TB_segment61_2.Multiline = true;
             this.TB_segment61_2.Name = "TB_segment61_2";
-            this.TB_segment61_2.Segment = null;
             this.TB_segment61_2.Size = new System.Drawing.Size(43, 20);
             this.TB_segment61_2.TabIndex = 17;
             this.TB_segment61_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2662,7 +2661,6 @@
             this.TB_segment61_3.MaxLength = 4;
             this.TB_segment61_3.Multiline = true;
             this.TB_segment61_3.Name = "TB_segment61_3";
-            this.TB_segment61_3.Segment = null;
             this.TB_segment61_3.Size = new System.Drawing.Size(43, 20);
             this.TB_segment61_3.TabIndex = 16;
             this.TB_segment61_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2676,7 +2674,6 @@
             this.TB_segment62_1.MaxLength = 4;
             this.TB_segment62_1.Multiline = true;
             this.TB_segment62_1.Name = "TB_segment62_1";
-            this.TB_segment62_1.Segment = null;
             this.TB_segment62_1.Size = new System.Drawing.Size(43, 20);
             this.TB_segment62_1.TabIndex = 18;
             this.TB_segment62_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2691,7 +2688,6 @@
             this.TB_segment62_2.MaxLength = 4;
             this.TB_segment62_2.Multiline = true;
             this.TB_segment62_2.Name = "TB_segment62_2";
-            this.TB_segment62_2.Segment = null;
             this.TB_segment62_2.Size = new System.Drawing.Size(43, 20);
             this.TB_segment62_2.TabIndex = 17;
             this.TB_segment62_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2705,7 +2701,6 @@
             this.TB_segment62_3.MaxLength = 4;
             this.TB_segment62_3.Multiline = true;
             this.TB_segment62_3.Name = "TB_segment62_3";
-            this.TB_segment62_3.Segment = null;
             this.TB_segment62_3.Size = new System.Drawing.Size(43, 20);
             this.TB_segment62_3.TabIndex = 16;
             this.TB_segment62_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2719,7 +2714,6 @@
             this.TB_segment63_1.MaxLength = 4;
             this.TB_segment63_1.Multiline = true;
             this.TB_segment63_1.Name = "TB_segment63_1";
-            this.TB_segment63_1.Segment = null;
             this.TB_segment63_1.Size = new System.Drawing.Size(43, 20);
             this.TB_segment63_1.TabIndex = 18;
             this.TB_segment63_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2733,7 +2727,6 @@
             this.TB_segment63_2.MaxLength = 4;
             this.TB_segment63_2.Multiline = true;
             this.TB_segment63_2.Name = "TB_segment63_2";
-            this.TB_segment63_2.Segment = null;
             this.TB_segment63_2.Size = new System.Drawing.Size(43, 20);
             this.TB_segment63_2.TabIndex = 17;
             this.TB_segment63_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2747,7 +2740,6 @@
             this.TB_segment63_3.MaxLength = 4;
             this.TB_segment63_3.Multiline = true;
             this.TB_segment63_3.Name = "TB_segment63_3";
-            this.TB_segment63_3.Segment = null;
             this.TB_segment63_3.Size = new System.Drawing.Size(43, 20);
             this.TB_segment63_3.TabIndex = 16;
             this.TB_segment63_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2761,7 +2753,6 @@
             this.TB_segment63_4.MaxLength = 4;
             this.TB_segment63_4.Multiline = true;
             this.TB_segment63_4.Name = "TB_segment63_4";
-            this.TB_segment63_4.Segment = null;
             this.TB_segment63_4.Size = new System.Drawing.Size(43, 20);
             this.TB_segment63_4.TabIndex = 15;
             this.TB_segment63_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2775,7 +2766,6 @@
             this.TB_segment64_1.MaxLength = 4;
             this.TB_segment64_1.Multiline = true;
             this.TB_segment64_1.Name = "TB_segment64_1";
-            this.TB_segment64_1.Segment = null;
             this.TB_segment64_1.Size = new System.Drawing.Size(43, 20);
             this.TB_segment64_1.TabIndex = 18;
             this.TB_segment64_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2789,7 +2779,6 @@
             this.TB_segment64_2.MaxLength = 4;
             this.TB_segment64_2.Multiline = true;
             this.TB_segment64_2.Name = "TB_segment64_2";
-            this.TB_segment64_2.Segment = null;
             this.TB_segment64_2.Size = new System.Drawing.Size(43, 20);
             this.TB_segment64_2.TabIndex = 17;
             this.TB_segment64_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2804,7 +2793,6 @@
             this.TB_segment64_3.MaxLength = 4;
             this.TB_segment64_3.Multiline = true;
             this.TB_segment64_3.Name = "TB_segment64_3";
-            this.TB_segment64_3.Segment = null;
             this.TB_segment64_3.Size = new System.Drawing.Size(43, 20);
             this.TB_segment64_3.TabIndex = 16;
             this.TB_segment64_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2818,7 +2806,6 @@
             this.TB_segment64_4.MaxLength = 4;
             this.TB_segment64_4.Multiline = true;
             this.TB_segment64_4.Name = "TB_segment64_4";
-            this.TB_segment64_4.Segment = null;
             this.TB_segment64_4.Size = new System.Drawing.Size(43, 20);
             this.TB_segment64_4.TabIndex = 15;
             this.TB_segment64_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2833,7 +2820,6 @@
             this.TB_segment64_5.MaxLength = 4;
             this.TB_segment64_5.Multiline = true;
             this.TB_segment64_5.Name = "TB_segment64_5";
-            this.TB_segment64_5.Segment = null;
             this.TB_segment64_5.Size = new System.Drawing.Size(43, 20);
             this.TB_segment64_5.TabIndex = 65;
             this.TB_segment64_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2847,7 +2833,6 @@
             this.TB_segment74_1.MaxLength = 4;
             this.TB_segment74_1.Multiline = true;
             this.TB_segment74_1.Name = "TB_segment74_1";
-            this.TB_segment74_1.Segment = null;
             this.TB_segment74_1.Size = new System.Drawing.Size(43, 20);
             this.TB_segment74_1.TabIndex = 24;
             this.TB_segment74_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2861,7 +2846,6 @@
             this.TB_segment74_2.MaxLength = 4;
             this.TB_segment74_2.Multiline = true;
             this.TB_segment74_2.Name = "TB_segment74_2";
-            this.TB_segment74_2.Segment = null;
             this.TB_segment74_2.Size = new System.Drawing.Size(43, 20);
             this.TB_segment74_2.TabIndex = 23;
             this.TB_segment74_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2875,7 +2859,6 @@
             this.TB_segment74_3.MaxLength = 4;
             this.TB_segment74_3.Multiline = true;
             this.TB_segment74_3.Name = "TB_segment74_3";
-            this.TB_segment74_3.Segment = null;
             this.TB_segment74_3.Size = new System.Drawing.Size(43, 20);
             this.TB_segment74_3.TabIndex = 22;
             this.TB_segment74_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2889,7 +2872,6 @@
             this.TB_segment74_4.MaxLength = 4;
             this.TB_segment74_4.Multiline = true;
             this.TB_segment74_4.Name = "TB_segment74_4";
-            this.TB_segment74_4.Segment = null;
             this.TB_segment74_4.Size = new System.Drawing.Size(43, 20);
             this.TB_segment74_4.TabIndex = 21;
             this.TB_segment74_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2903,7 +2885,6 @@
             this.TB_segment74_5.MaxLength = 4;
             this.TB_segment74_5.Multiline = true;
             this.TB_segment74_5.Name = "TB_segment74_5";
-            this.TB_segment74_5.Segment = null;
             this.TB_segment74_5.Size = new System.Drawing.Size(43, 20);
             this.TB_segment74_5.TabIndex = 21;
             this.TB_segment74_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2917,7 +2898,6 @@
             this.TB_segment75_1.MaxLength = 4;
             this.TB_segment75_1.Multiline = true;
             this.TB_segment75_1.Name = "TB_segment75_1";
-            this.TB_segment75_1.Segment = null;
             this.TB_segment75_1.Size = new System.Drawing.Size(43, 20);
             this.TB_segment75_1.TabIndex = 30;
             this.TB_segment75_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2931,7 +2911,6 @@
             this.TB_segment75_2.MaxLength = 4;
             this.TB_segment75_2.Multiline = true;
             this.TB_segment75_2.Name = "TB_segment75_2";
-            this.TB_segment75_2.Segment = null;
             this.TB_segment75_2.Size = new System.Drawing.Size(43, 20);
             this.TB_segment75_2.TabIndex = 29;
             this.TB_segment75_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2945,7 +2924,6 @@
             this.TB_segment75_3.MaxLength = 4;
             this.TB_segment75_3.Multiline = true;
             this.TB_segment75_3.Name = "TB_segment75_3";
-            this.TB_segment75_3.Segment = null;
             this.TB_segment75_3.Size = new System.Drawing.Size(43, 20);
             this.TB_segment75_3.TabIndex = 28;
             this.TB_segment75_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2959,7 +2937,6 @@
             this.TB_segment75_4.MaxLength = 4;
             this.TB_segment75_4.Multiline = true;
             this.TB_segment75_4.Name = "TB_segment75_4";
-            this.TB_segment75_4.Segment = null;
             this.TB_segment75_4.Size = new System.Drawing.Size(43, 20);
             this.TB_segment75_4.TabIndex = 27;
             this.TB_segment75_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2973,7 +2950,6 @@
             this.TB_segment75_5.MaxLength = 4;
             this.TB_segment75_5.Multiline = true;
             this.TB_segment75_5.Name = "TB_segment75_5";
-            this.TB_segment75_5.Segment = null;
             this.TB_segment75_5.Size = new System.Drawing.Size(43, 20);
             this.TB_segment75_5.TabIndex = 27;
             this.TB_segment75_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -2987,7 +2963,6 @@
             this.TB_segment76_1.MaxLength = 4;
             this.TB_segment76_1.Multiline = true;
             this.TB_segment76_1.Name = "TB_segment76_1";
-            this.TB_segment76_1.Segment = null;
             this.TB_segment76_1.Size = new System.Drawing.Size(43, 20);
             this.TB_segment76_1.TabIndex = 36;
             this.TB_segment76_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3001,7 +2976,6 @@
             this.TB_segment76_2.MaxLength = 4;
             this.TB_segment76_2.Multiline = true;
             this.TB_segment76_2.Name = "TB_segment76_2";
-            this.TB_segment76_2.Segment = null;
             this.TB_segment76_2.Size = new System.Drawing.Size(43, 20);
             this.TB_segment76_2.TabIndex = 35;
             this.TB_segment76_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3015,7 +2989,6 @@
             this.TB_segment76_3.MaxLength = 4;
             this.TB_segment76_3.Multiline = true;
             this.TB_segment76_3.Name = "TB_segment76_3";
-            this.TB_segment76_3.Segment = null;
             this.TB_segment76_3.Size = new System.Drawing.Size(43, 20);
             this.TB_segment76_3.TabIndex = 34;
             this.TB_segment76_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3029,7 +3002,6 @@
             this.TB_segment76_4.MaxLength = 4;
             this.TB_segment76_4.Multiline = true;
             this.TB_segment76_4.Name = "TB_segment76_4";
-            this.TB_segment76_4.Segment = null;
             this.TB_segment76_4.Size = new System.Drawing.Size(43, 20);
             this.TB_segment76_4.TabIndex = 33;
             this.TB_segment76_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3043,7 +3015,6 @@
             this.TB_segment76_5.MaxLength = 4;
             this.TB_segment76_5.Multiline = true;
             this.TB_segment76_5.Name = "TB_segment76_5";
-            this.TB_segment76_5.Segment = null;
             this.TB_segment76_5.Size = new System.Drawing.Size(43, 20);
             this.TB_segment76_5.TabIndex = 33;
             this.TB_segment76_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3057,7 +3028,6 @@
             this.TB_segment77_1.MaxLength = 4;
             this.TB_segment77_1.Multiline = true;
             this.TB_segment77_1.Name = "TB_segment77_1";
-            this.TB_segment77_1.Segment = null;
             this.TB_segment77_1.Size = new System.Drawing.Size(43, 20);
             this.TB_segment77_1.TabIndex = 42;
             this.TB_segment77_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3071,7 +3041,6 @@
             this.TB_segment77_2.MaxLength = 4;
             this.TB_segment77_2.Multiline = true;
             this.TB_segment77_2.Name = "TB_segment77_2";
-            this.TB_segment77_2.Segment = null;
             this.TB_segment77_2.Size = new System.Drawing.Size(43, 20);
             this.TB_segment77_2.TabIndex = 41;
             this.TB_segment77_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3085,7 +3054,6 @@
             this.TB_segment77_3.MaxLength = 4;
             this.TB_segment77_3.Multiline = true;
             this.TB_segment77_3.Name = "TB_segment77_3";
-            this.TB_segment77_3.Segment = null;
             this.TB_segment77_3.Size = new System.Drawing.Size(43, 20);
             this.TB_segment77_3.TabIndex = 40;
             this.TB_segment77_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3099,7 +3067,6 @@
             this.TB_segment77_4.MaxLength = 4;
             this.TB_segment77_4.Multiline = true;
             this.TB_segment77_4.Name = "TB_segment77_4";
-            this.TB_segment77_4.Segment = null;
             this.TB_segment77_4.Size = new System.Drawing.Size(43, 20);
             this.TB_segment77_4.TabIndex = 39;
             this.TB_segment77_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3113,7 +3080,6 @@
             this.TB_segment77_5.MaxLength = 4;
             this.TB_segment77_5.Multiline = true;
             this.TB_segment77_5.Name = "TB_segment77_5";
-            this.TB_segment77_5.Segment = null;
             this.TB_segment77_5.Size = new System.Drawing.Size(43, 20);
             this.TB_segment77_5.TabIndex = 39;
             this.TB_segment77_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3129,7 +3095,6 @@
             this.TB_spoor12.Name = "TB_spoor12";
             this.TB_spoor12.ReadOnly = true;
             this.TB_spoor12.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor12.Spoornummer = 12;
             this.TB_spoor12.TabIndex = 81;
             this.TB_spoor12.Text = "12";
             this.TB_spoor12.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3145,7 +3110,6 @@
             this.TB_spoor13.Name = "TB_spoor13";
             this.TB_spoor13.ReadOnly = true;
             this.TB_spoor13.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor13.Spoornummer = 13;
             this.TB_spoor13.TabIndex = 82;
             this.TB_spoor13.Text = "13";
             this.TB_spoor13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3161,7 +3125,6 @@
             this.TB_spoor14.Name = "TB_spoor14";
             this.TB_spoor14.ReadOnly = true;
             this.TB_spoor14.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor14.Spoornummer = 14;
             this.TB_spoor14.TabIndex = 83;
             this.TB_spoor14.Text = "14";
             this.TB_spoor14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3177,7 +3140,6 @@
             this.TB_spoor15.Name = "TB_spoor15";
             this.TB_spoor15.ReadOnly = true;
             this.TB_spoor15.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor15.Spoornummer = 15;
             this.TB_spoor15.TabIndex = 84;
             this.TB_spoor15.Text = "15";
             this.TB_spoor15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3193,7 +3155,6 @@
             this.TB_spoor16.Name = "TB_spoor16";
             this.TB_spoor16.ReadOnly = true;
             this.TB_spoor16.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor16.Spoornummer = 16;
             this.TB_spoor16.TabIndex = 85;
             this.TB_spoor16.Text = "16";
             this.TB_spoor16.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3209,7 +3170,6 @@
             this.TB_spoor17.Name = "TB_spoor17";
             this.TB_spoor17.ReadOnly = true;
             this.TB_spoor17.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor17.Spoornummer = 17;
             this.TB_spoor17.TabIndex = 86;
             this.TB_spoor17.Text = "17";
             this.TB_spoor17.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3225,7 +3185,6 @@
             this.TB_spoor18.Name = "TB_spoor18";
             this.TB_spoor18.ReadOnly = true;
             this.TB_spoor18.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor18.Spoornummer = 18;
             this.TB_spoor18.TabIndex = 87;
             this.TB_spoor18.Text = "18";
             this.TB_spoor18.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3241,7 +3200,6 @@
             this.TB_spoor19.Name = "TB_spoor19";
             this.TB_spoor19.ReadOnly = true;
             this.TB_spoor19.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor19.Spoornummer = 19;
             this.TB_spoor19.TabIndex = 88;
             this.TB_spoor19.Text = "19";
             this.TB_spoor19.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3257,7 +3215,6 @@
             this.TB_spoor20.Name = "TB_spoor20";
             this.TB_spoor20.ReadOnly = true;
             this.TB_spoor20.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor20.Spoornummer = 20;
             this.TB_spoor20.TabIndex = 89;
             this.TB_spoor20.Text = "20";
             this.TB_spoor20.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3273,7 +3230,6 @@
             this.TB_spoor21.Name = "TB_spoor21";
             this.TB_spoor21.ReadOnly = true;
             this.TB_spoor21.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor21.Spoornummer = 21;
             this.TB_spoor21.TabIndex = 90;
             this.TB_spoor21.Text = "21";
             this.TB_spoor21.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3289,7 +3245,6 @@
             this.TB_spoor30.Name = "TB_spoor30";
             this.TB_spoor30.ReadOnly = true;
             this.TB_spoor30.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor30.Spoornummer = 30;
             this.TB_spoor30.TabIndex = 0;
             this.TB_spoor30.Text = "30";
             this.TB_spoor30.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3305,7 +3260,6 @@
             this.TB_spoor31.Name = "TB_spoor31";
             this.TB_spoor31.ReadOnly = true;
             this.TB_spoor31.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor31.Spoornummer = 31;
             this.TB_spoor31.TabIndex = 0;
             this.TB_spoor31.Text = "31";
             this.TB_spoor31.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3321,7 +3275,6 @@
             this.TB_spoor32.Name = "TB_spoor32";
             this.TB_spoor32.ReadOnly = true;
             this.TB_spoor32.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor32.Spoornummer = 32;
             this.TB_spoor32.TabIndex = 0;
             this.TB_spoor32.Text = "32";
             this.TB_spoor32.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3337,7 +3290,6 @@
             this.TB_spoor33.Name = "TB_spoor33";
             this.TB_spoor33.ReadOnly = true;
             this.TB_spoor33.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor33.Spoornummer = 33;
             this.TB_spoor33.TabIndex = 0;
             this.TB_spoor33.Text = "33";
             this.TB_spoor33.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3353,7 +3305,6 @@
             this.TB_spoor34.Name = "TB_spoor34";
             this.TB_spoor34.ReadOnly = true;
             this.TB_spoor34.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor34.Spoornummer = 34;
             this.TB_spoor34.TabIndex = 0;
             this.TB_spoor34.Text = "34";
             this.TB_spoor34.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3369,7 +3320,6 @@
             this.TB_spoor35.Name = "TB_spoor35";
             this.TB_spoor35.ReadOnly = true;
             this.TB_spoor35.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor35.Spoornummer = 35;
             this.TB_spoor35.TabIndex = 0;
             this.TB_spoor35.Text = "35";
             this.TB_spoor35.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3385,7 +3335,6 @@
             this.TB_spoor36.Name = "TB_spoor36";
             this.TB_spoor36.ReadOnly = true;
             this.TB_spoor36.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor36.Spoornummer = 36;
             this.TB_spoor36.TabIndex = 0;
             this.TB_spoor36.Text = "36";
             this.TB_spoor36.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3401,7 +3350,6 @@
             this.TB_spoor37.Name = "TB_spoor37";
             this.TB_spoor37.ReadOnly = true;
             this.TB_spoor37.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor37.Spoornummer = 37;
             this.TB_spoor37.TabIndex = 0;
             this.TB_spoor37.Text = "37";
             this.TB_spoor37.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3417,7 +3365,6 @@
             this.TB_spoor38.Name = "TB_spoor38";
             this.TB_spoor38.ReadOnly = true;
             this.TB_spoor38.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor38.Spoornummer = 38;
             this.TB_spoor38.TabIndex = 0;
             this.TB_spoor38.Text = "38";
             this.TB_spoor38.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3433,7 +3380,6 @@
             this.TB_spoor40.Name = "TB_spoor40";
             this.TB_spoor40.ReadOnly = true;
             this.TB_spoor40.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor40.Spoornummer = 40;
             this.TB_spoor40.TabIndex = 20;
             this.TB_spoor40.Text = "40";
             this.TB_spoor40.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3449,7 +3395,6 @@
             this.TB_spoor41.Name = "TB_spoor41";
             this.TB_spoor41.ReadOnly = true;
             this.TB_spoor41.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor41.Spoornummer = 41;
             this.TB_spoor41.TabIndex = 20;
             this.TB_spoor41.Text = "41";
             this.TB_spoor41.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3465,7 +3410,6 @@
             this.TB_spoor42.Name = "TB_spoor42";
             this.TB_spoor42.ReadOnly = true;
             this.TB_spoor42.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor42.Spoornummer = 42;
             this.TB_spoor42.TabIndex = 20;
             this.TB_spoor42.Text = "42";
             this.TB_spoor42.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3481,7 +3425,6 @@
             this.TB_spoor43.Name = "TB_spoor43";
             this.TB_spoor43.ReadOnly = true;
             this.TB_spoor43.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor43.Spoornummer = 43;
             this.TB_spoor43.TabIndex = 20;
             this.TB_spoor43.Text = "43";
             this.TB_spoor43.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3497,7 +3440,6 @@
             this.TB_spoor44.Name = "TB_spoor44";
             this.TB_spoor44.ReadOnly = true;
             this.TB_spoor44.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor44.Spoornummer = 44;
             this.TB_spoor44.TabIndex = 20;
             this.TB_spoor44.Text = "44";
             this.TB_spoor44.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3513,7 +3455,6 @@
             this.TB_spoor45.Name = "TB_spoor45";
             this.TB_spoor45.ReadOnly = true;
             this.TB_spoor45.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor45.Spoornummer = 45;
             this.TB_spoor45.TabIndex = 26;
             this.TB_spoor45.Text = "45";
             this.TB_spoor45.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3529,7 +3470,6 @@
             this.TB_spoor51.Name = "TB_spoor51";
             this.TB_spoor51.ReadOnly = true;
             this.TB_spoor51.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor51.Spoornummer = 51;
             this.TB_spoor51.TabIndex = 20;
             this.TB_spoor51.Text = "51";
             this.TB_spoor51.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3545,7 +3485,6 @@
             this.TB_spoor52.Name = "TB_spoor52";
             this.TB_spoor52.ReadOnly = true;
             this.TB_spoor52.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor52.Spoornummer = 52;
             this.TB_spoor52.TabIndex = 20;
             this.TB_spoor52.Text = "52";
             this.TB_spoor52.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3561,7 +3500,6 @@
             this.TB_spoor53.Name = "TB_spoor53";
             this.TB_spoor53.ReadOnly = true;
             this.TB_spoor53.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor53.Spoornummer = 53;
             this.TB_spoor53.TabIndex = 20;
             this.TB_spoor53.Text = "53";
             this.TB_spoor53.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3577,7 +3515,6 @@
             this.TB_spoor54.Name = "TB_spoor54";
             this.TB_spoor54.ReadOnly = true;
             this.TB_spoor54.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor54.Spoornummer = 54;
             this.TB_spoor54.TabIndex = 20;
             this.TB_spoor54.Text = "54";
             this.TB_spoor54.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3593,7 +3530,6 @@
             this.TB_spoor55.Name = "TB_spoor55";
             this.TB_spoor55.ReadOnly = true;
             this.TB_spoor55.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor55.Spoornummer = 55;
             this.TB_spoor55.TabIndex = 20;
             this.TB_spoor55.Text = "55";
             this.TB_spoor55.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3609,7 +3545,6 @@
             this.TB_spoor56.Name = "TB_spoor56";
             this.TB_spoor56.ReadOnly = true;
             this.TB_spoor56.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor56.Spoornummer = 56;
             this.TB_spoor56.TabIndex = 20;
             this.TB_spoor56.Text = "56";
             this.TB_spoor56.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3625,7 +3560,6 @@
             this.TB_spoor57.Name = "TB_spoor57";
             this.TB_spoor57.ReadOnly = true;
             this.TB_spoor57.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor57.Spoornummer = 57;
             this.TB_spoor57.TabIndex = 20;
             this.TB_spoor57.Text = "57";
             this.TB_spoor57.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3641,7 +3575,6 @@
             this.TB_spoor58.Name = "TB_spoor58";
             this.TB_spoor58.ReadOnly = true;
             this.TB_spoor58.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor58.Spoornummer = 58;
             this.TB_spoor58.TabIndex = 68;
             this.TB_spoor58.Text = "58";
             this.TB_spoor58.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3657,7 +3590,6 @@
             this.TB_spoor61.Name = "TB_spoor61";
             this.TB_spoor61.ReadOnly = true;
             this.TB_spoor61.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor61.Spoornummer = 61;
             this.TB_spoor61.TabIndex = 20;
             this.TB_spoor61.Text = "61";
             this.TB_spoor61.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3673,7 +3605,6 @@
             this.TB_spoor62.Name = "TB_spoor62";
             this.TB_spoor62.ReadOnly = true;
             this.TB_spoor62.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor62.Spoornummer = 62;
             this.TB_spoor62.TabIndex = 20;
             this.TB_spoor62.Text = "62";
             this.TB_spoor62.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3689,7 +3620,6 @@
             this.TB_spoor63.Name = "TB_spoor63";
             this.TB_spoor63.ReadOnly = true;
             this.TB_spoor63.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor63.Spoornummer = 63;
             this.TB_spoor63.TabIndex = 20;
             this.TB_spoor63.Text = "63";
             this.TB_spoor63.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3705,7 +3635,6 @@
             this.TB_spoor64.Name = "TB_spoor64";
             this.TB_spoor64.ReadOnly = true;
             this.TB_spoor64.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor64.Spoornummer = 64;
             this.TB_spoor64.TabIndex = 20;
             this.TB_spoor64.Text = "64";
             this.TB_spoor64.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3721,7 +3650,6 @@
             this.TB_spoor74.Name = "TB_spoor74";
             this.TB_spoor74.ReadOnly = true;
             this.TB_spoor74.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor74.Spoornummer = 74;
             this.TB_spoor74.TabIndex = 26;
             this.TB_spoor74.Text = "74";
             this.TB_spoor74.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3737,7 +3665,6 @@
             this.TB_spoor75.Name = "TB_spoor75";
             this.TB_spoor75.ReadOnly = true;
             this.TB_spoor75.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor75.Spoornummer = 75;
             this.TB_spoor75.TabIndex = 32;
             this.TB_spoor75.Text = "75";
             this.TB_spoor75.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3753,7 +3680,6 @@
             this.TB_spoor76.Name = "TB_spoor76";
             this.TB_spoor76.ReadOnly = true;
             this.TB_spoor76.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor76.Spoornummer = 76;
             this.TB_spoor76.TabIndex = 38;
             this.TB_spoor76.Text = "76";
             this.TB_spoor76.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3769,7 +3695,6 @@
             this.TB_spoor77.Name = "TB_spoor77";
             this.TB_spoor77.ReadOnly = true;
             this.TB_spoor77.Size = new System.Drawing.Size(43, 30);
-            this.TB_spoor77.Spoornummer = 77;
             this.TB_spoor77.TabIndex = 44;
             this.TB_spoor77.Text = "77";
             this.TB_spoor77.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -3812,8 +3737,8 @@
             // pictureBox2
             // 
             this.pictureBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox2.ErrorImage = global::TramVerdeelSysteem__TVS_.Properties.Resources.Achtergrond;
-            this.pictureBox2.Image = global::TramVerdeelSysteem__TVS_.Properties.Resources.Achtergrond;
+            this.pictureBox2.ErrorImage = global::TVS.Properties.Resources.Achtergrond;
+            this.pictureBox2.Image = global::TVS.Properties.Resources.Achtergrond;
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";

@@ -18,12 +18,10 @@ namespace TramVerdeelSysteem__TVS_
 
         List<Spoor> sporen;
         List<Tram> trams;
-        Admin admin;
 
         public FormMain()
         {
             InitializeComponent();
-            admin = new Admin();
 
             trams = Tram.GetAll();
 
@@ -282,12 +280,12 @@ namespace TramVerdeelSysteem__TVS_
                 TextBoxSegment textBox = segmentCollection[index];
                 if (textBox.Segment != null && !textBox.Segment.Geblokkeerd && textBox.Text.Length == 0)
                 {
-                    if (textBox.Segment.Segmentnummer > 1)
+                    if (textBox.Segment.Nummer > 1)
                     {
                         foreach (TextBoxSegment tbs in segmentCollection.ToList())
                         {
-                            if (tbs.Segment != null && tbs.Segment.Spoornummer == textBox.Segment.Spoornummer &&
-                                tbs.Segment.Segmentnummer < textBox.Segment.Segmentnummer)
+                            if (tbs.Segment != null && tbs.Segment.Spoor.Nummer == textBox.Segment.Spoornummer &&
+                                tbs.Segment.Nummer < textBox.Segment.Nummer)
                             {
                                 if (
                                     !tbs.Segment.Geblokkeerd && tbs.Text.Length == 0)

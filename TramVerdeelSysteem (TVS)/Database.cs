@@ -19,6 +19,8 @@ namespace TramVerdeelSysteem__TVS_
             conn = new OracleConnection("User Id=" + Properties.Settings.Default.db_user + ";Password=" + Properties.Settings.Default.db_pass + ";Data Source=" + "//" + Properties.Settings.Default.db_server + "/" + Properties.Settings.Default.db_name + ";");
         }
 
+        public bool HasRows { get { return DataReader.HasRows; } }
+
         public OracleDataReader DataReader { get; private set; }
 
         public void Open()
@@ -53,19 +55,32 @@ namespace TramVerdeelSysteem__TVS_
             cmd.Parameters.Add(parameter);
         }
 
-        public bool Execute()
+        public void Execute()
         {
             if (cmd == null)
             {
                 throw new Exception("No command initiated.");
             }
-            DataReader = cmd.ExecuteReader();
-            if (DataReader != null)
+            if (conn.State != ConnectionState.Open)
             {
-                return true;
+                Open();
             }
-            return false;
+            DataReader = cmd.ExecuteReader();
         }
 
+        public bool Read()
+        {
+            if (DataReader == null)
+            {
+                Execute();
+            }
+
+            return DataReader.Read();
+        }
+
+        public T GetValueByColumn<T>(string column)
+        {
+            return DataReader.GetValueByColumn<T>(column);
+        }
     }
 }

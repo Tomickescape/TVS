@@ -10,14 +10,16 @@ namespace TramVerdeelSysteem__TVS_
 {
     public class Spoor
     {
-        private int _id;
         private List<Segment> _segments = null;
 
-        public Spoor(bool geblokkeerd, int spoornummer)
+        public Spoor(int id, bool geblokkeerd, int nummer)
         {
+            Id = id;
             Geblokkeerd = geblokkeerd;
-            Spoornummer = spoornummer;
+            Nummer = nummer;
         }
+
+        public int Id { get; private set; }
 
         public List<Segment> Segments
         {
@@ -25,7 +27,7 @@ namespace TramVerdeelSysteem__TVS_
             {
                 if (_segments == null)
                 {
-                    _segments = Segment.GetBySpoornummer(Spoornummer);
+                    _segments = Segment.GetBySpoornummer(Nummer);
                 }
                 return _segments;
             }
@@ -33,16 +35,16 @@ namespace TramVerdeelSysteem__TVS_
 
 
         public bool Geblokkeerd { get; set; }
-        public int Spoornummer { get; set; }
+        public int Nummer { get; set; }
 
         public void ChangeStatus(bool geblokkeerd)
         {
             Database db = new Database();
             try
             {
-                db.CreateCommand("UPDATE spoor SET spoorstatus = :status WHERE spoornummer = :spoornummer");
+                db.CreateCommand("UPDATE spoor SET status = :status WHERE id = :id");
                 db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
-                db.AddParameter("spoornummer", Spoornummer);
+                db.AddParameter("Id", Id);
                 db.Open();
                 db.Execute();
                 db.Close();
@@ -62,7 +64,7 @@ namespace TramVerdeelSysteem__TVS_
             }
         }
 
-        public static Spoor GetBySpoornummer(int spoornummer)
+        public static Spoor GetBySpoornummer(int nummer)
         {
             Spoor spoor = null;
 
@@ -70,8 +72,8 @@ namespace TramVerdeelSysteem__TVS_
 
             try
             {
-                db.CreateCommand("SELECT * FROM spoor WHERE spoornummer = :spoornummer");
-                db.AddParameter("spoornummer", spoornummer);
+                db.CreateCommand("SELECT * FROM spoor WHERE nummer = :nummer");
+                db.AddParameter("nummer", nummer);
                 db.Open();
                 db.Execute();
                 OracleDataReader dr = db.DataReader;
@@ -79,9 +81,43 @@ namespace TramVerdeelSysteem__TVS_
                 if (dr.HasRows)
                 {
                     dr.Read();
-                    bool blokkeerStatus = dr.GetValueByColumn<string>("spoorstatus") == "geblokkeerd";
+                    bool blokkeerStatus = dr.GetValueByColumn<string>("status") == "geblokkeerd";
 
-                    spoor = new Spoor(blokkeerStatus, dr.GetValueByColumn<int>("spoornummer"));
+                    spoor = new Spoor(dr.GetValueByColumn<int>("id"), blokkeerStatus, dr.GetValueByColumn<int>("nummer"));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return spoor;
+        }
+
+        public static Spoor GetById(int id)
+        {
+            Spoor spoor = null;
+
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("SELECT * FROM spoor WHERE id = :id");
+                db.AddParameter("id", id);
+                db.Open();
+                db.Execute();
+                OracleDataReader dr = db.DataReader;
+
+                if (dr.HasRows)
+                {
+                    dr.Read();
+                    bool geblokkeerd = dr.GetValueByColumn<string>("status") == "geblokkeerd";
+
+                    spoor = new Spoor(dr.GetValueByColumn<int>("id"), geblokkeerd, dr.GetValueByColumn<int>("nummer"));
                 }
             }
             catch (Exception ex)

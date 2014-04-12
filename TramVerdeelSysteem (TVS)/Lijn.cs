@@ -1,0 +1,51 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Oracle.DataAccess.Client;
+
+namespace TramVerdeelSysteem__TVS_
+{
+    public class Lijn
+    {
+
+        private Lijn(int id, int nummer)
+        {
+            Id = id;
+            Nummer = nummer;
+        }
+
+        public int Id { get; private set; }
+        public int Nummer { get; private set; }
+
+        public Lijn GetById(int id)
+        {
+            Lijn lijn = null;
+
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("SELECT * FROM lijn WHERE id = :id");
+                db.AddParameter("id", id);
+
+                while (db.Read())
+                {
+                    lijn = new Lijn(db.GetValueByColumn<int>("id"), db.GetValueByColumn<int>("nummer"));
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return lijn;
+        }
+
+    }
+}

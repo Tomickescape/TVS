@@ -343,7 +343,7 @@
             this.LBL_spoornummer.Name = "LBL_spoornummer";
             this.LBL_spoornummer.Size = new System.Drawing.Size(96, 16);
             this.LBL_spoornummer.TabIndex = 12;
-            this.LBL_spoornummer.Text = "Spoornummer:";
+            this.LBL_spoornummer.Text = "Nummer:";
             // 
             // LBL_tramnummer
             // 

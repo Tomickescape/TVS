@@ -5,38 +5,64 @@ using Oracle.DataAccess.Client;
 
 namespace TramVerdeelSysteem__TVS_
 {
-    class Segment
+    public class Segment
     {
 
-        private int _id;
-        private int _tramId;
-        private Tram _tram;
-        private bool isTramLoaded = false;
+        private int _spoorId;
+        private Spoor _spoor;
 
-        private Segment(int id, bool geblokkeerd, int segmentnummer, int spoornummer, string special, int tramId)
+        private Segment(int id, bool geblokkeerd, int nummer, string special)
         {
-            this._id = id;
+            Id = id;
             Geblokkeerd = geblokkeerd;
-            Segmentnummer = segmentnummer;
-            Spoornummer = spoornummer;
+            Nummer = nummer;
             Special = special;
-            this._tramId = tramId;
         }
 
-        public int Segmentnummer { get; set; }
+        public int Id { get; private set; }
+        public int Nummer { get; set; }
         public bool Geblokkeerd { get; set; }
         public int Spoornummer { get; private set; }
+
+        public Spoor Spoor
+        {
+            get
+            {
+                if (_spoor == null)
+                {
+                    _spoor = TramVerdeelSysteem__TVS_.Spoor.GetById(_spoorId);
+                }
+                return _spoor;
+            }
+        }
 
         public Tram Tram
         {
             get
             {
-                if (!isTramLoaded)
+                Database db = new Database();
+
+                TramVerdeelSysteem__TVS_.Tram tram = null;
+
+                try
                 {
-                    _tram = Tram.GetById(_tramId);
-                    isTramLoaded = true;
+                    db.CreateCommand("SELECT id FROM tram WHERE segment_id = :id");
+                    db.AddParameter("id", Id);
+                    if (db.Read())
+                    {
+                        tram = TramVerdeelSysteem__TVS_.Tram.GetById(db.GetValueByColumn<int>("id"));
+                    }
                 }
-                return _tram;
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    db.Close();
+                }
+
+                return tram;
             }
         }
 
@@ -47,9 +73,9 @@ namespace TramVerdeelSysteem__TVS_
             Database db = new Database();
             try
             {
-                db.CreateCommand("UPDATE segment SET spoorstatus = :status WHERE segmentid = :id");
+                db.CreateCommand("UPDATE segment SET spoorstatus = :status WHERE id = :id");
                 db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
-                db.AddParameter("id", _id);
+                db.AddParameter("id", Id);
                 db.Open();
                 db.Execute();
                 db.Close();
@@ -72,23 +98,20 @@ namespace TramVerdeelSysteem__TVS_
 
             try
             {
-                db.CreateCommand("UPDATE tram SET segmentid = 0 WHERE segmentid = :segmentid");
-                db.AddParameter("segmentid", _id);
+                db.CreateCommand("UPDATE tram SET segment_id = 0 WHERE segment_id = :segmentid");
+                db.AddParameter("segmentid", Id);
                 db.Open();
                 db.Execute();
-                db.Close();
 
                 if (tram != null)
                 {
-                    db.CreateCommand("UPDATE tram SET segmentid = :segmentid WHERE tramid = :tramid");
-                    db.AddParameter("segmentid", _id);
-                    db.AddParameter("tramid", tram.Id);
+                    db.Close();
+                    db.CreateCommand("UPDATE tram SET segment_id = :segmentid WHERE id = :tramid");
+                    db.AddParameter("segmentid", Id);
+                    db.AddParameter("id", tram.Id);
                     db.Open();
                     db.Execute();
-                    db.Close();
                 }
-
-                this._tram = tram;
             }
             catch (Exception ex)
             {
@@ -109,20 +132,13 @@ namespace TramVerdeelSysteem__TVS_
             try
             {
                 db.CreateCommand(
-                    "SELECT segment.*, spoor.spoornummer, tram.tramid FROM segment " +
-                    "LEFT JOIN tram ON tram.segmentid = segment.segmentid " +
-                    "LEFT JOIN spoor ON spoor.spoorid = segment.spoorid " +
-                    "WHERE segmentid = :segmentid");
-                db.AddParameter("segmentid", id);
-                db.Open();
-                db.Execute();
-                OracleDataReader dr = db.DataReader;
-                if (dr.HasRows)
+                    "SELECT * FROM segment WHERE id = :id");
+                db.AddParameter("id", id);
+                if (db.Read())
                 {
-                    dr.Read();
-                    bool blokkeerStatus = dr.GetValueByColumn<string>("spoorstatus") == "geblokkeerd";
+                    bool geblokkeerd = db.GetValueByColumn<string>("spoorstatus") == "geblokkeerd";
 
-                    segment = new Segment(dr.GetValueByColumn<int>("segmentid"), blokkeerStatus, dr.GetValueByColumn<int>("segmentnummer"), dr.GetValueByColumn<int>("spoornummmer"), dr.GetValueByColumn<string>("special"), dr.GetValueByColumn<int>("tramid"));
+                    segment = new Segment(db.GetValueByColumn<int>("id"), geblokkeerd, db.GetValueByColumn<int>("nummer"), db.GetValueByColumn<string>("special"));
                 }
 
             }
@@ -146,21 +162,17 @@ namespace TramVerdeelSysteem__TVS_
             try
             {
                 db.CreateCommand(
-                    "SELECT segment.*, tram.tramid FROM SEGMENT " +
-                    "LEFT JOIN tram ON tram.segmentid = segment.segmentid " +
-                    "LEFT JOIN spoor ON spoor.spoorid = segment.spoorid " +
-                    "WHERE spoor.spoornummer = :spoornummer and segment.segmentnummer = :segmentnummer");
+                    "SELECT segment.* FROM segment " +
+                    "LEFT JOIN spoor ON spoor.id = segment.spoor_id " +
+                    "WHERE spoor.nummer = :spoornummer and segment.nummer = :segmentnummer");
                 db.AddParameter("spoornummer", spoornummer);
                 db.AddParameter("segmentnummer", segmentnummer);
-                db.Open();
-                db.Execute();
-                OracleDataReader dr = db.DataReader;
-                if (dr.HasRows)
-                {
-                    dr.Read();
-                    bool blokkeerStatus = dr.GetValueByColumn<string>("spoorstatus") == "geblokkeerd";
 
-                    segment = new Segment(dr.GetValueByColumn<int>("segmentid"), blokkeerStatus, dr.GetValueByColumn<int>("segmentnummer"), spoornummer, dr.GetValueByColumn<string>("special"),dr.GetValueByColumn<int>("tramid"));
+                if (db.Read())
+                {
+                    bool geblokkeerd = db.GetValueByColumn<string>("status") == "geblokkeerd";
+
+                    segment = new Segment(db.GetValueByColumn<int>("id"), geblokkeerd, db.GetValueByColumn<int>("nummer"), db.GetValueByColumn<string>("special"));
                 }
 
             }
@@ -175,7 +187,7 @@ namespace TramVerdeelSysteem__TVS_
             return segment;
         }
 
-        public static List<Segment> GetBySpoornummer(int spoornummer)
+        public static List<Segment> GetBySpoornummer(int nummer)
         {
             List<Segment> segments = new List<Segment>();
 
@@ -183,14 +195,11 @@ namespace TramVerdeelSysteem__TVS_
 
             try
             {
-                db.CreateCommand("SELECT segment.* FROM segment JOIN spoor ON spoor.spoorID = segment.spoorID WHERE spoor.spoornummer = :spoornummer");
-                db.AddParameter("spoornummer", spoornummer);
-                db.Open();
-                db.Execute();
-                OracleDataReader dr = db.DataReader;
-                while(dr.Read())
+                db.CreateCommand("SELECT segment.* FROM segment JOIN spoor ON spoor.id = segment.spoor_id WHERE spoor.nummer = :nummer");
+                db.AddParameter("nummer", nummer);
+                while(db.Read())
                 {
-                    segments.Add(GetBySegmentnummerAndSpoornummer(dr.GetValueByColumn<int>("segmentnummer"), spoornummer));
+                    segments.Add(GetBySegmentnummerAndSpoornummer(db.GetValueByColumn<int>("nummer"), nummer));
                 }
             }
             catch (Exception ex)

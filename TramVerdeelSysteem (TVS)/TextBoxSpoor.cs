@@ -40,7 +40,7 @@ namespace TramVerdeelSysteem__TVS_
 
         public void LoadSpoor()
         {
-            Text = Spoor.Spoornummer.ToString();
+            Text = Spoor.Nummer.ToString();
         }
 
         public void SaveSpoor()

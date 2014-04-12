@@ -32,17 +32,16 @@ namespace TramVerdeelSysteem__TVS_
                     throw new Exception("Gebruikersnaam en wachtwoord zijn onbekend.");
                 }
 
-                db.CreateCommand("SELECT * FROM gebruiker where gebruikersnaam = :gebruikersnaam AND wachtwoord = :wachtwoord");
+                db.CreateCommand("SELECT * FROM gebruiker WHERE gebruikersnaam = :gebruikersnaam AND wachtwoord = :wachtwoord");
                 db.AddParameter("gebruikersnaam", gebruikersnaam);
                 db.AddParameter("wachtwoord", wachtwoord);
-                db.Open();
-                db.Execute();
-                if (db.DataReader.HasRows)
+
+                if (db.Read())
                 {
-                    formMain = new FormMain();
-                    formMain.Show();
-                    formMain.FormClosing += FormMainFormClosing;
-                    formMain.btUitloggen.Click += btUitloggen_Click;
+                    //formMain = new FormMain();
+                    //formMain.Show();
+                    //formMain.FormClosing += FormMainFormClosing;
+                    //formMain.btUitloggen.Click += btUitloggen_Click;
                     this.Hide();
                 }
                 else

@@ -326,11 +326,11 @@
             // listBoxReservations
             // 
             this.listBoxReservations.FormattingEnabled = true;
-            this.listBoxReservations.ItemHeight = 16;
+            this.listBoxReservations.ItemHeight = 20;
             this.listBoxReservations.Location = new System.Drawing.Point(12, 21);
             this.listBoxReservations.Name = "listBoxReservations";
             this.listBoxReservations.ScrollAlwaysVisible = true;
-            this.listBoxReservations.Size = new System.Drawing.Size(168, 260);
+            this.listBoxReservations.Size = new System.Drawing.Size(168, 244);
             this.listBoxReservations.TabIndex = 95;
             // 
             // LBL_tramnummer
@@ -338,7 +338,7 @@
             this.LBL_tramnummer.AutoSize = true;
             this.LBL_tramnummer.Location = new System.Drawing.Point(979, 154);
             this.LBL_tramnummer.Name = "LBL_tramnummer";
-            this.LBL_tramnummer.Size = new System.Drawing.Size(91, 16);
+            this.LBL_tramnummer.Size = new System.Drawing.Size(114, 20);
             this.LBL_tramnummer.TabIndex = 91;
             this.LBL_tramnummer.Text = "Tramnummer:";
             // 
@@ -349,9 +349,9 @@
             this.buttonSegment_12_1.Location = new System.Drawing.Point(440, 590);
             this.buttonSegment_12_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_12_1.Name = "buttonSegment_12_1";
-            this.buttonSegment_12_1.Segmentnummer = 0;
+            this.buttonSegment_12_1.Segmentnummer = 1;
             this.buttonSegment_12_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_12_1.Spoornummer = 0;
+            this.buttonSegment_12_1.Spoornummer = 12;
             this.buttonSegment_12_1.TabIndex = 58;
             // 
             // buttonSegment_13_1
@@ -361,9 +361,9 @@
             this.buttonSegment_13_1.Location = new System.Drawing.Point(491, 590);
             this.buttonSegment_13_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_13_1.Name = "buttonSegment_13_1";
-            this.buttonSegment_13_1.Segmentnummer = 0;
+            this.buttonSegment_13_1.Segmentnummer = 1;
             this.buttonSegment_13_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_13_1.Spoornummer = 0;
+            this.buttonSegment_13_1.Spoornummer = 13;
             this.buttonSegment_13_1.TabIndex = 58;
             // 
             // buttonSegment_14_1
@@ -373,9 +373,9 @@
             this.buttonSegment_14_1.Location = new System.Drawing.Point(542, 590);
             this.buttonSegment_14_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_14_1.Name = "buttonSegment_14_1";
-            this.buttonSegment_14_1.Segmentnummer = 0;
+            this.buttonSegment_14_1.Segmentnummer = 1;
             this.buttonSegment_14_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_14_1.Spoornummer = 0;
+            this.buttonSegment_14_1.Spoornummer = 14;
             this.buttonSegment_14_1.TabIndex = 58;
             // 
             // buttonSegment_15_1
@@ -385,9 +385,9 @@
             this.buttonSegment_15_1.Location = new System.Drawing.Point(593, 590);
             this.buttonSegment_15_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_15_1.Name = "buttonSegment_15_1";
-            this.buttonSegment_15_1.Segmentnummer = 0;
+            this.buttonSegment_15_1.Segmentnummer = 1;
             this.buttonSegment_15_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_15_1.Spoornummer = 0;
+            this.buttonSegment_15_1.Spoornummer = 15;
             this.buttonSegment_15_1.TabIndex = 58;
             // 
             // buttonSegment_16_1
@@ -397,9 +397,9 @@
             this.buttonSegment_16_1.Location = new System.Drawing.Point(644, 590);
             this.buttonSegment_16_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_16_1.Name = "buttonSegment_16_1";
-            this.buttonSegment_16_1.Segmentnummer = 0;
+            this.buttonSegment_16_1.Segmentnummer = 1;
             this.buttonSegment_16_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_16_1.Spoornummer = 0;
+            this.buttonSegment_16_1.Spoornummer = 16;
             this.buttonSegment_16_1.TabIndex = 58;
             // 
             // buttonSegment_17_1
@@ -409,9 +409,9 @@
             this.buttonSegment_17_1.Location = new System.Drawing.Point(695, 590);
             this.buttonSegment_17_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_17_1.Name = "buttonSegment_17_1";
-            this.buttonSegment_17_1.Segmentnummer = 0;
+            this.buttonSegment_17_1.Segmentnummer = 1;
             this.buttonSegment_17_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_17_1.Spoornummer = 0;
+            this.buttonSegment_17_1.Spoornummer = 17;
             this.buttonSegment_17_1.TabIndex = 58;
             // 
             // buttonSegment_18_1
@@ -421,9 +421,9 @@
             this.buttonSegment_18_1.Location = new System.Drawing.Point(746, 590);
             this.buttonSegment_18_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_18_1.Name = "buttonSegment_18_1";
-            this.buttonSegment_18_1.Segmentnummer = 0;
+            this.buttonSegment_18_1.Segmentnummer = 1;
             this.buttonSegment_18_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_18_1.Spoornummer = 0;
+            this.buttonSegment_18_1.Spoornummer = 18;
             this.buttonSegment_18_1.TabIndex = 58;
             // 
             // buttonSegment_19_1
@@ -433,9 +433,9 @@
             this.buttonSegment_19_1.Location = new System.Drawing.Point(797, 590);
             this.buttonSegment_19_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_19_1.Name = "buttonSegment_19_1";
-            this.buttonSegment_19_1.Segmentnummer = 0;
+            this.buttonSegment_19_1.Segmentnummer = 1;
             this.buttonSegment_19_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_19_1.Spoornummer = 0;
+            this.buttonSegment_19_1.Spoornummer = 19;
             this.buttonSegment_19_1.TabIndex = 58;
             // 
             // buttonSegment_20_1
@@ -445,9 +445,9 @@
             this.buttonSegment_20_1.Location = new System.Drawing.Point(848, 590);
             this.buttonSegment_20_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_20_1.Name = "buttonSegment_20_1";
-            this.buttonSegment_20_1.Segmentnummer = 0;
+            this.buttonSegment_20_1.Segmentnummer = 1;
             this.buttonSegment_20_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_20_1.Spoornummer = 0;
+            this.buttonSegment_20_1.Spoornummer = 20;
             this.buttonSegment_20_1.TabIndex = 58;
             // 
             // buttonSegment_21_1
@@ -457,9 +457,9 @@
             this.buttonSegment_21_1.Location = new System.Drawing.Point(899, 590);
             this.buttonSegment_21_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_21_1.Name = "buttonSegment_21_1";
-            this.buttonSegment_21_1.Segmentnummer = 0;
+            this.buttonSegment_21_1.Segmentnummer = 1;
             this.buttonSegment_21_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_21_1.Spoornummer = 0;
+            this.buttonSegment_21_1.Spoornummer = 21;
             this.buttonSegment_21_1.TabIndex = 58;
             // 
             // buttonSegment_30_1
@@ -469,9 +469,9 @@
             this.buttonSegment_30_1.Location = new System.Drawing.Point(610, 82);
             this.buttonSegment_30_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_30_1.Name = "buttonSegment_30_1";
-            this.buttonSegment_30_1.Segmentnummer = 0;
+            this.buttonSegment_30_1.Segmentnummer = 1;
             this.buttonSegment_30_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_30_1.Spoornummer = 0;
+            this.buttonSegment_30_1.Spoornummer = 30;
             this.buttonSegment_30_1.TabIndex = 0;
             // 
             // buttonSegment_30_2
@@ -481,9 +481,9 @@
             this.buttonSegment_30_2.Location = new System.Drawing.Point(610, 110);
             this.buttonSegment_30_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_30_2.Name = "buttonSegment_30_2";
-            this.buttonSegment_30_2.Segmentnummer = 0;
+            this.buttonSegment_30_2.Segmentnummer = 2;
             this.buttonSegment_30_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_30_2.Spoornummer = 0;
+            this.buttonSegment_30_2.Spoornummer = 30;
             this.buttonSegment_30_2.TabIndex = 0;
             // 
             // buttonSegment_30_3
@@ -493,9 +493,9 @@
             this.buttonSegment_30_3.Location = new System.Drawing.Point(610, 138);
             this.buttonSegment_30_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_30_3.Name = "buttonSegment_30_3";
-            this.buttonSegment_30_3.Segmentnummer = 0;
+            this.buttonSegment_30_3.Segmentnummer = 3;
             this.buttonSegment_30_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_30_3.Spoornummer = 0;
+            this.buttonSegment_30_3.Spoornummer = 30;
             this.buttonSegment_30_3.TabIndex = 0;
             // 
             // buttonSegment_31_1
@@ -505,9 +505,9 @@
             this.buttonSegment_31_1.Location = new System.Drawing.Point(559, 82);
             this.buttonSegment_31_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_31_1.Name = "buttonSegment_31_1";
-            this.buttonSegment_31_1.Segmentnummer = 0;
+            this.buttonSegment_31_1.Segmentnummer = 1;
             this.buttonSegment_31_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_31_1.Spoornummer = 0;
+            this.buttonSegment_31_1.Spoornummer = 31;
             this.buttonSegment_31_1.TabIndex = 0;
             // 
             // buttonSegment_31_2
@@ -517,9 +517,9 @@
             this.buttonSegment_31_2.Location = new System.Drawing.Point(559, 110);
             this.buttonSegment_31_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_31_2.Name = "buttonSegment_31_2";
-            this.buttonSegment_31_2.Segmentnummer = 0;
+            this.buttonSegment_31_2.Segmentnummer = 2;
             this.buttonSegment_31_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_31_2.Spoornummer = 0;
+            this.buttonSegment_31_2.Spoornummer = 31;
             this.buttonSegment_31_2.TabIndex = 0;
             // 
             // buttonSegment_31_3
@@ -529,9 +529,9 @@
             this.buttonSegment_31_3.Location = new System.Drawing.Point(559, 138);
             this.buttonSegment_31_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_31_3.Name = "buttonSegment_31_3";
-            this.buttonSegment_31_3.Segmentnummer = 0;
+            this.buttonSegment_31_3.Segmentnummer = 3;
             this.buttonSegment_31_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_31_3.Spoornummer = 0;
+            this.buttonSegment_31_3.Spoornummer = 31;
             this.buttonSegment_31_3.TabIndex = 0;
             // 
             // buttonSegment_32_1
@@ -541,9 +541,9 @@
             this.buttonSegment_32_1.Location = new System.Drawing.Point(508, 82);
             this.buttonSegment_32_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_32_1.Name = "buttonSegment_32_1";
-            this.buttonSegment_32_1.Segmentnummer = 0;
+            this.buttonSegment_32_1.Segmentnummer = 1;
             this.buttonSegment_32_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_32_1.Spoornummer = 0;
+            this.buttonSegment_32_1.Spoornummer = 32;
             this.buttonSegment_32_1.TabIndex = 0;
             // 
             // buttonSegment_32_2
@@ -553,9 +553,9 @@
             this.buttonSegment_32_2.Location = new System.Drawing.Point(508, 110);
             this.buttonSegment_32_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_32_2.Name = "buttonSegment_32_2";
-            this.buttonSegment_32_2.Segmentnummer = 0;
+            this.buttonSegment_32_2.Segmentnummer = 2;
             this.buttonSegment_32_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_32_2.Spoornummer = 0;
+            this.buttonSegment_32_2.Spoornummer = 32;
             this.buttonSegment_32_2.TabIndex = 0;
             // 
             // buttonSegment_32_3
@@ -565,9 +565,9 @@
             this.buttonSegment_32_3.Location = new System.Drawing.Point(508, 138);
             this.buttonSegment_32_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_32_3.Name = "buttonSegment_32_3";
-            this.buttonSegment_32_3.Segmentnummer = 0;
+            this.buttonSegment_32_3.Segmentnummer = 3;
             this.buttonSegment_32_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_32_3.Spoornummer = 0;
+            this.buttonSegment_32_3.Spoornummer = 32;
             this.buttonSegment_32_3.TabIndex = 0;
             // 
             // buttonSegment_32_4
@@ -577,9 +577,9 @@
             this.buttonSegment_32_4.Location = new System.Drawing.Point(508, 166);
             this.buttonSegment_32_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_32_4.Name = "buttonSegment_32_4";
-            this.buttonSegment_32_4.Segmentnummer = 0;
+            this.buttonSegment_32_4.Segmentnummer = 4;
             this.buttonSegment_32_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_32_4.Spoornummer = 0;
+            this.buttonSegment_32_4.Spoornummer = 32;
             this.buttonSegment_32_4.TabIndex = 0;
             // 
             // buttonSegment_33_1
@@ -589,9 +589,9 @@
             this.buttonSegment_33_1.Location = new System.Drawing.Point(457, 83);
             this.buttonSegment_33_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_33_1.Name = "buttonSegment_33_1";
-            this.buttonSegment_33_1.Segmentnummer = 0;
+            this.buttonSegment_33_1.Segmentnummer = 1;
             this.buttonSegment_33_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_33_1.Spoornummer = 0;
+            this.buttonSegment_33_1.Spoornummer = 33;
             this.buttonSegment_33_1.TabIndex = 0;
             // 
             // buttonSegment_33_2
@@ -601,9 +601,9 @@
             this.buttonSegment_33_2.Location = new System.Drawing.Point(457, 111);
             this.buttonSegment_33_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_33_2.Name = "buttonSegment_33_2";
-            this.buttonSegment_33_2.Segmentnummer = 0;
+            this.buttonSegment_33_2.Segmentnummer = 2;
             this.buttonSegment_33_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_33_2.Spoornummer = 0;
+            this.buttonSegment_33_2.Spoornummer = 33;
             this.buttonSegment_33_2.TabIndex = 0;
             // 
             // buttonSegment_33_3
@@ -613,9 +613,9 @@
             this.buttonSegment_33_3.Location = new System.Drawing.Point(457, 138);
             this.buttonSegment_33_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_33_3.Name = "buttonSegment_33_3";
-            this.buttonSegment_33_3.Segmentnummer = 0;
+            this.buttonSegment_33_3.Segmentnummer = 3;
             this.buttonSegment_33_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_33_3.Spoornummer = 0;
+            this.buttonSegment_33_3.Spoornummer = 33;
             this.buttonSegment_33_3.TabIndex = 0;
             // 
             // buttonSegment_33_4
@@ -625,9 +625,9 @@
             this.buttonSegment_33_4.Location = new System.Drawing.Point(457, 166);
             this.buttonSegment_33_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_33_4.Name = "buttonSegment_33_4";
-            this.buttonSegment_33_4.Segmentnummer = 0;
+            this.buttonSegment_33_4.Segmentnummer = 4;
             this.buttonSegment_33_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_33_4.Spoornummer = 0;
+            this.buttonSegment_33_4.Spoornummer = 33;
             this.buttonSegment_33_4.TabIndex = 0;
             // 
             // buttonSegment_34_1
@@ -637,9 +637,9 @@
             this.buttonSegment_34_1.Location = new System.Drawing.Point(406, 82);
             this.buttonSegment_34_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_34_1.Name = "buttonSegment_34_1";
-            this.buttonSegment_34_1.Segmentnummer = 0;
+            this.buttonSegment_34_1.Segmentnummer = 1;
             this.buttonSegment_34_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_34_1.Spoornummer = 0;
+            this.buttonSegment_34_1.Spoornummer = 34;
             this.buttonSegment_34_1.TabIndex = 0;
             // 
             // buttonSegment_34_2
@@ -649,9 +649,9 @@
             this.buttonSegment_34_2.Location = new System.Drawing.Point(406, 110);
             this.buttonSegment_34_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_34_2.Name = "buttonSegment_34_2";
-            this.buttonSegment_34_2.Segmentnummer = 0;
+            this.buttonSegment_34_2.Segmentnummer = 2;
             this.buttonSegment_34_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_34_2.Spoornummer = 0;
+            this.buttonSegment_34_2.Spoornummer = 34;
             this.buttonSegment_34_2.TabIndex = 0;
             // 
             // buttonSegment_34_3
@@ -661,9 +661,9 @@
             this.buttonSegment_34_3.Location = new System.Drawing.Point(406, 138);
             this.buttonSegment_34_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_34_3.Name = "buttonSegment_34_3";
-            this.buttonSegment_34_3.Segmentnummer = 0;
+            this.buttonSegment_34_3.Segmentnummer = 3;
             this.buttonSegment_34_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_34_3.Spoornummer = 0;
+            this.buttonSegment_34_3.Spoornummer = 34;
             this.buttonSegment_34_3.TabIndex = 0;
             // 
             // buttonSegment_34_4
@@ -673,9 +673,9 @@
             this.buttonSegment_34_4.Location = new System.Drawing.Point(406, 166);
             this.buttonSegment_34_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_34_4.Name = "buttonSegment_34_4";
-            this.buttonSegment_34_4.Segmentnummer = 0;
+            this.buttonSegment_34_4.Segmentnummer = 4;
             this.buttonSegment_34_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_34_4.Spoornummer = 0;
+            this.buttonSegment_34_4.Spoornummer = 34;
             this.buttonSegment_34_4.TabIndex = 0;
             // 
             // buttonSegment_35_1
@@ -685,9 +685,9 @@
             this.buttonSegment_35_1.Location = new System.Drawing.Point(355, 82);
             this.buttonSegment_35_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_35_1.Name = "buttonSegment_35_1";
-            this.buttonSegment_35_1.Segmentnummer = 0;
+            this.buttonSegment_35_1.Segmentnummer = 1;
             this.buttonSegment_35_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_35_1.Spoornummer = 0;
+            this.buttonSegment_35_1.Spoornummer = 35;
             this.buttonSegment_35_1.TabIndex = 0;
             // 
             // buttonSegment_35_2
@@ -697,9 +697,9 @@
             this.buttonSegment_35_2.Location = new System.Drawing.Point(355, 110);
             this.buttonSegment_35_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_35_2.Name = "buttonSegment_35_2";
-            this.buttonSegment_35_2.Segmentnummer = 0;
+            this.buttonSegment_35_2.Segmentnummer = 2;
             this.buttonSegment_35_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_35_2.Spoornummer = 0;
+            this.buttonSegment_35_2.Spoornummer = 35;
             this.buttonSegment_35_2.TabIndex = 0;
             // 
             // buttonSegment_35_3
@@ -709,9 +709,9 @@
             this.buttonSegment_35_3.Location = new System.Drawing.Point(355, 138);
             this.buttonSegment_35_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_35_3.Name = "buttonSegment_35_3";
-            this.buttonSegment_35_3.Segmentnummer = 0;
+            this.buttonSegment_35_3.Segmentnummer = 3;
             this.buttonSegment_35_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_35_3.Spoornummer = 0;
+            this.buttonSegment_35_3.Spoornummer = 35;
             this.buttonSegment_35_3.TabIndex = 0;
             // 
             // buttonSegment_35_4
@@ -721,9 +721,9 @@
             this.buttonSegment_35_4.Location = new System.Drawing.Point(355, 166);
             this.buttonSegment_35_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_35_4.Name = "buttonSegment_35_4";
-            this.buttonSegment_35_4.Segmentnummer = 0;
+            this.buttonSegment_35_4.Segmentnummer = 4;
             this.buttonSegment_35_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_35_4.Spoornummer = 0;
+            this.buttonSegment_35_4.Spoornummer = 35;
             this.buttonSegment_35_4.TabIndex = 0;
             // 
             // buttonSegment_36_1
@@ -733,9 +733,9 @@
             this.buttonSegment_36_1.Location = new System.Drawing.Point(304, 82);
             this.buttonSegment_36_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_36_1.Name = "buttonSegment_36_1";
-            this.buttonSegment_36_1.Segmentnummer = 0;
+            this.buttonSegment_36_1.Segmentnummer = 1;
             this.buttonSegment_36_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_36_1.Spoornummer = 0;
+            this.buttonSegment_36_1.Spoornummer = 36;
             this.buttonSegment_36_1.TabIndex = 0;
             // 
             // buttonSegment_36_2
@@ -745,9 +745,9 @@
             this.buttonSegment_36_2.Location = new System.Drawing.Point(304, 110);
             this.buttonSegment_36_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_36_2.Name = "buttonSegment_36_2";
-            this.buttonSegment_36_2.Segmentnummer = 0;
+            this.buttonSegment_36_2.Segmentnummer = 2;
             this.buttonSegment_36_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_36_2.Spoornummer = 0;
+            this.buttonSegment_36_2.Spoornummer = 36;
             this.buttonSegment_36_2.TabIndex = 0;
             // 
             // buttonSegment_36_3
@@ -757,9 +757,9 @@
             this.buttonSegment_36_3.Location = new System.Drawing.Point(304, 138);
             this.buttonSegment_36_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_36_3.Name = "buttonSegment_36_3";
-            this.buttonSegment_36_3.Segmentnummer = 0;
+            this.buttonSegment_36_3.Segmentnummer = 3;
             this.buttonSegment_36_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_36_3.Spoornummer = 0;
+            this.buttonSegment_36_3.Spoornummer = 36;
             this.buttonSegment_36_3.TabIndex = 0;
             // 
             // buttonSegment_36_4
@@ -769,9 +769,9 @@
             this.buttonSegment_36_4.Location = new System.Drawing.Point(304, 166);
             this.buttonSegment_36_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_36_4.Name = "buttonSegment_36_4";
-            this.buttonSegment_36_4.Segmentnummer = 0;
+            this.buttonSegment_36_4.Segmentnummer = 4;
             this.buttonSegment_36_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_36_4.Spoornummer = 0;
+            this.buttonSegment_36_4.Spoornummer = 36;
             this.buttonSegment_36_4.TabIndex = 0;
             // 
             // buttonSegment_37_1
@@ -781,9 +781,9 @@
             this.buttonSegment_37_1.Location = new System.Drawing.Point(253, 82);
             this.buttonSegment_37_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_37_1.Name = "buttonSegment_37_1";
-            this.buttonSegment_37_1.Segmentnummer = 0;
+            this.buttonSegment_37_1.Segmentnummer = 1;
             this.buttonSegment_37_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_37_1.Spoornummer = 0;
+            this.buttonSegment_37_1.Spoornummer = 37;
             this.buttonSegment_37_1.TabIndex = 0;
             // 
             // buttonSegment_37_2
@@ -793,9 +793,9 @@
             this.buttonSegment_37_2.Location = new System.Drawing.Point(253, 110);
             this.buttonSegment_37_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_37_2.Name = "buttonSegment_37_2";
-            this.buttonSegment_37_2.Segmentnummer = 0;
+            this.buttonSegment_37_2.Segmentnummer = 2;
             this.buttonSegment_37_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_37_2.Spoornummer = 0;
+            this.buttonSegment_37_2.Spoornummer = 37;
             this.buttonSegment_37_2.TabIndex = 0;
             // 
             // buttonSegment_37_3
@@ -805,9 +805,9 @@
             this.buttonSegment_37_3.Location = new System.Drawing.Point(253, 138);
             this.buttonSegment_37_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_37_3.Name = "buttonSegment_37_3";
-            this.buttonSegment_37_3.Segmentnummer = 0;
+            this.buttonSegment_37_3.Segmentnummer = 3;
             this.buttonSegment_37_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_37_3.Spoornummer = 0;
+            this.buttonSegment_37_3.Spoornummer = 37;
             this.buttonSegment_37_3.TabIndex = 0;
             // 
             // buttonSegment_37_4
@@ -817,9 +817,9 @@
             this.buttonSegment_37_4.Location = new System.Drawing.Point(253, 166);
             this.buttonSegment_37_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_37_4.Name = "buttonSegment_37_4";
-            this.buttonSegment_37_4.Segmentnummer = 0;
+            this.buttonSegment_37_4.Segmentnummer = 4;
             this.buttonSegment_37_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_37_4.Spoornummer = 0;
+            this.buttonSegment_37_4.Spoornummer = 37;
             this.buttonSegment_37_4.TabIndex = 0;
             // 
             // buttonSegment_38_1
@@ -829,9 +829,9 @@
             this.buttonSegment_38_1.Location = new System.Drawing.Point(202, 82);
             this.buttonSegment_38_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_38_1.Name = "buttonSegment_38_1";
-            this.buttonSegment_38_1.Segmentnummer = 0;
+            this.buttonSegment_38_1.Segmentnummer = 1;
             this.buttonSegment_38_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_38_1.Spoornummer = 0;
+            this.buttonSegment_38_1.Spoornummer = 38;
             this.buttonSegment_38_1.TabIndex = 0;
             // 
             // buttonSegment_38_2
@@ -841,9 +841,9 @@
             this.buttonSegment_38_2.Location = new System.Drawing.Point(202, 110);
             this.buttonSegment_38_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_38_2.Name = "buttonSegment_38_2";
-            this.buttonSegment_38_2.Segmentnummer = 0;
+            this.buttonSegment_38_2.Segmentnummer = 2;
             this.buttonSegment_38_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_38_2.Spoornummer = 0;
+            this.buttonSegment_38_2.Spoornummer = 38;
             this.buttonSegment_38_2.TabIndex = 0;
             // 
             // buttonSegment_38_3
@@ -853,9 +853,9 @@
             this.buttonSegment_38_3.Location = new System.Drawing.Point(202, 138);
             this.buttonSegment_38_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_38_3.Name = "buttonSegment_38_3";
-            this.buttonSegment_38_3.Segmentnummer = 0;
+            this.buttonSegment_38_3.Segmentnummer = 3;
             this.buttonSegment_38_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_38_3.Spoornummer = 0;
+            this.buttonSegment_38_3.Spoornummer = 38;
             this.buttonSegment_38_3.TabIndex = 0;
             // 
             // buttonSegment_38_4
@@ -865,9 +865,9 @@
             this.buttonSegment_38_4.Location = new System.Drawing.Point(202, 166);
             this.buttonSegment_38_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_38_4.Name = "buttonSegment_38_4";
-            this.buttonSegment_38_4.Segmentnummer = 0;
+            this.buttonSegment_38_4.Segmentnummer = 4;
             this.buttonSegment_38_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_38_4.Spoornummer = 0;
+            this.buttonSegment_38_4.Spoornummer = 38;
             this.buttonSegment_38_4.TabIndex = 0;
             // 
             // buttonSegment_40_1
@@ -877,9 +877,9 @@
             this.buttonSegment_40_1.Location = new System.Drawing.Point(668, 82);
             this.buttonSegment_40_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_40_1.Name = "buttonSegment_40_1";
-            this.buttonSegment_40_1.Segmentnummer = 0;
+            this.buttonSegment_40_1.Segmentnummer = 1;
             this.buttonSegment_40_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_40_1.Spoornummer = 0;
+            this.buttonSegment_40_1.Spoornummer = 40;
             this.buttonSegment_40_1.TabIndex = 18;
             // 
             // buttonSegment_40_2
@@ -889,9 +889,9 @@
             this.buttonSegment_40_2.Location = new System.Drawing.Point(668, 110);
             this.buttonSegment_40_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_40_2.Name = "buttonSegment_40_2";
-            this.buttonSegment_40_2.Segmentnummer = 0;
+            this.buttonSegment_40_2.Segmentnummer = 2;
             this.buttonSegment_40_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_40_2.Spoornummer = 0;
+            this.buttonSegment_40_2.Spoornummer = 40;
             this.buttonSegment_40_2.TabIndex = 17;
             // 
             // buttonSegment_40_3
@@ -901,9 +901,9 @@
             this.buttonSegment_40_3.Location = new System.Drawing.Point(668, 138);
             this.buttonSegment_40_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_40_3.Name = "buttonSegment_40_3";
-            this.buttonSegment_40_3.Segmentnummer = 0;
+            this.buttonSegment_40_3.Segmentnummer = 3;
             this.buttonSegment_40_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_40_3.Spoornummer = 0;
+            this.buttonSegment_40_3.Spoornummer = 40;
             this.buttonSegment_40_3.TabIndex = 16;
             // 
             // buttonSegment_40_4
@@ -913,9 +913,9 @@
             this.buttonSegment_40_4.Location = new System.Drawing.Point(668, 168);
             this.buttonSegment_40_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_40_4.Name = "buttonSegment_40_4";
-            this.buttonSegment_40_4.Segmentnummer = 0;
+            this.buttonSegment_40_4.Segmentnummer = 4;
             this.buttonSegment_40_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_40_4.Spoornummer = 0;
+            this.buttonSegment_40_4.Spoornummer = 40;
             this.buttonSegment_40_4.TabIndex = 15;
             // 
             // buttonSegment_40_5
@@ -925,9 +925,9 @@
             this.buttonSegment_40_5.Location = new System.Drawing.Point(668, 196);
             this.buttonSegment_40_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_40_5.Name = "buttonSegment_40_5";
-            this.buttonSegment_40_5.Segmentnummer = 0;
+            this.buttonSegment_40_5.Segmentnummer = 5;
             this.buttonSegment_40_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_40_5.Spoornummer = 0;
+            this.buttonSegment_40_5.Spoornummer = 40;
             this.buttonSegment_40_5.TabIndex = 17;
             // 
             // buttonSegment_40_6
@@ -937,9 +937,9 @@
             this.buttonSegment_40_6.Location = new System.Drawing.Point(668, 224);
             this.buttonSegment_40_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_40_6.Name = "buttonSegment_40_6";
-            this.buttonSegment_40_6.Segmentnummer = 0;
+            this.buttonSegment_40_6.Segmentnummer = 6;
             this.buttonSegment_40_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_40_6.Spoornummer = 0;
+            this.buttonSegment_40_6.Spoornummer = 40;
             this.buttonSegment_40_6.TabIndex = 16;
             // 
             // buttonSegment_40_7
@@ -949,9 +949,9 @@
             this.buttonSegment_40_7.Location = new System.Drawing.Point(669, 252);
             this.buttonSegment_40_7.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_40_7.Name = "buttonSegment_40_7";
-            this.buttonSegment_40_7.Segmentnummer = 0;
+            this.buttonSegment_40_7.Segmentnummer = 7;
             this.buttonSegment_40_7.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_40_7.Spoornummer = 0;
+            this.buttonSegment_40_7.Spoornummer = 40;
             this.buttonSegment_40_7.TabIndex = 15;
             // 
             // buttonSegment_41_1
@@ -961,9 +961,9 @@
             this.buttonSegment_41_1.Location = new System.Drawing.Point(719, 82);
             this.buttonSegment_41_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_41_1.Name = "buttonSegment_41_1";
-            this.buttonSegment_41_1.Segmentnummer = 0;
+            this.buttonSegment_41_1.Segmentnummer = 1;
             this.buttonSegment_41_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_41_1.Spoornummer = 0;
+            this.buttonSegment_41_1.Spoornummer = 41;
             this.buttonSegment_41_1.TabIndex = 18;
             // 
             // buttonSegment_41_2
@@ -973,9 +973,9 @@
             this.buttonSegment_41_2.Location = new System.Drawing.Point(719, 110);
             this.buttonSegment_41_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_41_2.Name = "buttonSegment_41_2";
-            this.buttonSegment_41_2.Segmentnummer = 0;
+            this.buttonSegment_41_2.Segmentnummer = 2;
             this.buttonSegment_41_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_41_2.Spoornummer = 0;
+            this.buttonSegment_41_2.Spoornummer = 41;
             this.buttonSegment_41_2.TabIndex = 17;
             // 
             // buttonSegment_41_3
@@ -985,9 +985,9 @@
             this.buttonSegment_41_3.Location = new System.Drawing.Point(719, 138);
             this.buttonSegment_41_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_41_3.Name = "buttonSegment_41_3";
-            this.buttonSegment_41_3.Segmentnummer = 0;
+            this.buttonSegment_41_3.Segmentnummer = 3;
             this.buttonSegment_41_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_41_3.Spoornummer = 0;
+            this.buttonSegment_41_3.Spoornummer = 41;
             this.buttonSegment_41_3.TabIndex = 16;
             // 
             // buttonSegment_41_4
@@ -997,9 +997,9 @@
             this.buttonSegment_41_4.Location = new System.Drawing.Point(719, 168);
             this.buttonSegment_41_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_41_4.Name = "buttonSegment_41_4";
-            this.buttonSegment_41_4.Segmentnummer = 0;
+            this.buttonSegment_41_4.Segmentnummer = 4;
             this.buttonSegment_41_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_41_4.Spoornummer = 0;
+            this.buttonSegment_41_4.Spoornummer = 41;
             this.buttonSegment_41_4.TabIndex = 15;
             // 
             // buttonSegment_42_1
@@ -1009,9 +1009,9 @@
             this.buttonSegment_42_1.Location = new System.Drawing.Point(770, 82);
             this.buttonSegment_42_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_42_1.Name = "buttonSegment_42_1";
-            this.buttonSegment_42_1.Segmentnummer = 0;
+            this.buttonSegment_42_1.Segmentnummer = 1;
             this.buttonSegment_42_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_42_1.Spoornummer = 0;
+            this.buttonSegment_42_1.Spoornummer = 42;
             this.buttonSegment_42_1.TabIndex = 18;
             // 
             // buttonSegment_42_2
@@ -1021,9 +1021,9 @@
             this.buttonSegment_42_2.Location = new System.Drawing.Point(770, 110);
             this.buttonSegment_42_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_42_2.Name = "buttonSegment_42_2";
-            this.buttonSegment_42_2.Segmentnummer = 0;
+            this.buttonSegment_42_2.Segmentnummer = 2;
             this.buttonSegment_42_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_42_2.Spoornummer = 0;
+            this.buttonSegment_42_2.Spoornummer = 42;
             this.buttonSegment_42_2.TabIndex = 17;
             // 
             // buttonSegment_42_3
@@ -1033,9 +1033,9 @@
             this.buttonSegment_42_3.Location = new System.Drawing.Point(770, 138);
             this.buttonSegment_42_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_42_3.Name = "buttonSegment_42_3";
-            this.buttonSegment_42_3.Segmentnummer = 0;
+            this.buttonSegment_42_3.Segmentnummer = 3;
             this.buttonSegment_42_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_42_3.Spoornummer = 0;
+            this.buttonSegment_42_3.Spoornummer = 42;
             this.buttonSegment_42_3.TabIndex = 16;
             // 
             // buttonSegment_42_4
@@ -1045,9 +1045,9 @@
             this.buttonSegment_42_4.Location = new System.Drawing.Point(770, 168);
             this.buttonSegment_42_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_42_4.Name = "buttonSegment_42_4";
-            this.buttonSegment_42_4.Segmentnummer = 0;
+            this.buttonSegment_42_4.Segmentnummer = 4;
             this.buttonSegment_42_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_42_4.Spoornummer = 0;
+            this.buttonSegment_42_4.Spoornummer = 42;
             this.buttonSegment_42_4.TabIndex = 15;
             // 
             // buttonSegment_43_1
@@ -1057,9 +1057,9 @@
             this.buttonSegment_43_1.Location = new System.Drawing.Point(821, 82);
             this.buttonSegment_43_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_43_1.Name = "buttonSegment_43_1";
-            this.buttonSegment_43_1.Segmentnummer = 0;
+            this.buttonSegment_43_1.Segmentnummer = 1;
             this.buttonSegment_43_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_43_1.Spoornummer = 0;
+            this.buttonSegment_43_1.Spoornummer = 43;
             this.buttonSegment_43_1.TabIndex = 18;
             // 
             // buttonSegment_43_2
@@ -1069,9 +1069,9 @@
             this.buttonSegment_43_2.Location = new System.Drawing.Point(821, 110);
             this.buttonSegment_43_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_43_2.Name = "buttonSegment_43_2";
-            this.buttonSegment_43_2.Segmentnummer = 0;
+            this.buttonSegment_43_2.Segmentnummer = 2;
             this.buttonSegment_43_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_43_2.Spoornummer = 0;
+            this.buttonSegment_43_2.Spoornummer = 43;
             this.buttonSegment_43_2.TabIndex = 17;
             // 
             // buttonSegment_43_3
@@ -1081,9 +1081,9 @@
             this.buttonSegment_43_3.Location = new System.Drawing.Point(821, 138);
             this.buttonSegment_43_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_43_3.Name = "buttonSegment_43_3";
-            this.buttonSegment_43_3.Segmentnummer = 0;
+            this.buttonSegment_43_3.Segmentnummer = 3;
             this.buttonSegment_43_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_43_3.Spoornummer = 0;
+            this.buttonSegment_43_3.Spoornummer = 43;
             this.buttonSegment_43_3.TabIndex = 16;
             // 
             // buttonSegment_43_4
@@ -1093,9 +1093,9 @@
             this.buttonSegment_43_4.Location = new System.Drawing.Point(821, 168);
             this.buttonSegment_43_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_43_4.Name = "buttonSegment_43_4";
-            this.buttonSegment_43_4.Segmentnummer = 0;
+            this.buttonSegment_43_4.Segmentnummer = 4;
             this.buttonSegment_43_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_43_4.Spoornummer = 0;
+            this.buttonSegment_43_4.Spoornummer = 43;
             this.buttonSegment_43_4.TabIndex = 15;
             // 
             // buttonSegment_44_1
@@ -1105,9 +1105,9 @@
             this.buttonSegment_44_1.Location = new System.Drawing.Point(872, 82);
             this.buttonSegment_44_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_44_1.Name = "buttonSegment_44_1";
-            this.buttonSegment_44_1.Segmentnummer = 0;
+            this.buttonSegment_44_1.Segmentnummer = 1;
             this.buttonSegment_44_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_44_1.Spoornummer = 0;
+            this.buttonSegment_44_1.Spoornummer = 44;
             this.buttonSegment_44_1.TabIndex = 18;
             // 
             // buttonSegment_44_2
@@ -1117,9 +1117,9 @@
             this.buttonSegment_44_2.Location = new System.Drawing.Point(872, 110);
             this.buttonSegment_44_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_44_2.Name = "buttonSegment_44_2";
-            this.buttonSegment_44_2.Segmentnummer = 0;
+            this.buttonSegment_44_2.Segmentnummer = 2;
             this.buttonSegment_44_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_44_2.Spoornummer = 0;
+            this.buttonSegment_44_2.Spoornummer = 44;
             this.buttonSegment_44_2.TabIndex = 17;
             // 
             // buttonSegment_44_3
@@ -1129,9 +1129,9 @@
             this.buttonSegment_44_3.Location = new System.Drawing.Point(872, 138);
             this.buttonSegment_44_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_44_3.Name = "buttonSegment_44_3";
-            this.buttonSegment_44_3.Segmentnummer = 0;
+            this.buttonSegment_44_3.Segmentnummer = 3;
             this.buttonSegment_44_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_44_3.Spoornummer = 0;
+            this.buttonSegment_44_3.Spoornummer = 44;
             this.buttonSegment_44_3.TabIndex = 16;
             // 
             // buttonSegment_44_4
@@ -1141,9 +1141,9 @@
             this.buttonSegment_44_4.Location = new System.Drawing.Point(872, 168);
             this.buttonSegment_44_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_44_4.Name = "buttonSegment_44_4";
-            this.buttonSegment_44_4.Segmentnummer = 0;
+            this.buttonSegment_44_4.Segmentnummer = 4;
             this.buttonSegment_44_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_44_4.Spoornummer = 0;
+            this.buttonSegment_44_4.Spoornummer = 44;
             this.buttonSegment_44_4.TabIndex = 15;
             // 
             // buttonSegment_45_1
@@ -1153,9 +1153,9 @@
             this.buttonSegment_45_1.Location = new System.Drawing.Point(923, 82);
             this.buttonSegment_45_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_1.Name = "buttonSegment_45_1";
-            this.buttonSegment_45_1.Segmentnummer = 0;
+            this.buttonSegment_45_1.Segmentnummer = 1;
             this.buttonSegment_45_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_1.Spoornummer = 0;
+            this.buttonSegment_45_1.Spoornummer = 45;
             this.buttonSegment_45_1.TabIndex = 24;
             // 
             // buttonSegment_45_10
@@ -1165,9 +1165,9 @@
             this.buttonSegment_45_10.Location = new System.Drawing.Point(923, 336);
             this.buttonSegment_45_10.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_10.Name = "buttonSegment_45_10";
-            this.buttonSegment_45_10.Segmentnummer = 0;
+            this.buttonSegment_45_10.Segmentnummer = 10;
             this.buttonSegment_45_10.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_10.Spoornummer = 0;
+            this.buttonSegment_45_10.Spoornummer = 45;
             this.buttonSegment_45_10.TabIndex = 21;
             // 
             // buttonSegment_45_2
@@ -1177,9 +1177,9 @@
             this.buttonSegment_45_2.Location = new System.Drawing.Point(923, 110);
             this.buttonSegment_45_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_2.Name = "buttonSegment_45_2";
-            this.buttonSegment_45_2.Segmentnummer = 0;
+            this.buttonSegment_45_2.Segmentnummer = 2;
             this.buttonSegment_45_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_2.Spoornummer = 0;
+            this.buttonSegment_45_2.Spoornummer = 45;
             this.buttonSegment_45_2.TabIndex = 23;
             // 
             // buttonSegment_45_3
@@ -1189,9 +1189,9 @@
             this.buttonSegment_45_3.Location = new System.Drawing.Point(923, 138);
             this.buttonSegment_45_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_3.Name = "buttonSegment_45_3";
-            this.buttonSegment_45_3.Segmentnummer = 0;
+            this.buttonSegment_45_3.Segmentnummer = 3;
             this.buttonSegment_45_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_3.Spoornummer = 0;
+            this.buttonSegment_45_3.Spoornummer = 45;
             this.buttonSegment_45_3.TabIndex = 22;
             // 
             // buttonSegment_45_4
@@ -1201,9 +1201,9 @@
             this.buttonSegment_45_4.Location = new System.Drawing.Point(923, 168);
             this.buttonSegment_45_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_4.Name = "buttonSegment_45_4";
-            this.buttonSegment_45_4.Segmentnummer = 0;
+            this.buttonSegment_45_4.Segmentnummer = 4;
             this.buttonSegment_45_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_4.Spoornummer = 0;
+            this.buttonSegment_45_4.Spoornummer = 45;
             this.buttonSegment_45_4.TabIndex = 21;
             // 
             // buttonSegment_45_5
@@ -1213,9 +1213,9 @@
             this.buttonSegment_45_5.Location = new System.Drawing.Point(922, 196);
             this.buttonSegment_45_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_5.Name = "buttonSegment_45_5";
-            this.buttonSegment_45_5.Segmentnummer = 0;
+            this.buttonSegment_45_5.Segmentnummer = 5;
             this.buttonSegment_45_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_5.Spoornummer = 0;
+            this.buttonSegment_45_5.Spoornummer = 45;
             this.buttonSegment_45_5.TabIndex = 24;
             // 
             // buttonSegment_45_6
@@ -1225,9 +1225,9 @@
             this.buttonSegment_45_6.Location = new System.Drawing.Point(922, 224);
             this.buttonSegment_45_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_6.Name = "buttonSegment_45_6";
-            this.buttonSegment_45_6.Segmentnummer = 0;
+            this.buttonSegment_45_6.Segmentnummer = 6;
             this.buttonSegment_45_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_6.Spoornummer = 0;
+            this.buttonSegment_45_6.Spoornummer = 45;
             this.buttonSegment_45_6.TabIndex = 23;
             // 
             // buttonSegment_45_7
@@ -1237,9 +1237,9 @@
             this.buttonSegment_45_7.Location = new System.Drawing.Point(923, 252);
             this.buttonSegment_45_7.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_7.Name = "buttonSegment_45_7";
-            this.buttonSegment_45_7.Segmentnummer = 0;
+            this.buttonSegment_45_7.Segmentnummer = 7;
             this.buttonSegment_45_7.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_7.Spoornummer = 0;
+            this.buttonSegment_45_7.Spoornummer = 45;
             this.buttonSegment_45_7.TabIndex = 22;
             // 
             // buttonSegment_45_8
@@ -1249,9 +1249,9 @@
             this.buttonSegment_45_8.Location = new System.Drawing.Point(923, 280);
             this.buttonSegment_45_8.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_8.Name = "buttonSegment_45_8";
-            this.buttonSegment_45_8.Segmentnummer = 0;
+            this.buttonSegment_45_8.Segmentnummer = 8;
             this.buttonSegment_45_8.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_8.Spoornummer = 0;
+            this.buttonSegment_45_8.Spoornummer = 45;
             this.buttonSegment_45_8.TabIndex = 21;
             // 
             // buttonSegment_45_9
@@ -1261,9 +1261,9 @@
             this.buttonSegment_45_9.Location = new System.Drawing.Point(923, 308);
             this.buttonSegment_45_9.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_45_9.Name = "buttonSegment_45_9";
-            this.buttonSegment_45_9.Segmentnummer = 0;
+            this.buttonSegment_45_9.Segmentnummer = 9;
             this.buttonSegment_45_9.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_45_9.Spoornummer = 0;
+            this.buttonSegment_45_9.Spoornummer = 45;
             this.buttonSegment_45_9.TabIndex = 21;
             // 
             // buttonSegment_51_1
@@ -1273,9 +1273,9 @@
             this.buttonSegment_51_1.Location = new System.Drawing.Point(364, 384);
             this.buttonSegment_51_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_51_1.Name = "buttonSegment_51_1";
-            this.buttonSegment_51_1.Segmentnummer = 0;
+            this.buttonSegment_51_1.Segmentnummer = 1;
             this.buttonSegment_51_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_51_1.Spoornummer = 0;
+            this.buttonSegment_51_1.Spoornummer = 51;
             this.buttonSegment_51_1.TabIndex = 18;
             // 
             // buttonSegment_51_2
@@ -1285,9 +1285,9 @@
             this.buttonSegment_51_2.Location = new System.Drawing.Point(364, 412);
             this.buttonSegment_51_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_51_2.Name = "buttonSegment_51_2";
-            this.buttonSegment_51_2.Segmentnummer = 0;
+            this.buttonSegment_51_2.Segmentnummer = 2;
             this.buttonSegment_51_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_51_2.Spoornummer = 0;
+            this.buttonSegment_51_2.Spoornummer = 51;
             this.buttonSegment_51_2.TabIndex = 17;
             // 
             // buttonSegment_51_3
@@ -1297,9 +1297,9 @@
             this.buttonSegment_51_3.Location = new System.Drawing.Point(364, 440);
             this.buttonSegment_51_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_51_3.Name = "buttonSegment_51_3";
-            this.buttonSegment_51_3.Segmentnummer = 0;
+            this.buttonSegment_51_3.Segmentnummer = 3;
             this.buttonSegment_51_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_51_3.Spoornummer = 0;
+            this.buttonSegment_51_3.Spoornummer = 51;
             this.buttonSegment_51_3.TabIndex = 16;
             // 
             // buttonSegment_51_4
@@ -1309,9 +1309,9 @@
             this.buttonSegment_51_4.Location = new System.Drawing.Point(364, 468);
             this.buttonSegment_51_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_51_4.Name = "buttonSegment_51_4";
-            this.buttonSegment_51_4.Segmentnummer = 0;
+            this.buttonSegment_51_4.Segmentnummer = 4;
             this.buttonSegment_51_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_51_4.Spoornummer = 0;
+            this.buttonSegment_51_4.Spoornummer = 51;
             this.buttonSegment_51_4.TabIndex = 15;
             // 
             // buttonSegment_51_5
@@ -1321,9 +1321,9 @@
             this.buttonSegment_51_5.Location = new System.Drawing.Point(364, 496);
             this.buttonSegment_51_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_51_5.Name = "buttonSegment_51_5";
-            this.buttonSegment_51_5.Segmentnummer = 0;
+            this.buttonSegment_51_5.Segmentnummer = 5;
             this.buttonSegment_51_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_51_5.Spoornummer = 0;
+            this.buttonSegment_51_5.Spoornummer = 51;
             this.buttonSegment_51_5.TabIndex = 66;
             // 
             // buttonSegment_51_6
@@ -1333,9 +1333,9 @@
             this.buttonSegment_51_6.Location = new System.Drawing.Point(364, 524);
             this.buttonSegment_51_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_51_6.Name = "buttonSegment_51_6";
-            this.buttonSegment_51_6.Segmentnummer = 0;
+            this.buttonSegment_51_6.Segmentnummer = 6;
             this.buttonSegment_51_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_51_6.Spoornummer = 0;
+            this.buttonSegment_51_6.Spoornummer = 51;
             this.buttonSegment_51_6.TabIndex = 65;
             // 
             // buttonSegment_52_1
@@ -1345,9 +1345,9 @@
             this.buttonSegment_52_1.Location = new System.Drawing.Point(313, 384);
             this.buttonSegment_52_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_52_1.Name = "buttonSegment_52_1";
-            this.buttonSegment_52_1.Segmentnummer = 0;
+            this.buttonSegment_52_1.Segmentnummer = 1;
             this.buttonSegment_52_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_52_1.Spoornummer = 0;
+            this.buttonSegment_52_1.Spoornummer = 52;
             this.buttonSegment_52_1.TabIndex = 18;
             // 
             // buttonSegment_52_2
@@ -1357,9 +1357,9 @@
             this.buttonSegment_52_2.Location = new System.Drawing.Point(313, 412);
             this.buttonSegment_52_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_52_2.Name = "buttonSegment_52_2";
-            this.buttonSegment_52_2.Segmentnummer = 0;
+            this.buttonSegment_52_2.Segmentnummer = 2;
             this.buttonSegment_52_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_52_2.Spoornummer = 0;
+            this.buttonSegment_52_2.Spoornummer = 52;
             this.buttonSegment_52_2.TabIndex = 17;
             // 
             // buttonSegment_52_3
@@ -1369,9 +1369,9 @@
             this.buttonSegment_52_3.Location = new System.Drawing.Point(313, 440);
             this.buttonSegment_52_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_52_3.Name = "buttonSegment_52_3";
-            this.buttonSegment_52_3.Segmentnummer = 0;
+            this.buttonSegment_52_3.Segmentnummer = 3;
             this.buttonSegment_52_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_52_3.Spoornummer = 0;
+            this.buttonSegment_52_3.Spoornummer = 52;
             this.buttonSegment_52_3.TabIndex = 16;
             // 
             // buttonSegment_52_4
@@ -1381,9 +1381,9 @@
             this.buttonSegment_52_4.Location = new System.Drawing.Point(313, 468);
             this.buttonSegment_52_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_52_4.Name = "buttonSegment_52_4";
-            this.buttonSegment_52_4.Segmentnummer = 0;
+            this.buttonSegment_52_4.Segmentnummer = 4;
             this.buttonSegment_52_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_52_4.Spoornummer = 0;
+            this.buttonSegment_52_4.Spoornummer = 52;
             this.buttonSegment_52_4.TabIndex = 15;
             // 
             // buttonSegment_52_5
@@ -1393,9 +1393,9 @@
             this.buttonSegment_52_5.Location = new System.Drawing.Point(313, 496);
             this.buttonSegment_52_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_52_5.Name = "buttonSegment_52_5";
-            this.buttonSegment_52_5.Segmentnummer = 0;
+            this.buttonSegment_52_5.Segmentnummer = 5;
             this.buttonSegment_52_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_52_5.Spoornummer = 0;
+            this.buttonSegment_52_5.Spoornummer = 52;
             this.buttonSegment_52_5.TabIndex = 66;
             // 
             // buttonSegment_52_6
@@ -1405,9 +1405,9 @@
             this.buttonSegment_52_6.Location = new System.Drawing.Point(313, 524);
             this.buttonSegment_52_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_52_6.Name = "buttonSegment_52_6";
-            this.buttonSegment_52_6.Segmentnummer = 0;
+            this.buttonSegment_52_6.Segmentnummer = 6;
             this.buttonSegment_52_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_52_6.Spoornummer = 0;
+            this.buttonSegment_52_6.Spoornummer = 52;
             this.buttonSegment_52_6.TabIndex = 65;
             // 
             // buttonSegment_52_7
@@ -1417,9 +1417,9 @@
             this.buttonSegment_52_7.Location = new System.Drawing.Point(313, 552);
             this.buttonSegment_52_7.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_52_7.Name = "buttonSegment_52_7";
-            this.buttonSegment_52_7.Segmentnummer = 0;
+            this.buttonSegment_52_7.Segmentnummer = 7;
             this.buttonSegment_52_7.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_52_7.Spoornummer = 0;
+            this.buttonSegment_52_7.Spoornummer = 52;
             this.buttonSegment_52_7.TabIndex = 64;
             // 
             // buttonSegment_53_1
@@ -1429,9 +1429,9 @@
             this.buttonSegment_53_1.Location = new System.Drawing.Point(262, 384);
             this.buttonSegment_53_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_53_1.Name = "buttonSegment_53_1";
-            this.buttonSegment_53_1.Segmentnummer = 0;
+            this.buttonSegment_53_1.Segmentnummer = 1;
             this.buttonSegment_53_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_53_1.Spoornummer = 0;
+            this.buttonSegment_53_1.Spoornummer = 53;
             this.buttonSegment_53_1.TabIndex = 18;
             // 
             // buttonSegment_53_2
@@ -1441,9 +1441,9 @@
             this.buttonSegment_53_2.Location = new System.Drawing.Point(262, 412);
             this.buttonSegment_53_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_53_2.Name = "buttonSegment_53_2";
-            this.buttonSegment_53_2.Segmentnummer = 0;
+            this.buttonSegment_53_2.Segmentnummer = 2;
             this.buttonSegment_53_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_53_2.Spoornummer = 0;
+            this.buttonSegment_53_2.Spoornummer = 53;
             this.buttonSegment_53_2.TabIndex = 17;
             // 
             // buttonSegment_53_3
@@ -1453,9 +1453,9 @@
             this.buttonSegment_53_3.Location = new System.Drawing.Point(262, 440);
             this.buttonSegment_53_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_53_3.Name = "buttonSegment_53_3";
-            this.buttonSegment_53_3.Segmentnummer = 0;
+            this.buttonSegment_53_3.Segmentnummer = 3;
             this.buttonSegment_53_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_53_3.Spoornummer = 0;
+            this.buttonSegment_53_3.Spoornummer = 53;
             this.buttonSegment_53_3.TabIndex = 16;
             // 
             // buttonSegment_53_4
@@ -1465,9 +1465,9 @@
             this.buttonSegment_53_4.Location = new System.Drawing.Point(262, 468);
             this.buttonSegment_53_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_53_4.Name = "buttonSegment_53_4";
-            this.buttonSegment_53_4.Segmentnummer = 0;
+            this.buttonSegment_53_4.Segmentnummer = 4;
             this.buttonSegment_53_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_53_4.Spoornummer = 0;
+            this.buttonSegment_53_4.Spoornummer = 53;
             this.buttonSegment_53_4.TabIndex = 15;
             // 
             // buttonSegment_53_5
@@ -1477,9 +1477,9 @@
             this.buttonSegment_53_5.Location = new System.Drawing.Point(262, 496);
             this.buttonSegment_53_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_53_5.Name = "buttonSegment_53_5";
-            this.buttonSegment_53_5.Segmentnummer = 0;
+            this.buttonSegment_53_5.Segmentnummer = 5;
             this.buttonSegment_53_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_53_5.Spoornummer = 0;
+            this.buttonSegment_53_5.Spoornummer = 53;
             this.buttonSegment_53_5.TabIndex = 66;
             // 
             // buttonSegment_53_6
@@ -1489,9 +1489,9 @@
             this.buttonSegment_53_6.Location = new System.Drawing.Point(262, 524);
             this.buttonSegment_53_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_53_6.Name = "buttonSegment_53_6";
-            this.buttonSegment_53_6.Segmentnummer = 0;
+            this.buttonSegment_53_6.Segmentnummer = 6;
             this.buttonSegment_53_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_53_6.Spoornummer = 0;
+            this.buttonSegment_53_6.Spoornummer = 53;
             this.buttonSegment_53_6.TabIndex = 65;
             // 
             // buttonSegment_53_7
@@ -1501,9 +1501,9 @@
             this.buttonSegment_53_7.Location = new System.Drawing.Point(262, 552);
             this.buttonSegment_53_7.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_53_7.Name = "buttonSegment_53_7";
-            this.buttonSegment_53_7.Segmentnummer = 0;
+            this.buttonSegment_53_7.Segmentnummer = 7;
             this.buttonSegment_53_7.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_53_7.Spoornummer = 0;
+            this.buttonSegment_53_7.Spoornummer = 53;
             this.buttonSegment_53_7.TabIndex = 64;
             // 
             // buttonSegment_54_1
@@ -1513,9 +1513,9 @@
             this.buttonSegment_54_1.Location = new System.Drawing.Point(211, 384);
             this.buttonSegment_54_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_54_1.Name = "buttonSegment_54_1";
-            this.buttonSegment_54_1.Segmentnummer = 0;
+            this.buttonSegment_54_1.Segmentnummer = 1;
             this.buttonSegment_54_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_54_1.Spoornummer = 0;
+            this.buttonSegment_54_1.Spoornummer = 54;
             this.buttonSegment_54_1.TabIndex = 18;
             // 
             // buttonSegment_54_2
@@ -1525,9 +1525,9 @@
             this.buttonSegment_54_2.Location = new System.Drawing.Point(211, 412);
             this.buttonSegment_54_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_54_2.Name = "buttonSegment_54_2";
-            this.buttonSegment_54_2.Segmentnummer = 0;
+            this.buttonSegment_54_2.Segmentnummer = 2;
             this.buttonSegment_54_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_54_2.Spoornummer = 0;
+            this.buttonSegment_54_2.Spoornummer = 54;
             this.buttonSegment_54_2.TabIndex = 17;
             // 
             // buttonSegment_54_3
@@ -1537,9 +1537,9 @@
             this.buttonSegment_54_3.Location = new System.Drawing.Point(211, 440);
             this.buttonSegment_54_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_54_3.Name = "buttonSegment_54_3";
-            this.buttonSegment_54_3.Segmentnummer = 0;
+            this.buttonSegment_54_3.Segmentnummer = 3;
             this.buttonSegment_54_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_54_3.Spoornummer = 0;
+            this.buttonSegment_54_3.Spoornummer = 54;
             this.buttonSegment_54_3.TabIndex = 16;
             // 
             // buttonSegment_54_4
@@ -1549,9 +1549,9 @@
             this.buttonSegment_54_4.Location = new System.Drawing.Point(211, 468);
             this.buttonSegment_54_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_54_4.Name = "buttonSegment_54_4";
-            this.buttonSegment_54_4.Segmentnummer = 0;
+            this.buttonSegment_54_4.Segmentnummer = 4;
             this.buttonSegment_54_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_54_4.Spoornummer = 0;
+            this.buttonSegment_54_4.Spoornummer = 54;
             this.buttonSegment_54_4.TabIndex = 15;
             // 
             // buttonSegment_54_5
@@ -1561,9 +1561,9 @@
             this.buttonSegment_54_5.Location = new System.Drawing.Point(211, 496);
             this.buttonSegment_54_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_54_5.Name = "buttonSegment_54_5";
-            this.buttonSegment_54_5.Segmentnummer = 0;
+            this.buttonSegment_54_5.Segmentnummer = 5;
             this.buttonSegment_54_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_54_5.Spoornummer = 0;
+            this.buttonSegment_54_5.Spoornummer = 54;
             this.buttonSegment_54_5.TabIndex = 66;
             // 
             // buttonSegment_54_6
@@ -1573,9 +1573,9 @@
             this.buttonSegment_54_6.Location = new System.Drawing.Point(211, 524);
             this.buttonSegment_54_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_54_6.Name = "buttonSegment_54_6";
-            this.buttonSegment_54_6.Segmentnummer = 0;
+            this.buttonSegment_54_6.Segmentnummer = 6;
             this.buttonSegment_54_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_54_6.Spoornummer = 0;
+            this.buttonSegment_54_6.Spoornummer = 54;
             this.buttonSegment_54_6.TabIndex = 65;
             // 
             // buttonSegment_54_7
@@ -1585,9 +1585,9 @@
             this.buttonSegment_54_7.Location = new System.Drawing.Point(211, 552);
             this.buttonSegment_54_7.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_54_7.Name = "buttonSegment_54_7";
-            this.buttonSegment_54_7.Segmentnummer = 0;
+            this.buttonSegment_54_7.Segmentnummer = 7;
             this.buttonSegment_54_7.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_54_7.Spoornummer = 0;
+            this.buttonSegment_54_7.Spoornummer = 54;
             this.buttonSegment_54_7.TabIndex = 64;
             // 
             // buttonSegment_55_1
@@ -1597,9 +1597,9 @@
             this.buttonSegment_55_1.Location = new System.Drawing.Point(160, 384);
             this.buttonSegment_55_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_55_1.Name = "buttonSegment_55_1";
-            this.buttonSegment_55_1.Segmentnummer = 0;
+            this.buttonSegment_55_1.Segmentnummer = 1;
             this.buttonSegment_55_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_55_1.Spoornummer = 0;
+            this.buttonSegment_55_1.Spoornummer = 55;
             this.buttonSegment_55_1.TabIndex = 18;
             // 
             // buttonSegment_55_2
@@ -1609,9 +1609,9 @@
             this.buttonSegment_55_2.Location = new System.Drawing.Point(160, 412);
             this.buttonSegment_55_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_55_2.Name = "buttonSegment_55_2";
-            this.buttonSegment_55_2.Segmentnummer = 0;
+            this.buttonSegment_55_2.Segmentnummer = 2;
             this.buttonSegment_55_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_55_2.Spoornummer = 0;
+            this.buttonSegment_55_2.Spoornummer = 55;
             this.buttonSegment_55_2.TabIndex = 17;
             // 
             // buttonSegment_55_3
@@ -1621,9 +1621,9 @@
             this.buttonSegment_55_3.Location = new System.Drawing.Point(160, 440);
             this.buttonSegment_55_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_55_3.Name = "buttonSegment_55_3";
-            this.buttonSegment_55_3.Segmentnummer = 0;
+            this.buttonSegment_55_3.Segmentnummer = 3;
             this.buttonSegment_55_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_55_3.Spoornummer = 0;
+            this.buttonSegment_55_3.Spoornummer = 55;
             this.buttonSegment_55_3.TabIndex = 16;
             // 
             // buttonSegment_55_4
@@ -1633,9 +1633,9 @@
             this.buttonSegment_55_4.Location = new System.Drawing.Point(160, 468);
             this.buttonSegment_55_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_55_4.Name = "buttonSegment_55_4";
-            this.buttonSegment_55_4.Segmentnummer = 0;
+            this.buttonSegment_55_4.Segmentnummer = 4;
             this.buttonSegment_55_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_55_4.Spoornummer = 0;
+            this.buttonSegment_55_4.Spoornummer = 55;
             this.buttonSegment_55_4.TabIndex = 15;
             // 
             // buttonSegment_55_5
@@ -1645,9 +1645,9 @@
             this.buttonSegment_55_5.Location = new System.Drawing.Point(160, 496);
             this.buttonSegment_55_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_55_5.Name = "buttonSegment_55_5";
-            this.buttonSegment_55_5.Segmentnummer = 0;
+            this.buttonSegment_55_5.Segmentnummer = 5;
             this.buttonSegment_55_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_55_5.Spoornummer = 0;
+            this.buttonSegment_55_5.Spoornummer = 55;
             this.buttonSegment_55_5.TabIndex = 66;
             // 
             // buttonSegment_55_6
@@ -1657,9 +1657,9 @@
             this.buttonSegment_55_6.Location = new System.Drawing.Point(160, 524);
             this.buttonSegment_55_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_55_6.Name = "buttonSegment_55_6";
-            this.buttonSegment_55_6.Segmentnummer = 0;
+            this.buttonSegment_55_6.Segmentnummer = 6;
             this.buttonSegment_55_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_55_6.Spoornummer = 0;
+            this.buttonSegment_55_6.Spoornummer = 55;
             this.buttonSegment_55_6.TabIndex = 65;
             // 
             // buttonSegment_55_7
@@ -1669,9 +1669,9 @@
             this.buttonSegment_55_7.Location = new System.Drawing.Point(160, 552);
             this.buttonSegment_55_7.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_55_7.Name = "buttonSegment_55_7";
-            this.buttonSegment_55_7.Segmentnummer = 0;
+            this.buttonSegment_55_7.Segmentnummer = 7;
             this.buttonSegment_55_7.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_55_7.Spoornummer = 0;
+            this.buttonSegment_55_7.Spoornummer = 55;
             this.buttonSegment_55_7.TabIndex = 64;
             // 
             // buttonSegment_55_8
@@ -1681,9 +1681,9 @@
             this.buttonSegment_55_8.Location = new System.Drawing.Point(160, 580);
             this.buttonSegment_55_8.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_55_8.Name = "buttonSegment_55_8";
-            this.buttonSegment_55_8.Segmentnummer = 0;
+            this.buttonSegment_55_8.Segmentnummer = 8;
             this.buttonSegment_55_8.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_55_8.Spoornummer = 0;
+            this.buttonSegment_55_8.Spoornummer = 55;
             this.buttonSegment_55_8.TabIndex = 63;
             // 
             // buttonSegment_56_1
@@ -1693,9 +1693,9 @@
             this.buttonSegment_56_1.Location = new System.Drawing.Point(109, 384);
             this.buttonSegment_56_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_56_1.Name = "buttonSegment_56_1";
-            this.buttonSegment_56_1.Segmentnummer = 0;
+            this.buttonSegment_56_1.Segmentnummer = 1;
             this.buttonSegment_56_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_56_1.Spoornummer = 0;
+            this.buttonSegment_56_1.Spoornummer = 56;
             this.buttonSegment_56_1.TabIndex = 18;
             // 
             // buttonSegment_56_2
@@ -1705,9 +1705,9 @@
             this.buttonSegment_56_2.Location = new System.Drawing.Point(109, 412);
             this.buttonSegment_56_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_56_2.Name = "buttonSegment_56_2";
-            this.buttonSegment_56_2.Segmentnummer = 0;
+            this.buttonSegment_56_2.Segmentnummer = 2;
             this.buttonSegment_56_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_56_2.Spoornummer = 0;
+            this.buttonSegment_56_2.Spoornummer = 56;
             this.buttonSegment_56_2.TabIndex = 17;
             // 
             // buttonSegment_56_3
@@ -1717,9 +1717,9 @@
             this.buttonSegment_56_3.Location = new System.Drawing.Point(109, 440);
             this.buttonSegment_56_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_56_3.Name = "buttonSegment_56_3";
-            this.buttonSegment_56_3.Segmentnummer = 0;
+            this.buttonSegment_56_3.Segmentnummer = 3;
             this.buttonSegment_56_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_56_3.Spoornummer = 0;
+            this.buttonSegment_56_3.Spoornummer = 56;
             this.buttonSegment_56_3.TabIndex = 16;
             // 
             // buttonSegment_56_4
@@ -1729,9 +1729,9 @@
             this.buttonSegment_56_4.Location = new System.Drawing.Point(109, 468);
             this.buttonSegment_56_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_56_4.Name = "buttonSegment_56_4";
-            this.buttonSegment_56_4.Segmentnummer = 0;
+            this.buttonSegment_56_4.Segmentnummer = 4;
             this.buttonSegment_56_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_56_4.Spoornummer = 0;
+            this.buttonSegment_56_4.Spoornummer = 56;
             this.buttonSegment_56_4.TabIndex = 15;
             // 
             // buttonSegment_56_5
@@ -1741,9 +1741,9 @@
             this.buttonSegment_56_5.Location = new System.Drawing.Point(109, 496);
             this.buttonSegment_56_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_56_5.Name = "buttonSegment_56_5";
-            this.buttonSegment_56_5.Segmentnummer = 0;
+            this.buttonSegment_56_5.Segmentnummer = 5;
             this.buttonSegment_56_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_56_5.Spoornummer = 0;
+            this.buttonSegment_56_5.Spoornummer = 56;
             this.buttonSegment_56_5.TabIndex = 66;
             // 
             // buttonSegment_56_6
@@ -1753,9 +1753,9 @@
             this.buttonSegment_56_6.Location = new System.Drawing.Point(109, 524);
             this.buttonSegment_56_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_56_6.Name = "buttonSegment_56_6";
-            this.buttonSegment_56_6.Segmentnummer = 0;
+            this.buttonSegment_56_6.Segmentnummer = 6;
             this.buttonSegment_56_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_56_6.Spoornummer = 0;
+            this.buttonSegment_56_6.Spoornummer = 56;
             this.buttonSegment_56_6.TabIndex = 65;
             // 
             // buttonSegment_56_7
@@ -1765,9 +1765,9 @@
             this.buttonSegment_56_7.Location = new System.Drawing.Point(109, 552);
             this.buttonSegment_56_7.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_56_7.Name = "buttonSegment_56_7";
-            this.buttonSegment_56_7.Segmentnummer = 0;
+            this.buttonSegment_56_7.Segmentnummer = 7;
             this.buttonSegment_56_7.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_56_7.Spoornummer = 0;
+            this.buttonSegment_56_7.Spoornummer = 56;
             this.buttonSegment_56_7.TabIndex = 64;
             // 
             // buttonSegment_56_8
@@ -1777,9 +1777,9 @@
             this.buttonSegment_56_8.Location = new System.Drawing.Point(109, 580);
             this.buttonSegment_56_8.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_56_8.Name = "buttonSegment_56_8";
-            this.buttonSegment_56_8.Segmentnummer = 0;
+            this.buttonSegment_56_8.Segmentnummer = 8;
             this.buttonSegment_56_8.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_56_8.Spoornummer = 0;
+            this.buttonSegment_56_8.Spoornummer = 56;
             this.buttonSegment_56_8.TabIndex = 63;
             // 
             // buttonSegment_57_1
@@ -1789,9 +1789,9 @@
             this.buttonSegment_57_1.Location = new System.Drawing.Point(58, 384);
             this.buttonSegment_57_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_57_1.Name = "buttonSegment_57_1";
-            this.buttonSegment_57_1.Segmentnummer = 0;
+            this.buttonSegment_57_1.Segmentnummer = 1;
             this.buttonSegment_57_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_57_1.Spoornummer = 0;
+            this.buttonSegment_57_1.Spoornummer = 57;
             this.buttonSegment_57_1.TabIndex = 18;
             // 
             // buttonSegment_57_2
@@ -1801,9 +1801,9 @@
             this.buttonSegment_57_2.Location = new System.Drawing.Point(58, 412);
             this.buttonSegment_57_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_57_2.Name = "buttonSegment_57_2";
-            this.buttonSegment_57_2.Segmentnummer = 0;
+            this.buttonSegment_57_2.Segmentnummer = 2;
             this.buttonSegment_57_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_57_2.Spoornummer = 0;
+            this.buttonSegment_57_2.Spoornummer = 57;
             this.buttonSegment_57_2.TabIndex = 17;
             // 
             // buttonSegment_57_3
@@ -1813,9 +1813,9 @@
             this.buttonSegment_57_3.Location = new System.Drawing.Point(58, 440);
             this.buttonSegment_57_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_57_3.Name = "buttonSegment_57_3";
-            this.buttonSegment_57_3.Segmentnummer = 0;
+            this.buttonSegment_57_3.Segmentnummer = 3;
             this.buttonSegment_57_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_57_3.Spoornummer = 0;
+            this.buttonSegment_57_3.Spoornummer = 57;
             this.buttonSegment_57_3.TabIndex = 16;
             // 
             // buttonSegment_57_4
@@ -1825,9 +1825,9 @@
             this.buttonSegment_57_4.Location = new System.Drawing.Point(58, 468);
             this.buttonSegment_57_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_57_4.Name = "buttonSegment_57_4";
-            this.buttonSegment_57_4.Segmentnummer = 0;
+            this.buttonSegment_57_4.Segmentnummer = 4;
             this.buttonSegment_57_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_57_4.Spoornummer = 0;
+            this.buttonSegment_57_4.Spoornummer = 57;
             this.buttonSegment_57_4.TabIndex = 15;
             // 
             // buttonSegment_57_5
@@ -1837,9 +1837,9 @@
             this.buttonSegment_57_5.Location = new System.Drawing.Point(58, 496);
             this.buttonSegment_57_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_57_5.Name = "buttonSegment_57_5";
-            this.buttonSegment_57_5.Segmentnummer = 0;
+            this.buttonSegment_57_5.Segmentnummer = 5;
             this.buttonSegment_57_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_57_5.Spoornummer = 0;
+            this.buttonSegment_57_5.Spoornummer = 57;
             this.buttonSegment_57_5.TabIndex = 66;
             // 
             // buttonSegment_57_6
@@ -1849,9 +1849,9 @@
             this.buttonSegment_57_6.Location = new System.Drawing.Point(58, 524);
             this.buttonSegment_57_6.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_57_6.Name = "buttonSegment_57_6";
-            this.buttonSegment_57_6.Segmentnummer = 0;
+            this.buttonSegment_57_6.Segmentnummer = 6;
             this.buttonSegment_57_6.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_57_6.Spoornummer = 0;
+            this.buttonSegment_57_6.Spoornummer = 57;
             this.buttonSegment_57_6.TabIndex = 65;
             // 
             // buttonSegment_57_7
@@ -1861,9 +1861,9 @@
             this.buttonSegment_57_7.Location = new System.Drawing.Point(58, 552);
             this.buttonSegment_57_7.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_57_7.Name = "buttonSegment_57_7";
-            this.buttonSegment_57_7.Segmentnummer = 0;
+            this.buttonSegment_57_7.Segmentnummer = 7;
             this.buttonSegment_57_7.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_57_7.Spoornummer = 0;
+            this.buttonSegment_57_7.Spoornummer = 57;
             this.buttonSegment_57_7.TabIndex = 64;
             // 
             // buttonSegment_57_8
@@ -1873,9 +1873,9 @@
             this.buttonSegment_57_8.Location = new System.Drawing.Point(58, 580);
             this.buttonSegment_57_8.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_57_8.Name = "buttonSegment_57_8";
-            this.buttonSegment_57_8.Segmentnummer = 0;
+            this.buttonSegment_57_8.Segmentnummer = 8;
             this.buttonSegment_57_8.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_57_8.Spoornummer = 0;
+            this.buttonSegment_57_8.Spoornummer = 57;
             this.buttonSegment_57_8.TabIndex = 63;
             // 
             // buttonSegment_58_1
@@ -1885,9 +1885,9 @@
             this.buttonSegment_58_1.Location = new System.Drawing.Point(7, 384);
             this.buttonSegment_58_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_58_1.Name = "buttonSegment_58_1";
-            this.buttonSegment_58_1.Segmentnummer = 0;
+            this.buttonSegment_58_1.Segmentnummer = 1;
             this.buttonSegment_58_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_58_1.Spoornummer = 0;
+            this.buttonSegment_58_1.Spoornummer = 58;
             this.buttonSegment_58_1.TabIndex = 66;
             // 
             // buttonSegment_58_2
@@ -1897,9 +1897,9 @@
             this.buttonSegment_58_2.Location = new System.Drawing.Point(7, 412);
             this.buttonSegment_58_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_58_2.Name = "buttonSegment_58_2";
-            this.buttonSegment_58_2.Segmentnummer = 0;
+            this.buttonSegment_58_2.Segmentnummer = 2;
             this.buttonSegment_58_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_58_2.Spoornummer = 0;
+            this.buttonSegment_58_2.Spoornummer = 58;
             this.buttonSegment_58_2.TabIndex = 65;
             // 
             // buttonSegment_58_3
@@ -1909,9 +1909,9 @@
             this.buttonSegment_58_3.Location = new System.Drawing.Point(7, 440);
             this.buttonSegment_58_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_58_3.Name = "buttonSegment_58_3";
-            this.buttonSegment_58_3.Segmentnummer = 0;
+            this.buttonSegment_58_3.Segmentnummer = 3;
             this.buttonSegment_58_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_58_3.Spoornummer = 0;
+            this.buttonSegment_58_3.Spoornummer = 58;
             this.buttonSegment_58_3.TabIndex = 64;
             // 
             // buttonSegment_58_4
@@ -1921,9 +1921,9 @@
             this.buttonSegment_58_4.Location = new System.Drawing.Point(7, 468);
             this.buttonSegment_58_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_58_4.Name = "buttonSegment_58_4";
-            this.buttonSegment_58_4.Segmentnummer = 0;
+            this.buttonSegment_58_4.Segmentnummer = 4;
             this.buttonSegment_58_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_58_4.Spoornummer = 0;
+            this.buttonSegment_58_4.Spoornummer = 58;
             this.buttonSegment_58_4.TabIndex = 63;
             // 
             // buttonSegment_61_1
@@ -1933,9 +1933,9 @@
             this.buttonSegment_61_1.Location = new System.Drawing.Point(593, 384);
             this.buttonSegment_61_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_61_1.Name = "buttonSegment_61_1";
-            this.buttonSegment_61_1.Segmentnummer = 0;
+            this.buttonSegment_61_1.Segmentnummer = 1;
             this.buttonSegment_61_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_61_1.Spoornummer = 0;
+            this.buttonSegment_61_1.Spoornummer = 61;
             this.buttonSegment_61_1.TabIndex = 18;
             // 
             // buttonSegment_61_2
@@ -1945,9 +1945,9 @@
             this.buttonSegment_61_2.Location = new System.Drawing.Point(593, 412);
             this.buttonSegment_61_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_61_2.Name = "buttonSegment_61_2";
-            this.buttonSegment_61_2.Segmentnummer = 0;
+            this.buttonSegment_61_2.Segmentnummer = 2;
             this.buttonSegment_61_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_61_2.Spoornummer = 0;
+            this.buttonSegment_61_2.Spoornummer = 61;
             this.buttonSegment_61_2.TabIndex = 17;
             // 
             // buttonSegment_61_3
@@ -1957,9 +1957,9 @@
             this.buttonSegment_61_3.Location = new System.Drawing.Point(593, 440);
             this.buttonSegment_61_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_61_3.Name = "buttonSegment_61_3";
-            this.buttonSegment_61_3.Segmentnummer = 0;
+            this.buttonSegment_61_3.Segmentnummer = 3;
             this.buttonSegment_61_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_61_3.Spoornummer = 0;
+            this.buttonSegment_61_3.Spoornummer = 61;
             this.buttonSegment_61_3.TabIndex = 16;
             // 
             // buttonSegment_62_1
@@ -1969,9 +1969,9 @@
             this.buttonSegment_62_1.Location = new System.Drawing.Point(542, 384);
             this.buttonSegment_62_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_62_1.Name = "buttonSegment_62_1";
-            this.buttonSegment_62_1.Segmentnummer = 0;
+            this.buttonSegment_62_1.Segmentnummer = 1;
             this.buttonSegment_62_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_62_1.Spoornummer = 0;
+            this.buttonSegment_62_1.Spoornummer = 62;
             this.buttonSegment_62_1.TabIndex = 18;
             // 
             // buttonSegment_62_2
@@ -1981,9 +1981,9 @@
             this.buttonSegment_62_2.Location = new System.Drawing.Point(542, 412);
             this.buttonSegment_62_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_62_2.Name = "buttonSegment_62_2";
-            this.buttonSegment_62_2.Segmentnummer = 0;
+            this.buttonSegment_62_2.Segmentnummer = 2;
             this.buttonSegment_62_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_62_2.Spoornummer = 0;
+            this.buttonSegment_62_2.Spoornummer = 62;
             this.buttonSegment_62_2.TabIndex = 17;
             // 
             // buttonSegment_62_3
@@ -1993,9 +1993,9 @@
             this.buttonSegment_62_3.Location = new System.Drawing.Point(542, 440);
             this.buttonSegment_62_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_62_3.Name = "buttonSegment_62_3";
-            this.buttonSegment_62_3.Segmentnummer = 0;
+            this.buttonSegment_62_3.Segmentnummer = 3;
             this.buttonSegment_62_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_62_3.Spoornummer = 0;
+            this.buttonSegment_62_3.Spoornummer = 62;
             this.buttonSegment_62_3.TabIndex = 16;
             // 
             // buttonSegment_63_1
@@ -2005,9 +2005,9 @@
             this.buttonSegment_63_1.Location = new System.Drawing.Point(491, 384);
             this.buttonSegment_63_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_63_1.Name = "buttonSegment_63_1";
-            this.buttonSegment_63_1.Segmentnummer = 0;
+            this.buttonSegment_63_1.Segmentnummer = 1;
             this.buttonSegment_63_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_63_1.Spoornummer = 0;
+            this.buttonSegment_63_1.Spoornummer = 63;
             this.buttonSegment_63_1.TabIndex = 18;
             // 
             // buttonSegment_63_2
@@ -2017,9 +2017,9 @@
             this.buttonSegment_63_2.Location = new System.Drawing.Point(491, 412);
             this.buttonSegment_63_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_63_2.Name = "buttonSegment_63_2";
-            this.buttonSegment_63_2.Segmentnummer = 0;
+            this.buttonSegment_63_2.Segmentnummer = 2;
             this.buttonSegment_63_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_63_2.Spoornummer = 0;
+            this.buttonSegment_63_2.Spoornummer = 63;
             this.buttonSegment_63_2.TabIndex = 17;
             // 
             // buttonSegment_63_3
@@ -2029,9 +2029,9 @@
             this.buttonSegment_63_3.Location = new System.Drawing.Point(491, 440);
             this.buttonSegment_63_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_63_3.Name = "buttonSegment_63_3";
-            this.buttonSegment_63_3.Segmentnummer = 0;
+            this.buttonSegment_63_3.Segmentnummer = 3;
             this.buttonSegment_63_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_63_3.Spoornummer = 0;
+            this.buttonSegment_63_3.Spoornummer = 63;
             this.buttonSegment_63_3.TabIndex = 16;
             // 
             // buttonSegment_63_4
@@ -2041,9 +2041,9 @@
             this.buttonSegment_63_4.Location = new System.Drawing.Point(491, 468);
             this.buttonSegment_63_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_63_4.Name = "buttonSegment_63_4";
-            this.buttonSegment_63_4.Segmentnummer = 0;
+            this.buttonSegment_63_4.Segmentnummer = 4;
             this.buttonSegment_63_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_63_4.Spoornummer = 0;
+            this.buttonSegment_63_4.Spoornummer = 63;
             this.buttonSegment_63_4.TabIndex = 15;
             // 
             // buttonSegment_64_1
@@ -2053,9 +2053,9 @@
             this.buttonSegment_64_1.Location = new System.Drawing.Point(440, 384);
             this.buttonSegment_64_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_64_1.Name = "buttonSegment_64_1";
-            this.buttonSegment_64_1.Segmentnummer = 0;
+            this.buttonSegment_64_1.Segmentnummer = 1;
             this.buttonSegment_64_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_64_1.Spoornummer = 0;
+            this.buttonSegment_64_1.Spoornummer = 64;
             this.buttonSegment_64_1.TabIndex = 18;
             // 
             // buttonSegment_64_2
@@ -2065,9 +2065,9 @@
             this.buttonSegment_64_2.Location = new System.Drawing.Point(440, 412);
             this.buttonSegment_64_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_64_2.Name = "buttonSegment_64_2";
-            this.buttonSegment_64_2.Segmentnummer = 0;
+            this.buttonSegment_64_2.Segmentnummer = 2;
             this.buttonSegment_64_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_64_2.Spoornummer = 0;
+            this.buttonSegment_64_2.Spoornummer = 64;
             this.buttonSegment_64_2.TabIndex = 17;
             // 
             // buttonSegment_64_3
@@ -2077,9 +2077,9 @@
             this.buttonSegment_64_3.Location = new System.Drawing.Point(440, 440);
             this.buttonSegment_64_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_64_3.Name = "buttonSegment_64_3";
-            this.buttonSegment_64_3.Segmentnummer = 0;
+            this.buttonSegment_64_3.Segmentnummer = 3;
             this.buttonSegment_64_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_64_3.Spoornummer = 0;
+            this.buttonSegment_64_3.Spoornummer = 64;
             this.buttonSegment_64_3.TabIndex = 16;
             // 
             // buttonSegment_64_4
@@ -2089,9 +2089,9 @@
             this.buttonSegment_64_4.Location = new System.Drawing.Point(440, 468);
             this.buttonSegment_64_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_64_4.Name = "buttonSegment_64_4";
-            this.buttonSegment_64_4.Segmentnummer = 0;
+            this.buttonSegment_64_4.Segmentnummer = 4;
             this.buttonSegment_64_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_64_4.Spoornummer = 0;
+            this.buttonSegment_64_4.Spoornummer = 64;
             this.buttonSegment_64_4.TabIndex = 15;
             // 
             // buttonSegment_64_5
@@ -2101,9 +2101,9 @@
             this.buttonSegment_64_5.Location = new System.Drawing.Point(440, 496);
             this.buttonSegment_64_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_64_5.Name = "buttonSegment_64_5";
-            this.buttonSegment_64_5.Segmentnummer = 0;
+            this.buttonSegment_64_5.Segmentnummer = 5;
             this.buttonSegment_64_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_64_5.Spoornummer = 0;
+            this.buttonSegment_64_5.Spoornummer = 64;
             this.buttonSegment_64_5.TabIndex = 65;
             // 
             // buttonSegment_74_1
@@ -2113,9 +2113,9 @@
             this.buttonSegment_74_1.Location = new System.Drawing.Point(668, 384);
             this.buttonSegment_74_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_74_1.Name = "buttonSegment_74_1";
-            this.buttonSegment_74_1.Segmentnummer = 0;
+            this.buttonSegment_74_1.Segmentnummer = 1;
             this.buttonSegment_74_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_74_1.Spoornummer = 0;
+            this.buttonSegment_74_1.Spoornummer = 74;
             this.buttonSegment_74_1.TabIndex = 24;
             // 
             // buttonSegment_74_2
@@ -2125,9 +2125,9 @@
             this.buttonSegment_74_2.Location = new System.Drawing.Point(668, 412);
             this.buttonSegment_74_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_74_2.Name = "buttonSegment_74_2";
-            this.buttonSegment_74_2.Segmentnummer = 0;
+            this.buttonSegment_74_2.Segmentnummer = 2;
             this.buttonSegment_74_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_74_2.Spoornummer = 0;
+            this.buttonSegment_74_2.Spoornummer = 74;
             this.buttonSegment_74_2.TabIndex = 23;
             // 
             // buttonSegment_74_3
@@ -2137,9 +2137,9 @@
             this.buttonSegment_74_3.Location = new System.Drawing.Point(668, 440);
             this.buttonSegment_74_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_74_3.Name = "buttonSegment_74_3";
-            this.buttonSegment_74_3.Segmentnummer = 0;
+            this.buttonSegment_74_3.Segmentnummer = 3;
             this.buttonSegment_74_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_74_3.Spoornummer = 0;
+            this.buttonSegment_74_3.Spoornummer = 74;
             this.buttonSegment_74_3.TabIndex = 22;
             // 
             // buttonSegment_74_4
@@ -2149,9 +2149,9 @@
             this.buttonSegment_74_4.Location = new System.Drawing.Point(668, 468);
             this.buttonSegment_74_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_74_4.Name = "buttonSegment_74_4";
-            this.buttonSegment_74_4.Segmentnummer = 0;
+            this.buttonSegment_74_4.Segmentnummer = 4;
             this.buttonSegment_74_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_74_4.Spoornummer = 0;
+            this.buttonSegment_74_4.Spoornummer = 74;
             this.buttonSegment_74_4.TabIndex = 21;
             // 
             // buttonSegment_74_5
@@ -2161,9 +2161,9 @@
             this.buttonSegment_74_5.Location = new System.Drawing.Point(668, 496);
             this.buttonSegment_74_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_74_5.Name = "buttonSegment_74_5";
-            this.buttonSegment_74_5.Segmentnummer = 0;
+            this.buttonSegment_74_5.Segmentnummer = 5;
             this.buttonSegment_74_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_74_5.Spoornummer = 0;
+            this.buttonSegment_74_5.Spoornummer = 74;
             this.buttonSegment_74_5.TabIndex = 21;
             // 
             // buttonSegment_75_1
@@ -2173,9 +2173,9 @@
             this.buttonSegment_75_1.Location = new System.Drawing.Point(719, 384);
             this.buttonSegment_75_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_75_1.Name = "buttonSegment_75_1";
-            this.buttonSegment_75_1.Segmentnummer = 0;
+            this.buttonSegment_75_1.Segmentnummer = 1;
             this.buttonSegment_75_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_75_1.Spoornummer = 0;
+            this.buttonSegment_75_1.Spoornummer = 75;
             this.buttonSegment_75_1.TabIndex = 30;
             // 
             // buttonSegment_75_2
@@ -2185,9 +2185,9 @@
             this.buttonSegment_75_2.Location = new System.Drawing.Point(719, 412);
             this.buttonSegment_75_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_75_2.Name = "buttonSegment_75_2";
-            this.buttonSegment_75_2.Segmentnummer = 0;
+            this.buttonSegment_75_2.Segmentnummer = 2;
             this.buttonSegment_75_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_75_2.Spoornummer = 0;
+            this.buttonSegment_75_2.Spoornummer = 75;
             this.buttonSegment_75_2.TabIndex = 29;
             // 
             // buttonSegment_75_3
@@ -2197,9 +2197,9 @@
             this.buttonSegment_75_3.Location = new System.Drawing.Point(719, 440);
             this.buttonSegment_75_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_75_3.Name = "buttonSegment_75_3";
-            this.buttonSegment_75_3.Segmentnummer = 0;
+            this.buttonSegment_75_3.Segmentnummer = 3;
             this.buttonSegment_75_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_75_3.Spoornummer = 0;
+            this.buttonSegment_75_3.Spoornummer = 75;
             this.buttonSegment_75_3.TabIndex = 28;
             // 
             // buttonSegment_75_4
@@ -2209,9 +2209,9 @@
             this.buttonSegment_75_4.Location = new System.Drawing.Point(719, 468);
             this.buttonSegment_75_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_75_4.Name = "buttonSegment_75_4";
-            this.buttonSegment_75_4.Segmentnummer = 0;
+            this.buttonSegment_75_4.Segmentnummer = 4;
             this.buttonSegment_75_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_75_4.Spoornummer = 0;
+            this.buttonSegment_75_4.Spoornummer = 75;
             this.buttonSegment_75_4.TabIndex = 27;
             // 
             // buttonSegment_75_5
@@ -2221,9 +2221,9 @@
             this.buttonSegment_75_5.Location = new System.Drawing.Point(719, 496);
             this.buttonSegment_75_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_75_5.Name = "buttonSegment_75_5";
-            this.buttonSegment_75_5.Segmentnummer = 0;
+            this.buttonSegment_75_5.Segmentnummer = 5;
             this.buttonSegment_75_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_75_5.Spoornummer = 0;
+            this.buttonSegment_75_5.Spoornummer = 75;
             this.buttonSegment_75_5.TabIndex = 27;
             // 
             // buttonSegment_76_1
@@ -2233,9 +2233,9 @@
             this.buttonSegment_76_1.Location = new System.Drawing.Point(770, 384);
             this.buttonSegment_76_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_76_1.Name = "buttonSegment_76_1";
-            this.buttonSegment_76_1.Segmentnummer = 0;
+            this.buttonSegment_76_1.Segmentnummer = 1;
             this.buttonSegment_76_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_76_1.Spoornummer = 0;
+            this.buttonSegment_76_1.Spoornummer = 76;
             this.buttonSegment_76_1.TabIndex = 36;
             // 
             // buttonSegment_76_2
@@ -2245,9 +2245,9 @@
             this.buttonSegment_76_2.Location = new System.Drawing.Point(770, 412);
             this.buttonSegment_76_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_76_2.Name = "buttonSegment_76_2";
-            this.buttonSegment_76_2.Segmentnummer = 0;
+            this.buttonSegment_76_2.Segmentnummer = 2;
             this.buttonSegment_76_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_76_2.Spoornummer = 0;
+            this.buttonSegment_76_2.Spoornummer = 76;
             this.buttonSegment_76_2.TabIndex = 35;
             // 
             // buttonSegment_76_3
@@ -2257,9 +2257,9 @@
             this.buttonSegment_76_3.Location = new System.Drawing.Point(770, 440);
             this.buttonSegment_76_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_76_3.Name = "buttonSegment_76_3";
-            this.buttonSegment_76_3.Segmentnummer = 0;
+            this.buttonSegment_76_3.Segmentnummer = 3;
             this.buttonSegment_76_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_76_3.Spoornummer = 0;
+            this.buttonSegment_76_3.Spoornummer = 76;
             this.buttonSegment_76_3.TabIndex = 34;
             // 
             // buttonSegment_76_4
@@ -2269,9 +2269,9 @@
             this.buttonSegment_76_4.Location = new System.Drawing.Point(770, 468);
             this.buttonSegment_76_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_76_4.Name = "buttonSegment_76_4";
-            this.buttonSegment_76_4.Segmentnummer = 0;
+            this.buttonSegment_76_4.Segmentnummer = 4;
             this.buttonSegment_76_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_76_4.Spoornummer = 0;
+            this.buttonSegment_76_4.Spoornummer = 76;
             this.buttonSegment_76_4.TabIndex = 33;
             // 
             // buttonSegment_76_5
@@ -2281,9 +2281,9 @@
             this.buttonSegment_76_5.Location = new System.Drawing.Point(770, 496);
             this.buttonSegment_76_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_76_5.Name = "buttonSegment_76_5";
-            this.buttonSegment_76_5.Segmentnummer = 0;
+            this.buttonSegment_76_5.Segmentnummer = 5;
             this.buttonSegment_76_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_76_5.Spoornummer = 0;
+            this.buttonSegment_76_5.Spoornummer = 76;
             this.buttonSegment_76_5.TabIndex = 33;
             // 
             // buttonSegment_77_1
@@ -2293,9 +2293,9 @@
             this.buttonSegment_77_1.Location = new System.Drawing.Point(821, 384);
             this.buttonSegment_77_1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_77_1.Name = "buttonSegment_77_1";
-            this.buttonSegment_77_1.Segmentnummer = 0;
+            this.buttonSegment_77_1.Segmentnummer = 1;
             this.buttonSegment_77_1.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_77_1.Spoornummer = 0;
+            this.buttonSegment_77_1.Spoornummer = 77;
             this.buttonSegment_77_1.TabIndex = 42;
             // 
             // buttonSegment_77_2
@@ -2305,9 +2305,9 @@
             this.buttonSegment_77_2.Location = new System.Drawing.Point(821, 412);
             this.buttonSegment_77_2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_77_2.Name = "buttonSegment_77_2";
-            this.buttonSegment_77_2.Segmentnummer = 0;
+            this.buttonSegment_77_2.Segmentnummer = 2;
             this.buttonSegment_77_2.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_77_2.Spoornummer = 0;
+            this.buttonSegment_77_2.Spoornummer = 77;
             this.buttonSegment_77_2.TabIndex = 41;
             // 
             // buttonSegment_77_3
@@ -2317,9 +2317,9 @@
             this.buttonSegment_77_3.Location = new System.Drawing.Point(821, 440);
             this.buttonSegment_77_3.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_77_3.Name = "buttonSegment_77_3";
-            this.buttonSegment_77_3.Segmentnummer = 0;
+            this.buttonSegment_77_3.Segmentnummer = 3;
             this.buttonSegment_77_3.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_77_3.Spoornummer = 0;
+            this.buttonSegment_77_3.Spoornummer = 77;
             this.buttonSegment_77_3.TabIndex = 40;
             // 
             // buttonSegment_77_4
@@ -2329,9 +2329,9 @@
             this.buttonSegment_77_4.Location = new System.Drawing.Point(821, 468);
             this.buttonSegment_77_4.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_77_4.Name = "buttonSegment_77_4";
-            this.buttonSegment_77_4.Segmentnummer = 0;
+            this.buttonSegment_77_4.Segmentnummer = 4;
             this.buttonSegment_77_4.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_77_4.Spoornummer = 0;
+            this.buttonSegment_77_4.Spoornummer = 77;
             this.buttonSegment_77_4.TabIndex = 39;
             // 
             // buttonSegment_77_5
@@ -2341,9 +2341,9 @@
             this.buttonSegment_77_5.Location = new System.Drawing.Point(821, 496);
             this.buttonSegment_77_5.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSegment_77_5.Name = "buttonSegment_77_5";
-            this.buttonSegment_77_5.Segmentnummer = 0;
+            this.buttonSegment_77_5.Segmentnummer = 5;
             this.buttonSegment_77_5.Size = new System.Drawing.Size(43, 20);
-            this.buttonSegment_77_5.Spoornummer = 0;
+            this.buttonSegment_77_5.Spoornummer = 77;
             this.buttonSegment_77_5.TabIndex = 39;
             // 
             // buttonSpoor_12
@@ -2354,7 +2354,7 @@
             this.buttonSpoor_12.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_12.Name = "buttonSpoor_12";
             this.buttonSpoor_12.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_12.Spoornummer = 0;
+            this.buttonSpoor_12.Spoornummer = 12;
             this.buttonSpoor_12.TabIndex = 81;
             // 
             // buttonSpoor_13
@@ -2365,7 +2365,7 @@
             this.buttonSpoor_13.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_13.Name = "buttonSpoor_13";
             this.buttonSpoor_13.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_13.Spoornummer = 0;
+            this.buttonSpoor_13.Spoornummer = 13;
             this.buttonSpoor_13.TabIndex = 82;
             // 
             // buttonSpoor_14
@@ -2376,7 +2376,7 @@
             this.buttonSpoor_14.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_14.Name = "buttonSpoor_14";
             this.buttonSpoor_14.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_14.Spoornummer = 0;
+            this.buttonSpoor_14.Spoornummer = 14;
             this.buttonSpoor_14.TabIndex = 83;
             // 
             // buttonSpoor_15
@@ -2387,7 +2387,7 @@
             this.buttonSpoor_15.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_15.Name = "buttonSpoor_15";
             this.buttonSpoor_15.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_15.Spoornummer = 0;
+            this.buttonSpoor_15.Spoornummer = 15;
             this.buttonSpoor_15.TabIndex = 84;
             // 
             // buttonSpoor_16
@@ -2398,7 +2398,7 @@
             this.buttonSpoor_16.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_16.Name = "buttonSpoor_16";
             this.buttonSpoor_16.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_16.Spoornummer = 0;
+            this.buttonSpoor_16.Spoornummer = 16;
             this.buttonSpoor_16.TabIndex = 85;
             // 
             // buttonSpoor_17
@@ -2409,7 +2409,7 @@
             this.buttonSpoor_17.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_17.Name = "buttonSpoor_17";
             this.buttonSpoor_17.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_17.Spoornummer = 0;
+            this.buttonSpoor_17.Spoornummer = 17;
             this.buttonSpoor_17.TabIndex = 86;
             // 
             // buttonSpoor_18
@@ -2420,7 +2420,7 @@
             this.buttonSpoor_18.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_18.Name = "buttonSpoor_18";
             this.buttonSpoor_18.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_18.Spoornummer = 0;
+            this.buttonSpoor_18.Spoornummer = 18;
             this.buttonSpoor_18.TabIndex = 87;
             // 
             // buttonSpoor_19
@@ -2431,7 +2431,7 @@
             this.buttonSpoor_19.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_19.Name = "buttonSpoor_19";
             this.buttonSpoor_19.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_19.Spoornummer = 0;
+            this.buttonSpoor_19.Spoornummer = 19;
             this.buttonSpoor_19.TabIndex = 88;
             // 
             // buttonSpoor_20
@@ -2442,7 +2442,7 @@
             this.buttonSpoor_20.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_20.Name = "buttonSpoor_20";
             this.buttonSpoor_20.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_20.Spoornummer = 0;
+            this.buttonSpoor_20.Spoornummer = 20;
             this.buttonSpoor_20.TabIndex = 89;
             // 
             // buttonSpoor_21
@@ -2453,7 +2453,7 @@
             this.buttonSpoor_21.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_21.Name = "buttonSpoor_21";
             this.buttonSpoor_21.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_21.Spoornummer = 0;
+            this.buttonSpoor_21.Spoornummer = 21;
             this.buttonSpoor_21.TabIndex = 90;
             // 
             // buttonSpoor_30
@@ -2464,7 +2464,7 @@
             this.buttonSpoor_30.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_30.Name = "buttonSpoor_30";
             this.buttonSpoor_30.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_30.Spoornummer = 0;
+            this.buttonSpoor_30.Spoornummer = 30;
             this.buttonSpoor_30.TabIndex = 0;
             // 
             // buttonSpoor_31
@@ -2475,7 +2475,7 @@
             this.buttonSpoor_31.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_31.Name = "buttonSpoor_31";
             this.buttonSpoor_31.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_31.Spoornummer = 0;
+            this.buttonSpoor_31.Spoornummer = 31;
             this.buttonSpoor_31.TabIndex = 0;
             // 
             // buttonSpoor_32
@@ -2486,7 +2486,7 @@
             this.buttonSpoor_32.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_32.Name = "buttonSpoor_32";
             this.buttonSpoor_32.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_32.Spoornummer = 0;
+            this.buttonSpoor_32.Spoornummer = 32;
             this.buttonSpoor_32.TabIndex = 0;
             // 
             // buttonSpoor_33
@@ -2497,7 +2497,7 @@
             this.buttonSpoor_33.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_33.Name = "buttonSpoor_33";
             this.buttonSpoor_33.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_33.Spoornummer = 0;
+            this.buttonSpoor_33.Spoornummer = 33;
             this.buttonSpoor_33.TabIndex = 0;
             // 
             // buttonSpoor_34
@@ -2508,7 +2508,7 @@
             this.buttonSpoor_34.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_34.Name = "buttonSpoor_34";
             this.buttonSpoor_34.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_34.Spoornummer = 0;
+            this.buttonSpoor_34.Spoornummer = 34;
             this.buttonSpoor_34.TabIndex = 0;
             // 
             // buttonSpoor_35
@@ -2519,7 +2519,7 @@
             this.buttonSpoor_35.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_35.Name = "buttonSpoor_35";
             this.buttonSpoor_35.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_35.Spoornummer = 0;
+            this.buttonSpoor_35.Spoornummer = 35;
             this.buttonSpoor_35.TabIndex = 0;
             // 
             // buttonSpoor_36
@@ -2530,7 +2530,7 @@
             this.buttonSpoor_36.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_36.Name = "buttonSpoor_36";
             this.buttonSpoor_36.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_36.Spoornummer = 0;
+            this.buttonSpoor_36.Spoornummer = 36;
             this.buttonSpoor_36.TabIndex = 0;
             // 
             // buttonSpoor_37
@@ -2541,7 +2541,7 @@
             this.buttonSpoor_37.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_37.Name = "buttonSpoor_37";
             this.buttonSpoor_37.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_37.Spoornummer = 0;
+            this.buttonSpoor_37.Spoornummer = 37;
             this.buttonSpoor_37.TabIndex = 0;
             // 
             // buttonSpoor_38
@@ -2563,7 +2563,7 @@
             this.buttonSpoor_40.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_40.Name = "buttonSpoor_40";
             this.buttonSpoor_40.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_40.Spoornummer = 0;
+            this.buttonSpoor_40.Spoornummer = 40;
             this.buttonSpoor_40.TabIndex = 20;
             // 
             // buttonSpoor_41
@@ -2574,7 +2574,7 @@
             this.buttonSpoor_41.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_41.Name = "buttonSpoor_41";
             this.buttonSpoor_41.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_41.Spoornummer = 0;
+            this.buttonSpoor_41.Spoornummer = 41;
             this.buttonSpoor_41.TabIndex = 20;
             // 
             // buttonSpoor_42
@@ -2585,7 +2585,7 @@
             this.buttonSpoor_42.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_42.Name = "buttonSpoor_42";
             this.buttonSpoor_42.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_42.Spoornummer = 0;
+            this.buttonSpoor_42.Spoornummer = 42;
             this.buttonSpoor_42.TabIndex = 20;
             // 
             // buttonSpoor_43
@@ -2596,7 +2596,7 @@
             this.buttonSpoor_43.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_43.Name = "buttonSpoor_43";
             this.buttonSpoor_43.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_43.Spoornummer = 0;
+            this.buttonSpoor_43.Spoornummer = 43;
             this.buttonSpoor_43.TabIndex = 20;
             // 
             // buttonSpoor_44
@@ -2607,7 +2607,7 @@
             this.buttonSpoor_44.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_44.Name = "buttonSpoor_44";
             this.buttonSpoor_44.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_44.Spoornummer = 0;
+            this.buttonSpoor_44.Spoornummer = 44;
             this.buttonSpoor_44.TabIndex = 20;
             // 
             // buttonSpoor_45
@@ -2618,7 +2618,7 @@
             this.buttonSpoor_45.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_45.Name = "buttonSpoor_45";
             this.buttonSpoor_45.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_45.Spoornummer = 0;
+            this.buttonSpoor_45.Spoornummer = 45;
             this.buttonSpoor_45.TabIndex = 26;
             // 
             // buttonSpoor_51
@@ -2629,7 +2629,7 @@
             this.buttonSpoor_51.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_51.Name = "buttonSpoor_51";
             this.buttonSpoor_51.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_51.Spoornummer = 0;
+            this.buttonSpoor_51.Spoornummer = 51;
             this.buttonSpoor_51.TabIndex = 20;
             // 
             // buttonSpoor_52
@@ -2640,7 +2640,7 @@
             this.buttonSpoor_52.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_52.Name = "buttonSpoor_52";
             this.buttonSpoor_52.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_52.Spoornummer = 0;
+            this.buttonSpoor_52.Spoornummer = 52;
             this.buttonSpoor_52.TabIndex = 20;
             // 
             // buttonSpoor_53
@@ -2651,7 +2651,7 @@
             this.buttonSpoor_53.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_53.Name = "buttonSpoor_53";
             this.buttonSpoor_53.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_53.Spoornummer = 0;
+            this.buttonSpoor_53.Spoornummer = 53;
             this.buttonSpoor_53.TabIndex = 20;
             // 
             // buttonSpoor_54
@@ -2662,7 +2662,7 @@
             this.buttonSpoor_54.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_54.Name = "buttonSpoor_54";
             this.buttonSpoor_54.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_54.Spoornummer = 0;
+            this.buttonSpoor_54.Spoornummer = 54;
             this.buttonSpoor_54.TabIndex = 20;
             // 
             // buttonSpoor_55
@@ -2673,7 +2673,7 @@
             this.buttonSpoor_55.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_55.Name = "buttonSpoor_55";
             this.buttonSpoor_55.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_55.Spoornummer = 0;
+            this.buttonSpoor_55.Spoornummer = 55;
             this.buttonSpoor_55.TabIndex = 20;
             // 
             // buttonSpoor_56
@@ -2684,7 +2684,7 @@
             this.buttonSpoor_56.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_56.Name = "buttonSpoor_56";
             this.buttonSpoor_56.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_56.Spoornummer = 0;
+            this.buttonSpoor_56.Spoornummer = 56;
             this.buttonSpoor_56.TabIndex = 20;
             // 
             // buttonSpoor_57
@@ -2695,7 +2695,7 @@
             this.buttonSpoor_57.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_57.Name = "buttonSpoor_57";
             this.buttonSpoor_57.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_57.Spoornummer = 0;
+            this.buttonSpoor_57.Spoornummer = 57;
             this.buttonSpoor_57.TabIndex = 20;
             // 
             // buttonSpoor_58
@@ -2706,7 +2706,7 @@
             this.buttonSpoor_58.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_58.Name = "buttonSpoor_58";
             this.buttonSpoor_58.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_58.Spoornummer = 0;
+            this.buttonSpoor_58.Spoornummer = 58;
             this.buttonSpoor_58.TabIndex = 68;
             // 
             // buttonSpoor_61
@@ -2717,7 +2717,7 @@
             this.buttonSpoor_61.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_61.Name = "buttonSpoor_61";
             this.buttonSpoor_61.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_61.Spoornummer = 0;
+            this.buttonSpoor_61.Spoornummer = 61;
             this.buttonSpoor_61.TabIndex = 20;
             // 
             // buttonSpoor_62
@@ -2728,7 +2728,7 @@
             this.buttonSpoor_62.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_62.Name = "buttonSpoor_62";
             this.buttonSpoor_62.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_62.Spoornummer = 0;
+            this.buttonSpoor_62.Spoornummer = 62;
             this.buttonSpoor_62.TabIndex = 20;
             // 
             // buttonSpoor_63
@@ -2739,7 +2739,7 @@
             this.buttonSpoor_63.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_63.Name = "buttonSpoor_63";
             this.buttonSpoor_63.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_63.Spoornummer = 0;
+            this.buttonSpoor_63.Spoornummer = 63;
             this.buttonSpoor_63.TabIndex = 20;
             // 
             // buttonSpoor_64
@@ -2750,7 +2750,7 @@
             this.buttonSpoor_64.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_64.Name = "buttonSpoor_64";
             this.buttonSpoor_64.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_64.Spoornummer = 0;
+            this.buttonSpoor_64.Spoornummer = 64;
             this.buttonSpoor_64.TabIndex = 20;
             // 
             // buttonSpoor_74
@@ -2761,7 +2761,7 @@
             this.buttonSpoor_74.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_74.Name = "buttonSpoor_74";
             this.buttonSpoor_74.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_74.Spoornummer = 0;
+            this.buttonSpoor_74.Spoornummer = 74;
             this.buttonSpoor_74.TabIndex = 26;
             // 
             // buttonSpoor_75
@@ -2772,7 +2772,7 @@
             this.buttonSpoor_75.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_75.Name = "buttonSpoor_75";
             this.buttonSpoor_75.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_75.Spoornummer = 0;
+            this.buttonSpoor_75.Spoornummer = 75;
             this.buttonSpoor_75.TabIndex = 32;
             // 
             // buttonSpoor_76
@@ -2783,7 +2783,7 @@
             this.buttonSpoor_76.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_76.Name = "buttonSpoor_76";
             this.buttonSpoor_76.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_76.Spoornummer = 0;
+            this.buttonSpoor_76.Spoornummer = 76;
             this.buttonSpoor_76.TabIndex = 38;
             // 
             // buttonSpoor_77
@@ -2794,7 +2794,7 @@
             this.buttonSpoor_77.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSpoor_77.Name = "buttonSpoor_77";
             this.buttonSpoor_77.Size = new System.Drawing.Size(43, 30);
-            this.buttonSpoor_77.Spoornummer = 0;
+            this.buttonSpoor_77.Spoornummer = 77;
             this.buttonSpoor_77.TabIndex = 44;
             // 
             // TB_lijn10_1
@@ -3211,7 +3211,7 @@
             // 
             this.TB_tramnummer.Location = new System.Drawing.Point(1082, 149);
             this.TB_tramnummer.Name = "TB_tramnummer";
-            this.TB_tramnummer.Size = new System.Drawing.Size(92, 22);
+            this.TB_tramnummer.Size = new System.Drawing.Size(92, 26);
             this.TB_tramnummer.TabIndex = 93;
             // 
             // buttonLogout
@@ -3232,7 +3232,7 @@
             this.pictureBox2.Location = new System.Drawing.Point(0, 0);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(1350, 700);
+            this.pictureBox2.Size = new System.Drawing.Size(1348, 692);
             this.pictureBox2.TabIndex = 10;
             this.pictureBox2.TabStop = false;
             // 
@@ -3252,9 +3252,9 @@
             // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1350, 700);
+            this.ClientSize = new System.Drawing.Size(1348, 692);
             this.Controls.Add(this.GB_Reservering);
             this.Controls.Add(this.buttonPlaceTram);
             this.Controls.Add(this.TB_tramnummer);

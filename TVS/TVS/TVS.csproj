@@ -57,13 +57,16 @@
     <Compile Include="Classes\Model\Spoor.cs" />
     <Compile Include="Classes\Model\Tram.cs" />
     <Compile Include="Classes\Status.cs" />
-    <Compile Include="Classes\TextBox\TextBoxLijn.cs">
+    <Compile Include="Classes\TextBox\ButtonAdvanced.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\TextBox\TextBoxSegment.cs">
+    <Compile Include="Classes\TextBox\ButtonLijn.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\TextBox\TextBoxSpoor.cs">
+    <Compile Include="Classes\TextBox\ButtonSegment.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\TextBox\ButtonSpoor.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="FormLogin.cs">

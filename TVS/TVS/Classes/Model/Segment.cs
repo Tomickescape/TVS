@@ -9,10 +9,10 @@ namespace TVS
     {
 
         private int _spoorId;
-        private Spoor _spoor;
 
-        private Segment(int id, bool geblokkeerd, int nummer, string special)
+        private Segment(int id, bool geblokkeerd, int nummer, string special, int spoorId)
         {
+            _spoorId = spoorId;
             Id = id;
             Geblokkeerd = geblokkeerd;
             Nummer = nummer;
@@ -28,11 +28,7 @@ namespace TVS
         {
             get
             {
-                if (_spoor == null)
-                {
-                    _spoor = Spoor.GetById(_spoorId);
-                }
-                return _spoor;
+                return Spoor.GetById(_spoorId);
             }
         }
 
@@ -68,17 +64,15 @@ namespace TVS
 
         public string Special { get; private set; }
 
-        public void ChangeStatus(bool geblokkeerd)
+        public void ChangeGeblokkeerd(bool geblokkeerd)
         {
             Database db = new Database();
             try
             {
-                db.CreateCommand("UPDATE segment SET spoorstatus = :status WHERE id = :id");
+                db.CreateCommand("UPDATE segment SET status = :status WHERE id = :id");
                 db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
                 db.AddParameter("id", Id);
-                db.Open();
                 db.Execute();
-                db.Close();
 
                 Geblokkeerd = geblokkeerd;
             }
@@ -90,6 +84,11 @@ namespace TVS
             {
                 db.Close();
             }
+        }
+
+        public void ToggleGeblokkeerd()
+        {
+            ChangeGeblokkeerd(!Geblokkeerd);
         }
 
         public void ChangeTram(Tram tram)
@@ -108,7 +107,7 @@ namespace TVS
                     db.Close();
                     db.CreateCommand("UPDATE tram SET segment_id = :segmentid WHERE id = :tramid");
                     db.AddParameter("segmentid", Id);
-                    db.AddParameter("id", tram.Id);
+                    db.AddParameter("tramid", tram.Id);
                     db.Open();
                     db.Execute();
                 }
@@ -136,9 +135,9 @@ namespace TVS
                 db.AddParameter("id", id);
                 if (db.Read())
                 {
-                    bool geblokkeerd = db.GetValueByColumn<string>("spoorstatus") == "geblokkeerd";
+                    bool geblokkeerd = db.GetValueByColumn<string>("status") == "geblokkeerd";
 
-                    segment = new Segment(db.GetValueByColumn<int>("id"), geblokkeerd, db.GetValueByColumn<int>("nummer"), db.GetValueByColumn<string>("special"));
+                    segment = new Segment(db.GetValueByColumn<int>("id"), geblokkeerd, db.GetValueByColumn<int>("nummer"), db.GetValueByColumn<string>("special"), db.GetValueByColumn<int>("spoor_id"));
                 }
 
             }
@@ -172,7 +171,7 @@ namespace TVS
                 {
                     bool geblokkeerd = db.GetValueByColumn<string>("status") == "geblokkeerd";
 
-                    segment = new Segment(db.GetValueByColumn<int>("id"), geblokkeerd, db.GetValueByColumn<int>("nummer"), db.GetValueByColumn<string>("special"));
+                    segment = new Segment(db.GetValueByColumn<int>("id"), geblokkeerd, db.GetValueByColumn<int>("nummer"), db.GetValueByColumn<string>("special"), db.GetValueByColumn<int>("spoor_id"));
                 }
 
             }

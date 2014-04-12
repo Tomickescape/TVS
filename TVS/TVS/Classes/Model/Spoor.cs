@@ -10,7 +10,6 @@ namespace TVS
 {
     public class Spoor
     {
-        private List<Segment> _segments = null;
 
         public Spoor(int id, bool geblokkeerd, int nummer)
         {
@@ -25,11 +24,7 @@ namespace TVS
         {
             get
             {
-                if (_segments == null)
-                {
-                    _segments = Segment.GetBySpoornummer(Nummer);
-                }
-                return _segments;
+                return Segment.GetBySpoornummer(Nummer);
             }
         }
 
@@ -37,7 +32,12 @@ namespace TVS
         public bool Geblokkeerd { get; set; }
         public int Nummer { get; set; }
 
-        public void ChangeStatus(bool geblokkeerd)
+        public void ToggleGeblokkeerd()
+        {
+            ChangeGeblokkeerd(!Geblokkeerd);
+        }
+
+        public void ChangeGeblokkeerd(bool geblokkeerd)
         {
             Database db = new Database();
             try
@@ -51,8 +51,10 @@ namespace TVS
 
                 foreach (Segment segment in Segments)
                 {
-                    segment.ChangeStatus(geblokkeerd);
+                    segment.ChangeGeblokkeerd(geblokkeerd);
                 }
+
+                Geblokkeerd = geblokkeerd;
             }
             catch (Exception ex)
             {

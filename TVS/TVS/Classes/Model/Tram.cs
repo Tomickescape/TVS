@@ -75,7 +75,7 @@ namespace TVS
 
             try
             {
-                db.CreateCommand("SELECT * FROM tram WHERE tramid = :id");
+                db.CreateCommand("SELECT * FROM tram WHERE id = :id");
                 db.AddParameter("id", parId);
                 db.Open();
                 db.Execute();
@@ -109,15 +109,15 @@ namespace TVS
                     {
                         status = Status.Gereed;
                     }
-                    int id = (dr.GetValueByColumn<int>("tramid"));
-                    string type = (dr.GetValueByColumn<string>("tramtype"));
-                    int nummer = (dr.GetValueByColumn<int>("tramnummer"));
+                    int id = (dr.GetValueByColumn<int>("id"));
+                    string type = (dr.GetValueByColumn<string>("type"));
+                    int nummer = (dr.GetValueByColumn<int>("nummer"));
                     string rfidcode = (dr.GetValueByColumn<string>("rfidcode"));
-                    int lijnnr = (dr.GetValueByColumn<int>("lijnId"));
-                    int remiseid = (dr.GetValueByColumn<int>("remiseid"));
-                    int segmentId = (dr.GetValueByColumn<int>("segmentid"));
-                    bool aanwezig = (dr.GetValueByColumn<int>("statusaanwezig")) > 0;
-                    tram = new Tram(id, type, nummer, status, rfidcode, lijnnr, remiseid, segmentId, aanwezig);
+                    int lijnId = (dr.GetValueByColumn<int>("lijn_id"));
+                    int remiseId = (dr.GetValueByColumn<int>("remise_id"));
+                    int segmentId = (dr.GetValueByColumn<int>("segment_id"));
+                    bool aanwezig = (dr.GetValueByColumn<int>("aanwezig")) > 0;
+                    tram = new Tram(id, type, nummer, status, rfidcode, lijnId, remiseId, segmentId, aanwezig);
 
                 }
 
@@ -142,13 +142,13 @@ namespace TVS
 
             try
             {
-                db.CreateCommand("SELECT tramid FROM tram");
+                db.CreateCommand("SELECT id FROM tram");
                 db.Open();
                 db.Execute();
                 OracleDataReader dr = db.DataReader;
                 while (dr.Read())
                 {
-                    trams.Add(GetById(dr.GetValueByColumn<int>("tramid")));
+                    trams.Add(GetById(dr.GetValueByColumn<int>("id")));
                 }
             }
             catch (Exception ex)

@@ -36,7 +36,7 @@ namespace TVS
                 db.AddParameter("gebruikersnaam", gebruikersnaam);
                 db.AddParameter("wachtwoord", wachtwoord);
 
-                if (db.DataReader.Read())
+                if (db.Read())
                 {
                     formMain = new FormMain();
                     formMain.Show();
@@ -51,7 +51,8 @@ namespace TVS
             }
             catch(Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                System.Diagnostics.Debug.WriteLine(ex.Source + "\r\n" + ex.Message);
+                //MessageBox.Show(ex.Message);
             }
             finally
             {
@@ -63,7 +64,7 @@ namespace TVS
 
         private void btInloggen_Click(object sender, EventArgs e)
         {
-            //Inloggen();
+            Inloggen();
         }
 
         void FormMainFormClosing(object sender, FormClosingEventArgs e)

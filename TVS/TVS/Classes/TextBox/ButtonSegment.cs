@@ -15,18 +15,14 @@ namespace TVS
         {
         }
 
-        public int Segmentnummer { get; set; }
         public int Spoornummer { get; set; }
+        public int Segmentnummer { get; set; }
 
         public Segment Segment
         {
             get
             {
-                return Segment.GetBySegmentnummerAndSpoornummer(Segmentnummer, Spoornummer);
-            }
-            set
-            {
-                // Doet niks omdat designer dom doet.
+                return Segment.GetBySpoornummerAndSegmentnummer(Spoornummer, Segmentnummer);
             }
         }
 

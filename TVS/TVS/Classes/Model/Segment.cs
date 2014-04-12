@@ -152,7 +152,7 @@ namespace TVS
             return segment;
         }
 
-        public static Segment GetBySegmentnummerAndSpoornummer(int segmentnummer, int spoornummer)
+        public static Segment GetBySpoornummerAndSegmentnummer(int spoornummer, int segmentnummer)
         {
             Segment segment = null;
             
@@ -198,7 +198,7 @@ namespace TVS
                 db.AddParameter("nummer", nummer);
                 while(db.Read())
                 {
-                    segments.Add(GetBySegmentnummerAndSpoornummer(db.GetValueByColumn<int>("nummer"), nummer));
+                    segments.Add(GetBySpoornummerAndSegmentnummer(db.GetValueByColumn<int>("nummer"), nummer));
                 }
             }
             catch (Exception ex)

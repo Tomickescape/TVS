@@ -23,12 +23,7 @@ namespace TVS
         public FormMain()
         {
             InitializeComponent();
-
-            buttonSegment_12_1.Segmentnummer = 1;
-            buttonSegment_12_1.Spoornummer = 12;
-            buttonSegment_13_1.Segmentnummer = 13;
-            buttonSegment_13_1.Spoornummer = 1;
-
+            
             trams = Tram.GetAll();
 
             segments.Add(buttonSegment_13_1);

@@ -81,12 +81,6 @@
     <Compile Include="FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMainReplace.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormMainReplace.Designer.cs">
-      <DependentUpon>FormMainReplace.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormTramsOverzicht.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,9 +94,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FormMainReplace.resx">
-      <DependentUpon>FormMainReplace.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTramsOverzicht.resx">
       <DependentUpon>FormTramsOverzicht.cs</DependentUpon>

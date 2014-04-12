@@ -41,7 +41,7 @@ namespace TVS
                     formMain = new FormMain();
                     formMain.Show();
                     formMain.FormClosing += FormMainFormClosing;
-                    formMain.btUitloggen.Click += btUitloggen_Click;
+                    formMain.buttonLogout.Click += btUitloggen_Click;
                     this.Hide();
                 }
                 else

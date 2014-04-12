@@ -11,18 +11,17 @@ namespace TVS
 {
     public class ButtonSpoor : ButtonAdvanced
     {
-        private int _spoornummer;
 
-        public ButtonSpoor(int spoornummer)
+        public ButtonSpoor()
         {
-            _spoornummer = spoornummer;
         }
+        public int Spoornummer { get; set; }
 
         public Spoor Spoor
         {
             get
             {
-                return Spoor.GetBySpoornummer(_spoornummer);
+                return Spoor.GetBySpoornummer(Spoornummer);
             }
         }
 

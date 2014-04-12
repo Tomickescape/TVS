@@ -11,20 +11,18 @@ namespace TVS
     public class ButtonSegment : ButtonAdvanced
     {
 
-        private int _segmentnummer;
-        private int _spoornummer;
-
-        public ButtonSegment(int segmentnummer, int spoornummer)
+        public ButtonSegment()
         {
-            _segmentnummer = segmentnummer;
-            _spoornummer = spoornummer;
         }
+
+        public int Segmentnummer { get; set; }
+        public int Spoornummer { get; set; }
 
         public Segment Segment
         {
             get
             {
-                return Segment.GetBySegmentnummerAndSpoornummer(_segmentnummer, _spoornummer);
+                return Segment.GetBySegmentnummerAndSpoornummer(Segmentnummer, Spoornummer);
             }
             set
             {

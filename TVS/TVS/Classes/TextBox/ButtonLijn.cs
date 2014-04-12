@@ -10,20 +10,17 @@ namespace TVS
 {
     public class ButtonLijn : ButtonAdvanced
     {
-
-        private int _nummer;
-        private Lijn _lijn;
-
-        public ButtonLijn(int nummer)
+        public ButtonLijn()
         {
-            _nummer = nummer;
         }
+
+        public int Nummer { get; set; }
 
         public Lijn Lijn
         {
             get
             {
-                return Lijn.GetByNummer(_nummer);
+                return Lijn.GetByNummer(Nummer);
             }
         }
 

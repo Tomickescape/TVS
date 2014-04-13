@@ -43,6 +43,7 @@ namespace TVS
                     formMain.FormClosing += FormMainFormClosing;
                     formMain.buttonLogout.Click += btUitloggen_Click;
                     this.Hide();
+                    tbWachtwoord.Text = "";
                 }
                 else
                 {
@@ -52,7 +53,6 @@ namespace TVS
             catch(Exception ex)
             {
                 System.Diagnostics.Debug.WriteLine(ex.Source + "\r\n" + ex.Message);
-                //MessageBox.Show(ex.Message);
             }
             finally
             {

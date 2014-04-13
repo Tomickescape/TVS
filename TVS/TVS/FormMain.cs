@@ -14,192 +14,105 @@ namespace TVS
 
     public partial class FormMain : Form
     {
-        private List<ButtonSegment> segments = new List<ButtonSegment>();
-        private List<Spoor> sporen;
-        private List<Tram> trams;
-
+        private Timer _simulationTimer = new Timer();
         private ButtonAdvanced _buttonAdvancedSelected = null;
 
         public FormMain()
         {
             InitializeComponent();
-            
-            trams = Tram.GetAll();
-
-            segments.Add(buttonSegment_13_1);
-            segments.Add(buttonSegment_14_1);
-            segments.Add(buttonSegment_15_1);
-            segments.Add(buttonSegment_16_1);
-            segments.Add(buttonSegment_17_1);
-            segments.Add(buttonSegment_18_1);
-            segments.Add(buttonSegment_19_1);
-            segments.Add(buttonSegment_20_1);
-            segments.Add(buttonSegment_21_1);
-            segments.Add(buttonSegment_40_1);
-            segments.Add(buttonSegment_40_2);
-            segments.Add(buttonSegment_40_5);
-            segments.Add(buttonSegment_40_3);
-            segments.Add(buttonSegment_40_6);
-            segments.Add(buttonSegment_40_4);
-            segments.Add(buttonSegment_40_7);
-            segments.Add(buttonSegment_57_5);
-            segments.Add(buttonSegment_57_6);
-            segments.Add(buttonSegment_57_7);
-            segments.Add(buttonSegment_57_8);
-            segments.Add(buttonSegment_56_5);
-            segments.Add(buttonSegment_56_6);
-            segments.Add(buttonSegment_56_7);
-            segments.Add(buttonSegment_56_8);
-            segments.Add(buttonSegment_55_5);
-            segments.Add(buttonSegment_55_6);
-            segments.Add(buttonSegment_55_7);
-            segments.Add(buttonSegment_55_8);
-            segments.Add(buttonSegment_54_5);
-            segments.Add(buttonSegment_54_6);
-            segments.Add(buttonSegment_54_7);
-            segments.Add(buttonSegment_53_5);
-            segments.Add(buttonSegment_53_6);
-            segments.Add(buttonSegment_53_7);
-            segments.Add(buttonSegment_52_5);
-            segments.Add(buttonSegment_52_6);
-            segments.Add(buttonSegment_52_7);
-            segments.Add(buttonSegment_51_5);
-            segments.Add(buttonSegment_51_6);
-            segments.Add(buttonSegment_64_5);
-            segments.Add(buttonSegment_74_5);
-            segments.Add(buttonSegment_75_5);
-            segments.Add(buttonSegment_76_5);
-            segments.Add(buttonSegment_77_5);
-            segments.Add(buttonSegment_45_5);
-            segments.Add(buttonSegment_45_6);
-            segments.Add(buttonSegment_45_7);
-            segments.Add(buttonSegment_45_8);
-            segments.Add(buttonSegment_45_9);
-            segments.Add(buttonSegment_45_10);
-            segments.Add(buttonSegment_12_1);
-            segments.Add(buttonSegment_58_4);
-            segments.Add(buttonSegment_58_3);
-            segments.Add(buttonSegment_58_2);
-            segments.Add(buttonSegment_58_1);
-            segments.Add(buttonSegment_77_4);
-            segments.Add(buttonSegment_77_3);
-            segments.Add(buttonSegment_77_2);
-            segments.Add(buttonSegment_77_1);
-            segments.Add(buttonSegment_76_4);
-            segments.Add(buttonSegment_76_3);
-            segments.Add(buttonSegment_76_2);
-            segments.Add(buttonSegment_76_1);
-            segments.Add(buttonSegment_45_1);
-            segments.Add(buttonSegment_45_2);
-            segments.Add(buttonSegment_45_3);
-            segments.Add(buttonSegment_45_4);
-            segments.Add(buttonSegment_75_4);
-            segments.Add(buttonSegment_75_3);
-            segments.Add(buttonSegment_75_2);
-            segments.Add(buttonSegment_75_1);
-            segments.Add(buttonSegment_41_1);
-            segments.Add(buttonSegment_42_1);
-            segments.Add(buttonSegment_43_1);
-            segments.Add(buttonSegment_44_1);
-            segments.Add(buttonSegment_41_2);
-            segments.Add(buttonSegment_42_2);
-            segments.Add(buttonSegment_43_2);
-            segments.Add(buttonSegment_44_2);
-            segments.Add(buttonSegment_41_3);
-            segments.Add(buttonSegment_42_3);
-            segments.Add(buttonSegment_43_3);
-            segments.Add(buttonSegment_44_3);
-            segments.Add(buttonSegment_41_4);
-            segments.Add(buttonSegment_42_4);
-            segments.Add(buttonSegment_43_4);
-            segments.Add(buttonSegment_44_4);
-            segments.Add(buttonSegment_74_4);
-            segments.Add(buttonSegment_74_3);
-            segments.Add(buttonSegment_74_2);
-            segments.Add(buttonSegment_74_1);
-            segments.Add(buttonSegment_61_1);
-            segments.Add(buttonSegment_61_2);
-            segments.Add(buttonSegment_61_3);
-            segments.Add(buttonSegment_62_1);
-            segments.Add(buttonSegment_62_2);
-            segments.Add(buttonSegment_62_3);
-            segments.Add(buttonSegment_63_1);
-            segments.Add(buttonSegment_63_2);
-            segments.Add(buttonSegment_63_3);
-            segments.Add(buttonSegment_63_4);
-            segments.Add(buttonSegment_64_1);
-            segments.Add(buttonSegment_64_2);
-            segments.Add(buttonSegment_64_3);
-            segments.Add(buttonSegment_64_4);
-            segments.Add(buttonSegment_51_1);
-            segments.Add(buttonSegment_51_2);
-            segments.Add(buttonSegment_51_3);
-            segments.Add(buttonSegment_51_4);
-            segments.Add(buttonSegment_52_1);
-            segments.Add(buttonSegment_52_2);
-            segments.Add(buttonSegment_52_3);
-            segments.Add(buttonSegment_52_4);
-            segments.Add(buttonSegment_53_1);
-            segments.Add(buttonSegment_53_2);
-            segments.Add(buttonSegment_53_3);
-            segments.Add(buttonSegment_53_4);
-            segments.Add(buttonSegment_54_1);
-            segments.Add(buttonSegment_54_2);
-            segments.Add(buttonSegment_54_3);
-            segments.Add(buttonSegment_54_4);
-            segments.Add(buttonSegment_55_1);
-            segments.Add(buttonSegment_55_2);
-            segments.Add(buttonSegment_55_3);
-            segments.Add(buttonSegment_55_4);
-            segments.Add(buttonSegment_56_1);
-            segments.Add(buttonSegment_56_2);
-            segments.Add(buttonSegment_56_3);
-            segments.Add(buttonSegment_56_4);
-            segments.Add(buttonSegment_38_4);
-            segments.Add(buttonSegment_37_4);
-            segments.Add(buttonSegment_36_4);
-            segments.Add(buttonSegment_35_4);
-            segments.Add(buttonSegment_34_4);
-            segments.Add(buttonSegment_33_4);
-            segments.Add(buttonSegment_32_4);
-            segments.Add(buttonSegment_57_4);
-            segments.Add(buttonSegment_57_3);
-            segments.Add(buttonSegment_57_2);
-            segments.Add(buttonSegment_57_1);
-            segments.Add(buttonSegment_30_1);
-            segments.Add(buttonSegment_30_2);
-            segments.Add(buttonSegment_30_3);
-            segments.Add(buttonSegment_31_1);
-            segments.Add(buttonSegment_31_2);
-            segments.Add(buttonSegment_31_3);
-            segments.Add(buttonSegment_32_1);
-            segments.Add(buttonSegment_32_2);
-            segments.Add(buttonSegment_32_3);
-            segments.Add(buttonSegment_33_1);
-            segments.Add(buttonSegment_33_2);
-            segments.Add(buttonSegment_33_3);
-            segments.Add(buttonSegment_34_1);
-            segments.Add(buttonSegment_34_2);
-            segments.Add(buttonSegment_34_3);
-            segments.Add(buttonSegment_35_1);
-            segments.Add(buttonSegment_35_2);
-            segments.Add(buttonSegment_35_3);
-            segments.Add(buttonSegment_36_1);
-            segments.Add(buttonSegment_36_2);
-            segments.Add(buttonSegment_36_3);
-            segments.Add(buttonSegment_37_1);
-            segments.Add(buttonSegment_37_2);
-            segments.Add(buttonSegment_37_3);
-            segments.Add(buttonSegment_38_1);
-            segments.Add(buttonSegment_38_2);
-            segments.Add(buttonSegment_38_3);
 
             foreach (ButtonAdvanced tb in GetAllButtonAdvanced())
             {
                 tb.Click += buttonAdvanced_Click;
             }
 
+            _simulationTimer.Tick += _simulationTimer_Tick;
+            _simulationTimer.Interval = 100;
+
             RefreshInterface();
+        }
+
+        private Segment EerstePlekOpSpoorVoorTram(Spoor spoor, Tram tram)
+        {
+            Segment eersteSegment = null;
+
+            foreach (Segment segment in spoor.Segments)
+            {
+                if (!segment.Geblokkeerd && segment.Special != "permanent" && segment.CheckUitrij())
+                {
+                    if (segment.Tram == null || (segment.Tram.Id == tram.Id))
+                    {
+                        if (eersteSegment == null || segment.Nummer < eersteSegment.Nummer)
+                        {
+                            eersteSegment = segment;
+                        }
+                    }
+                }
+            }
+            return eersteSegment;
+        }
+
+        void _simulationTimer_Tick(object sender, EventArgs e)
+        {
+            Random rand = new Random();
+            try
+            {
+                Segment selectedSegment = null;
+                List<Tram> trams = Tram.GetAll().FindAll(x => x.Segment == null);
+                if (trams.Count > 0)
+                {
+
+                    Tram tram = null;
+
+                    foreach (ListViewItem item in listViewReservations.Items)
+                    {
+                        foreach (Tram subTram in trams)
+                        {
+                            if (item.SubItems[0].Text == subTram.Nummer.ToString())
+                            {
+                                tram = subTram;
+                                selectedSegment = EerstePlekOpSpoorVoorTram(Spoor.GetBySpoornummer(int.Parse(item.SubItems[1].Text)), tram);
+                                item.Remove();
+                            }
+                        }
+                    }
+
+                    if (tram == null)
+                    {
+                        tram = trams[rand.Next(trams.Count - 1)];
+                    }
+                    List<ButtonSpoor> buttons = GetAllButtonAdvanced().FindAll(x => x is ButtonSpoor).Cast<ButtonSpoor>().ToList();
+
+
+                    while (selectedSegment == null)
+                    {
+                        if (buttons.Count == 0)
+                        {
+                            throw new Exception("Geen plekken beschikbaar.");
+                        }
+
+                        int buttonIndex = rand.Next(buttons.Count - 1);
+
+                        selectedSegment = EerstePlekOpSpoorVoorTram(buttons[buttonIndex].Spoor, tram);
+
+                        buttons.RemoveAt(buttonIndex);
+                    }
+
+                    selectedSegment.ChangeTram(tram);
+                    RefreshInterface();
+                }
+                else
+                {
+                    throw new Exception("Geen trams beschikbaar.");
+                }
+            }
+            catch (Exception ex)
+            {
+                _simulationTimer.Stop();
+                RefreshInterface();
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private List<ButtonAdvanced> GetAllButtonAdvanced()
@@ -218,6 +131,15 @@ namespace TVS
 
         private void RefreshInterface()
         {
+            if (!_simulationTimer.Enabled)
+            {
+                buttonRunSimulation.Text = "Start simulatie";
+            }
+            else
+            {
+                buttonRunSimulation.Text = "Stop simulatie";
+            }
+
             foreach (ButtonAdvanced buttonAdvanced in GetAllButtonAdvanced())
             {
                 buttonAdvanced.Reload();
@@ -275,64 +197,154 @@ namespace TVS
 
         private void buttonPlaceTram_Click(object sender, EventArgs e)
         {
-            List<ButtonSpoor> sporen = GetAllButtonAdvanced().FindAll(x => x is ButtonSpoor).Cast<ButtonSpoor>().ToList();
-
-            while (sporen.Count > 0)
+            try
             {
-                Random rand = new Random();
-                int index = rand.Next(sporen.Count);
-
-                ButtonSpoor buttonSpoor = sporen[index];
-
-                Segment randomSegment = null;
-                if (!buttonSpoor.Spoor.Geblokkeerd)
+                if (_buttonAdvancedSelected == null || (!(_buttonAdvancedSelected is ButtonSegment) && !(_buttonAdvancedSelected is ButtonSpoor)))
                 {
-                    foreach (Segment segment in buttonSpoor.Spoor.Segments)
-                    {
-                        if (!segment.Geblokkeerd)
-                        {
-                            if (segment.Tram == null)
-                            {
-                                if (randomSegment != null)
-                                {
-                                    if (segment.Nummer < randomSegment.Nummer)
-                                    {
-                                        randomSegment = segment;
-                                    }
-                                }
-                                else
-                                {
-                                    randomSegment = segment;
-                                }
-                            }
-                        }
-                    }
+                    throw new Exception("Geen spoor of segment geselecteerd.");
                 }
 
-                sporen.RemoveAt(index);
+                int tramNummer;
+                int.TryParse(textBoxTramNummer.Text.Trim(), out tramNummer);
 
-                if (randomSegment != null)
+                Tram tram = Tram.GetByNummer(tramNummer);
+                if (tram == null) 
                 {
-                    try
+                    throw new Exception("Tram niet gevonden.");
+                }
+
+                if(_buttonAdvancedSelected is ButtonSegment) 
+                {                    
+                    ButtonSegment buttonSegment = (ButtonSegment)_buttonAdvancedSelected;
+                    if (buttonSegment.Segment.Geblokkeerd) 
                     {
-                        randomSegment.ChangeTram(trams[rand.Next(trams.Count)]);
+                        throw new Exception("Segment is geblokkeerd.");
                     }
-                    catch (Exception ex)
+                    if (buttonSegment.Segment.Special == "permanent")
                     {
-                        MessageBox.Show(ex.Message);
+                        throw new Exception("Segment is permanent dicht.");
                     }
-                    RefreshInterface();
-                    return;
+
+                    if (!buttonSegment.Segment.CheckUitrij())
+                    {
+                        throw new Exception("Segment is uitrij en is momenteel geblokkeerd.");
+                    }
+
+                    buttonSegment.Segment.ChangeTram(tram);
+                }
+                else 
+                {
+                    ButtonSpoor buttonSpoor = (ButtonSpoor)_buttonAdvancedSelected;
+                    if (buttonSpoor.Spoor.Geblokkeerd)
+                    {
+                        throw new Exception("Spoor is geblokkeerd.");
+                    }
+
+                    Segment firstSegmentOnSpoorAvailable = EerstePlekOpSpoorVoorTram(buttonSpoor.Spoor, tram);
+
+                    if (firstSegmentOnSpoorAvailable == null) 
+                    {
+                        throw new Exception("Geen segmenten beschikbaar.");
+                    }
+
+                    firstSegmentOnSpoorAvailable.ChangeTram(tram);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
 
-            MessageBox.Show("Geen locatie voor tram gevonden.");
+            RefreshInterface();
         }
 
-        private void BTN_statusOpvragenTrams_Click(object sender, EventArgs e)
+        private void buttonTramOverview_Click(object sender, EventArgs e)
         {
-            FormTramsOverzicht TramOverzicht = new FormTramsOverzicht();
-            TramOverzicht.Show();
+            FormTramsOverzicht overview = new FormTramsOverzicht();
+            overview.Show();
+            overview.FormClosed += overview_FormClosed;
+        }
+
+        void overview_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            RefreshInterface();
+        }
+
+        private void buttonRunSimulation_Click(object sender, EventArgs e)
+        {
+            _simulationTimer.Enabled = !_simulationTimer.Enabled;
+        }
+
+        private void buttonReservateTram_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int tramnummer;
+                int.TryParse(textBoxTramNummer.Text.Trim(), out tramnummer);
+
+                Tram tram = Tram.GetByNummer(tramnummer);
+                if (tram == null)
+                {
+                    throw new Exception("Tram niet gevonden.");
+                }
+
+                if (tram.Segment != null)
+                {
+                    throw new Exception("Tram is al geplaatst.");
+                }
+
+                if (!(_buttonAdvancedSelected is ButtonSpoor))
+                {
+                    throw new Exception("Geen spoor geselecteerd.");
+                }
+
+                Spoor spoor = ((ButtonSpoor) _buttonAdvancedSelected).Spoor;
+
+                foreach (ListViewItem subItem in listViewReservations.Items)
+                {
+                    if (subItem.SubItems[0].Text == tram.Nummer.ToString())
+                    {
+                        throw new Exception("Tram is al gereserveerd.");
+                    }
+                }
+
+                ListViewItem item = new ListViewItem(tram.Nummer.ToString());
+                item.SubItems.Add(spoor.Nummer.ToString());
+                listViewReservations.Items.Add(item);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listViewReservations_ItemChecked(object sender, ItemCheckedEventArgs e)
+        {
+            if (e.Item.Checked)
+            {
+                e.Item.Remove();
+            }
+        }
+
+        private void buttonClean_Click(object sender, EventArgs e)
+        {
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("UPDATE tram SET segment_id = 0");
+                db.Execute();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                db.Close();
+            }
+            RefreshInterface();
         }
     }
 }

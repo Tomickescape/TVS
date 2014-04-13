@@ -7,6 +7,6 @@ using System.Threading.Tasks;
 namespace TVS
 {
   
-       public enum Status { Aanwezig, Afwezig, Defect, Gereed, Onderhoud, Verontreinigd }
+       public enum Status { Gereed, Defect, Onderhoud }
     
 }

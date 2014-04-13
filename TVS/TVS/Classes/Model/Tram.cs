@@ -18,20 +18,20 @@ namespace TVS
         private int _lijnId;
         private Lijn _lijn;
 
+        private int _remiseId;
 
 
-        private Tram(int id, string type, int nummer, Status status, string rFIDCode, int lijnId, int remiseID, int segmentId, bool aanwezig)
+        private Tram(int id, string type, int nummer, Status status, string rFIDCode, int lijnId, int remiseId, int segmentId)
         {
             _lijnId = lijnId;
             _segmentId = segmentId;
+            _remiseId = remiseId;
 
             Id = id;
             Type = type;
             Nummer = nummer;
             Status = status;
             RFIDCode = rFIDCode;
-            RemiseID = remiseID;
-            Aanwezig = aanwezig;
         }
 
         public int Id { get; private set; }
@@ -51,8 +51,36 @@ namespace TVS
                 return _lijn;
             }
         }
-        public int RemiseID { get; private set; }
-        public bool Aanwezig { get; private set; }
+        public Remise Remise
+        {
+            get
+            {
+                return Remise.GetById(_remiseId);
+            }
+        }
+
+        public void ChangeStatus(Status status)
+        {
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("UPDATE tram SET status = :status WHERE id = :id");
+                db.AddParameter("status", status.ToString());
+                db.AddParameter("id", Id);
+                db.Execute();
+
+                Status = status;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
 
         public Segment Segment
         {
@@ -85,21 +113,10 @@ namespace TVS
                 {
                     Status status;
                     string StringStatus = dr.GetValueByColumn<string>("status");
-                    if (StringStatus == "Aanwezig")
-                    {
-                        status = Status.Aanwezig;
-                    }
-                    else if (StringStatus == "Afwezig")
-                    {
-                        status = Status.Afwezig;
-                    }
-                    else if (StringStatus == "Defect")
+
+                    if (StringStatus == "Defect")
                     {
                         status = Status.Defect;
-                    }
-                    else if (StringStatus == "Verontreinigd")
-                    {
-                        status = Status.Verontreinigd;
                     }
                     else if (StringStatus == "Onderhoud")
                     {
@@ -116,9 +133,37 @@ namespace TVS
                     int lijnId = (dr.GetValueByColumn<int>("lijn_id"));
                     int remiseId = (dr.GetValueByColumn<int>("remise_id"));
                     int segmentId = (dr.GetValueByColumn<int>("segment_id"));
-                    bool aanwezig = (dr.GetValueByColumn<int>("aanwezig")) > 0;
-                    tram = new Tram(id, type, nummer, status, rfidcode, lijnId, remiseId, segmentId, aanwezig);
+                    tram = new Tram(id, type, nummer, status, rfidcode, lijnId, remiseId, segmentId);
 
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return tram;
+        }
+
+        public static Tram GetByNummer(int parNummer)
+        {
+            Tram tram = null;
+
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("SELECT id FROM tram WHERE nummer = :nummer");
+                db.AddParameter("nummer", parNummer);
+
+                while (db.Read())
+                {
+                    tram = Tram.GetById(db.GetValueByColumn<int>("id"));
                 }
 
             }

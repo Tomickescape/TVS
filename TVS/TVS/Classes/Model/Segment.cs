@@ -22,7 +22,6 @@ namespace TVS
         public int Id { get; private set; }
         public int Nummer { get; set; }
         public bool Geblokkeerd { get; set; }
-        public int Spoornummer { get; private set; }
 
         public Spoor Spoor
         {
@@ -64,6 +63,42 @@ namespace TVS
 
         public string Special { get; private set; }
 
+        public bool CheckUitrij()
+        {
+            if (Special == "uitrijding")
+            {
+                int nummer = Spoor.Nummer;
+                List<Spoor> sporen = new List<Spoor>();
+
+                Spoor spoor1 = TVS.Spoor.GetBySpoornummer(nummer - 1);
+                Spoor spoor2 = TVS.Spoor.GetBySpoornummer(nummer + 1);
+
+                if (spoor1 != null)
+                {
+                    sporen.Add(spoor1);
+                }
+                if (spoor2 != null)
+                {
+                    sporen.Add(spoor2);
+                }
+
+                foreach (Spoor spoor in sporen)
+                {
+                    if (spoor != null)
+                    {
+                        if (spoor.Segments.Find(x =>
+                            x.Nummer == Nummer && x.Tram == null
+                            ) != null)
+                        {
+                            return false;
+                        }
+                    }
+                }
+            }
+
+            return true;
+        }
+
         public void ChangeGeblokkeerd(bool geblokkeerd)
         {
             Database db = new Database();
@@ -73,6 +108,11 @@ namespace TVS
                 db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
                 db.AddParameter("id", Id);
                 db.Execute();
+
+                if (Tram != null)
+                {
+                    ChangeTram(null);
+                }
 
                 Geblokkeerd = geblokkeerd;
             }
@@ -198,7 +238,7 @@ namespace TVS
                 db.AddParameter("nummer", nummer);
                 while(db.Read())
                 {
-                    segments.Add(GetBySpoornummerAndSegmentnummer(db.GetValueByColumn<int>("nummer"), nummer));
+                    segments.Add(GetBySpoornummerAndSegmentnummer(nummer, db.GetValueByColumn<int>("nummer")));
                 }
             }
             catch (Exception ex)

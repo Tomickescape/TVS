@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Classes\Database.cs" />
     <Compile Include="Classes\DataReaderExtensions.cs" />
+    <Compile Include="Classes\ListBoxItem.cs" />
     <Compile Include="Classes\Model\Lijn.cs" />
     <Compile Include="Classes\Model\Remise.cs" />
     <Compile Include="Classes\Model\RFID.cs" />
@@ -124,6 +125,7 @@
   <ItemGroup>
     <None Include="Resources\Achtergrond.jpg" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -78,11 +78,11 @@
             // 
             // btInloggen
             // 
-            this.btInloggen.Location = new System.Drawing.Point(208, 174);
+            this.btInloggen.Location = new System.Drawing.Point(213, 173);
             this.btInloggen.Name = "btInloggen";
             this.btInloggen.Size = new System.Drawing.Size(75, 23);
             this.btInloggen.TabIndex = 2;
-            this.btInloggen.Text = "Inloggen";
+            this.btInloggen.Text = "Aanmelden";
             this.btInloggen.UseVisualStyleBackColor = true;
             this.btInloggen.Click += new System.EventHandler(this.btInloggen_Click);
             // 
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 202);
+            this.ClientSize = new System.Drawing.Size(300, 201);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btInloggen);
             this.Controls.Add(this.tbWachtwoord);
@@ -121,7 +121,7 @@
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(316, 240);
             this.Name = "FormLogin";
-            this.Text = "GVB - Inloggen";
+            this.Text = "GVB - Aanmelden";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

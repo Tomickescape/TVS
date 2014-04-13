@@ -18,6 +18,10 @@ namespace TVS
         {
             InitializeComponent();
             tbGebruikersnaam.Text = Properties.Settings.Default.login_last_username;
+            if (tbGebruikersnaam.Text.Length > 0)
+            {
+                tbGebruikersnaam.TabIndex = 100;
+            }
         }
 
         private void Inloggen()

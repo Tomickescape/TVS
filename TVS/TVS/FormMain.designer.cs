@@ -75,6 +75,8 @@
             this.columnHeaderTram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderSpoor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonClean = new System.Windows.Forms.Button();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.labelOutput = new System.Windows.Forms.ToolStripStatusLabel();
             this.buttonSpoor_21 = new TVS.ButtonSpoor();
             this.buttonSpoor_20 = new TVS.ButtonSpoor();
             this.buttonSpoor_19 = new TVS.ButtonSpoor();
@@ -283,8 +285,6 @@
             this.buttonSpoor_36 = new TVS.ButtonSpoor();
             this.buttonSpoor_37 = new TVS.ButtonSpoor();
             this.buttonSpoor_38 = new TVS.ButtonSpoor();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.labelOutput = new System.Windows.Forms.ToolStripStatusLabel();
             this.GB_Reservering.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -751,7 +751,7 @@
             // 
             // buttonLogout
             // 
-            this.buttonLogout.Location = new System.Drawing.Point(1250, 615);
+            this.buttonLogout.Location = new System.Drawing.Point(1248, 642);
             this.buttonLogout.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLogout.Name = "buttonLogout";
             this.buttonLogout.Size = new System.Drawing.Size(84, 28);
@@ -807,7 +807,7 @@
             // 
             // buttonRunSimulation
             // 
-            this.buttonRunSimulation.Location = new System.Drawing.Point(1083, 615);
+            this.buttonRunSimulation.Location = new System.Drawing.Point(1085, 642);
             this.buttonRunSimulation.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRunSimulation.Name = "buttonRunSimulation";
             this.buttonRunSimulation.Size = new System.Drawing.Size(155, 28);
@@ -852,7 +852,7 @@
             // 
             // buttonClean
             // 
-            this.buttonClean.Location = new System.Drawing.Point(-3, 629);
+            this.buttonClean.Location = new System.Drawing.Point(922, 642);
             this.buttonClean.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClean.Name = "buttonClean";
             this.buttonClean.Size = new System.Drawing.Size(155, 28);
@@ -860,6 +860,27 @@
             this.buttonClean.Text = "Leegmaken";
             this.buttonClean.UseVisualStyleBackColor = true;
             this.buttonClean.Click += new System.EventHandler(this.buttonClean_Click);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.labelOutput});
+            this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
+            this.statusStrip1.Location = new System.Drawing.Point(0, 674);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
+            this.statusStrip1.Size = new System.Drawing.Size(1348, 26);
+            this.statusStrip1.TabIndex = 102;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // labelOutput
+            // 
+            this.labelOutput.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.labelOutput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelOutput.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.labelOutput.Name = "labelOutput";
+            this.labelOutput.Size = new System.Drawing.Size(64, 21);
+            this.labelOutput.Text = "Output";
             // 
             // buttonSpoor_21
             // 
@@ -3733,26 +3754,6 @@
             this.buttonSpoor_38.Spoornummer = 38;
             this.buttonSpoor_38.TabIndex = 0;
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.labelOutput});
-            this.statusStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
-            this.statusStrip1.Location = new System.Drawing.Point(0, 674);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(1348, 26);
-            this.statusStrip1.TabIndex = 102;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // labelOutput
-            // 
-            this.labelOutput.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelOutput.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
-            this.labelOutput.Name = "labelOutput";
-            this.labelOutput.Size = new System.Drawing.Size(174, 21);
-            this.labelOutput.Text = "toolStripStatusLabel1";
-            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -4017,7 +4018,7 @@
             this.MaximumSize = new System.Drawing.Size(1366, 739);
             this.MinimumSize = new System.Drawing.Size(1364, 739);
             this.Name = "FormMain";
-            this.Text = "GVB - FormMain";
+            this.Text = "GVB";
             this.GB_Reservering.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.statusStrip1.ResumeLayout(false);

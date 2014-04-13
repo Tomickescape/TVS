@@ -70,5 +70,17 @@ namespace TVS.Properties {
                 this["db_name"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string login_last_username {
+            get {
+                return ((string)(this["login_last_username"]));
+            }
+            set {
+                this["login_last_username"] = value;
+            }
+        }
     }
 }

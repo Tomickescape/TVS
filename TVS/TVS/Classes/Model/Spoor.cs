@@ -37,6 +37,26 @@ namespace TVS
             ChangeGeblokkeerd(!Geblokkeerd);
         }
 
+        public Segment FirstSegmentAvailableForTram(Tram tram)
+        {
+            Segment eersteSegment = null;
+
+            foreach (Segment segment in Segments)
+            {
+                if (!segment.Geblokkeerd && segment.Special != "permanent" && segment.CheckUitrij())
+                {
+                    if (segment.Tram == null || (segment.Tram.Id == tram.Id))
+                    {
+                        if (eersteSegment == null || segment.Nummer < eersteSegment.Nummer)
+                        {
+                            eersteSegment = segment;
+                        }
+                    }
+                }
+            }
+            return eersteSegment;
+        }
+
         public void ChangeGeblokkeerd(bool geblokkeerd)
         {
             Database db = new Database();

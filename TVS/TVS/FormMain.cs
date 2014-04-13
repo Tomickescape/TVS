@@ -30,26 +30,38 @@ namespace TVS
             _simulationTimer.Interval = 100;
 
             RefreshInterface();
+
+            AutoCompleteStringCollection strings = new AutoCompleteStringCollection();
+            foreach (Tram tram in Tram.GetAll())
+            {
+                strings.Add(tram.Nummer.ToString());
+            }
+            textBoxTramNummer.AutoCompleteCustomSource = strings;
         }
 
-        private Segment EerstePlekOpSpoorVoorTram(Spoor spoor, Tram tram)
+        private void Output(string text)
         {
-            Segment eersteSegment = null;
+            labelOutput.Text = text;
+        }
 
-            foreach (Segment segment in spoor.Segments)
+        private void Output(Exception ex)
+        {
+            Output(ex.Message);
+        }
+
+        private void PlaceTram(Segment segment, Tram tram)
+        {
+            foreach (ListViewItem item in listViewReservations.Items)
             {
-                if (!segment.Geblokkeerd && segment.Special != "permanent" && segment.CheckUitrij())
+                if (item.SubItems[0].Text == tram.Nummer.ToString())
                 {
-                    if (segment.Tram == null || (segment.Tram.Id == tram.Id))
-                    {
-                        if (eersteSegment == null || segment.Nummer < eersteSegment.Nummer)
-                        {
-                            eersteSegment = segment;
-                        }
-                    }
+                    item.Remove();
                 }
             }
-            return eersteSegment;
+
+            Output("Tram: " + tram.Nummer + " op " + segment.Spoor.Nummer + " . " + segment.Nummer);
+            segment.ChangeTram(tram);
+            RefreshInterface();
         }
 
         void _simulationTimer_Tick(object sender, EventArgs e)
@@ -71,7 +83,7 @@ namespace TVS
                             if (item.SubItems[0].Text == subTram.Nummer.ToString())
                             {
                                 tram = subTram;
-                                selectedSegment = EerstePlekOpSpoorVoorTram(Spoor.GetBySpoornummer(int.Parse(item.SubItems[1].Text)), tram);
+                                selectedSegment = Spoor.GetBySpoornummer(int.Parse(item.SubItems[1].Text)).FirstSegmentAvailableForTram(tram);
                                 item.Remove();
                             }
                         }
@@ -93,13 +105,12 @@ namespace TVS
 
                         int buttonIndex = rand.Next(buttons.Count - 1);
 
-                        selectedSegment = EerstePlekOpSpoorVoorTram(buttons[buttonIndex].Spoor, tram);
+                        selectedSegment = buttons[buttonIndex].Spoor.FirstSegmentAvailableForTram(tram);
 
                         buttons.RemoveAt(buttonIndex);
                     }
 
-                    selectedSegment.ChangeTram(tram);
-                    RefreshInterface();
+                    PlaceTram(selectedSegment, tram);
                 }
                 else
                 {
@@ -110,7 +121,7 @@ namespace TVS
             {
                 _simulationTimer.Stop();
                 RefreshInterface();
-                MessageBox.Show(ex.Message);
+                Output(ex);
             }
 
         }
@@ -190,7 +201,7 @@ namespace TVS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Output(ex);
             }
 
         }
@@ -230,7 +241,7 @@ namespace TVS
                         throw new Exception("Segment is uitrij en is momenteel geblokkeerd.");
                     }
 
-                    buttonSegment.Segment.ChangeTram(tram);
+                    PlaceTram(buttonSegment.Segment, tram);
                 }
                 else 
                 {
@@ -240,23 +251,20 @@ namespace TVS
                         throw new Exception("Spoor is geblokkeerd.");
                     }
 
-                    Segment firstSegmentOnSpoorAvailable = EerstePlekOpSpoorVoorTram(buttonSpoor.Spoor, tram);
+                    Segment firstSegmentOnSpoorAvailable = buttonSpoor.Spoor.FirstSegmentAvailableForTram(tram);
 
                     if (firstSegmentOnSpoorAvailable == null) 
                     {
                         throw new Exception("Geen segmenten beschikbaar.");
                     }
 
-                    firstSegmentOnSpoorAvailable.ChangeTram(tram);
+                    PlaceTram(firstSegmentOnSpoorAvailable, tram);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Output(ex);
             }
-            
-
-            RefreshInterface();
         }
 
         private void buttonTramOverview_Click(object sender, EventArgs e)
@@ -268,11 +276,13 @@ namespace TVS
 
         void overview_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Output("Overzicht gesloten.");
             RefreshInterface();
         }
 
         private void buttonRunSimulation_Click(object sender, EventArgs e)
         {
+            Output("Simulatie gestart.");
             _simulationTimer.Enabled = !_simulationTimer.Enabled;
         }
 
@@ -315,7 +325,7 @@ namespace TVS
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Output(ex);
             }
         }
 
@@ -335,16 +345,39 @@ namespace TVS
             {
                 db.CreateCommand("UPDATE tram SET segment_id = 0");
                 db.Execute();
+
+                Output("Alles schoongemaakt.");
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                Output(ex.Message);
             }
             finally
             {
                 db.Close();
             }
             RefreshInterface();
+        }
+
+        private void buttonRemoveTram_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (!(_buttonAdvancedSelected is ButtonSegment))
+                {
+                    throw new Exception("Geen segment geselecteerd");
+                }
+
+                ButtonSegment buttonSegment = _buttonAdvancedSelected as ButtonSegment;
+                Output("Tram verwijderd van " + buttonSegment.Segment.Spoor.Nummer + ", " + buttonSegment.Segment.Nummer);
+                buttonSegment.Segment.ChangeTram(null);
+                RefreshInterface();
+            }
+            catch (Exception ex)
+            {
+                Output(ex);
+            }
+            
         }
     }
 }

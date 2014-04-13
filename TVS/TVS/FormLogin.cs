@@ -17,6 +17,7 @@ namespace TVS
         public FormLogin()
         {
             InitializeComponent();
+            tbGebruikersnaam.Text = Properties.Settings.Default.login_last_username;
         }
 
         private void Inloggen()
@@ -38,6 +39,8 @@ namespace TVS
 
                 if (db.Read())
                 {
+                    Properties.Settings.Default.login_last_username = gebruikersnaam;
+                    Properties.Settings.Default.Save();
                     formMain = new FormMain();
                     formMain.Show();
                     formMain.FormClosing += FormMainFormClosing;

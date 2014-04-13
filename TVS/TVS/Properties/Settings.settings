@@ -14,5 +14,8 @@
     <Setting Name="db_name" Type="System.String" Scope="User">
       <Value Profile="(Default)">xe</Value>
     </Setting>
+    <Setting Name="login_last_username" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
   </Settings>
 </SettingsFile>

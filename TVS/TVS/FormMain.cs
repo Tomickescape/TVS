@@ -27,7 +27,7 @@ namespace TVS
         public FormMain()
         {
             InitializeComponent();
-           // RFIDInitialize();
+            RFIDInitialize();
 
             
             foreach (ButtonAdvanced tb in GetAllButtonAdvanced())

@@ -18,6 +18,7 @@ namespace TVS
     public partial class FormMain : Form
     {
         private FormTramsOverzicht _formTramsOverzicht = null;
+        private FormLog _formLog = null;
         private Timer _simulationTimer = new Timer();
         private ButtonAdvanced _buttonAdvancedSelected = null;
         string gescandeRFIDCode;
@@ -26,7 +27,7 @@ namespace TVS
         public FormMain()
         {
             InitializeComponent();
-            RFIDInitialize();
+           // RFIDInitialize();
 
             
             foreach (ButtonAdvanced tb in GetAllButtonAdvanced())
@@ -197,6 +198,11 @@ namespace TVS
             foreach (ButtonAdvanced buttonAdvanced in GetAllButtonAdvanced())
             {
                 buttonAdvanced.Reload();
+            }
+
+            if (_formLog != null)
+            {
+                _formLog.RefreshInterface();
             }
         }
         //
@@ -576,6 +582,12 @@ namespace TVS
             {
                 Output(ex);
             }
+        }
+
+        private void buttonOverviewInOut_Click(object sender, EventArgs e)
+        {
+            _formLog = new FormLog();
+            _formLog.Show();
         }
 
     }

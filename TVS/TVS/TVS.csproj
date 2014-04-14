@@ -56,6 +56,7 @@
     <Compile Include="Classes\DataReaderExtensions.cs" />
     <Compile Include="Classes\ListBoxItem.cs" />
     <Compile Include="Classes\Model\Lijn.cs" />
+    <Compile Include="Classes\Model\Log.cs" />
     <Compile Include="Classes\Model\Remise.cs" />
     <Compile Include="Classes\Model\RFID.cs" />
     <Compile Include="Classes\Model\Segment.cs" />
@@ -92,6 +93,12 @@
     <Compile Include="FormMain.designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLog.Designer.cs">
+      <DependentUpon>FormLog.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTramsOverzicht.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -108,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLog.resx">
+      <DependentUpon>FormLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTramsOverzicht.resx">
       <DependentUpon>FormTramsOverzicht.cs</DependentUpon>

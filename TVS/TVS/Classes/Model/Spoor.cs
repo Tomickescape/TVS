@@ -49,41 +49,7 @@ namespace TVS
 
         public int Nummer { get; set; }
 
-        public void AddTram(Tram tram)
-        {
-            Segment segment = FirstSegmentAvailableForTram(tram);
 
-            if (segment == null)
-            {
-                throw new Exception("Geen segment beschikbaar op dit spoor.");
-            }
-            AddTram(segment, tram);
-        }
-
-        public void AddTram(Segment parSegment, Tram tram)
-        {
-            if (parSegment.Geblokkeerd)
-            {
-                throw new Exception("Segment is geblokkeerd.");
-            }
-            if (parSegment.CheckUitrij(tram))
-            {
-                throw new Exception("Segment is uitrij, vul eerst de langsliggende sporen.");
-            }
-
-            foreach (Segment segment in Segments)
-            {
-                if (segment.Nummer < parSegment.Nummer && segment.Tram == null)
-                {
-                    segment.ChangeGeblokkeerd(true);
-                }
-            }
-        }
-
-        public void ToggleGeblokkeerd()
-        {
-            ChangeGeblokkeerd(!Geblokkeerd);
-        }
 
         public Segment FirstSegmentAvailableForTram(Tram tram)
         {

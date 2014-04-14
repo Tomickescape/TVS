@@ -193,19 +193,14 @@ namespace TVS
 
             try
             {
-                db.CreateCommand("UPDATE tram SET segment_id = 0 WHERE segment_id = :segmentid");
-                db.AddParameter("segmentid", Id);
-                db.Open();
-                db.Execute();
+                if (Tram != null)
+                {
+                    Tram.ChangeSegment(null);
+                }
 
                 if (tram != null)
                 {
-                    db.Close();
-                    db.CreateCommand("UPDATE tram SET segment_id = :segmentid WHERE id = :tramid");
-                    db.AddParameter("segmentid", Id);
-                    db.AddParameter("tramid", tram.Id);
-                    db.Open();
-                    db.Execute();
+                    tram.ChangeSegment(this);
                 }
             }
             catch (Exception ex)

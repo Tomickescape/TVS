@@ -286,6 +286,7 @@
             this.buttonSpoor_37 = new TVS.ButtonSpoor();
             this.buttonSpoor_38 = new TVS.ButtonSpoor();
             this.LBL_RFID = new System.Windows.Forms.Label();
+            this.buttonOverviewInOut = new System.Windows.Forms.Button();
             this.GB_Reservering.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -3764,11 +3765,22 @@
             this.LBL_RFID.TabIndex = 103;
             this.LBL_RFID.Text = "RFID";
             // 
+            // buttonOverviewInOut
+            // 
+            this.buttonOverviewInOut.Location = new System.Drawing.Point(1178, 147);
+            this.buttonOverviewInOut.Name = "buttonOverviewInOut";
+            this.buttonOverviewInOut.Size = new System.Drawing.Size(154, 28);
+            this.buttonOverviewInOut.TabIndex = 104;
+            this.buttonOverviewInOut.Text = "Overzicht log";
+            this.buttonOverviewInOut.UseVisualStyleBackColor = true;
+            this.buttonOverviewInOut.Click += new System.EventHandler(this.buttonOverviewInOut_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 700);
+            this.Controls.Add(this.buttonOverviewInOut);
             this.Controls.Add(this.LBL_RFID);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.buttonClean);
@@ -4298,6 +4310,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel labelOutput;
         private System.Windows.Forms.Label LBL_RFID;
+        private System.Windows.Forms.Button buttonOverviewInOut;
     }
 }
 

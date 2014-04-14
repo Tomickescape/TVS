@@ -149,6 +149,27 @@ namespace TVS
             return tram;
         }
 
+        public void Log(Segment segment)
+        {
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("INSERT INTO tram_log(tram_id, segment_id) VALUES(:tram, :segment)");
+                db.AddParameter("tram", Id);
+                db.AddParameter("segment", segment != null ? segment.Id : 0);
+                db.Execute();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
+
         public void ChangeSegment(Segment segment)
         {
             Database db = new Database();
@@ -160,6 +181,8 @@ namespace TVS
                 db.AddParameter("id", Id);
                 db.Open();
                 db.Execute();
+
+                Log(segment);
             }
             catch (Exception ex)
             {

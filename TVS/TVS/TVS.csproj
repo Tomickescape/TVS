@@ -38,7 +38,7 @@
     </Reference>
     <Reference Include="Phidget21.NET, Version=2.1.8.182, Culture=neutral, PublicKeyToken=c2b1f2a3594bce52, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Dropbox\Dropbox\Fontys\PTS21h -Groep A2\Phidgets\Phidget21.NET.dll</HintPath>
+      <HintPath>.\Phidget21.NET.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -74,6 +74,12 @@
     <Compile Include="Classes\Button\ButtonSpoor.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FormCreateTram.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateTram.Designer.cs">
+      <DependentUpon>FormCreateTram.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormCreateTram.resx">
+      <DependentUpon>FormCreateTram.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -128,17 +137,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Achtergrond.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="Phidget21COM">
-      <Guid>{50484945-4745-5453-0000-000000000000}</Guid>
-      <VersionMajor>2</VersionMajor>
-      <VersionMinor>1</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

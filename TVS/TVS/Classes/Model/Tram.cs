@@ -171,6 +171,54 @@ namespace TVS
             }
         }
 
+        public void Delete()
+        {
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("DELETE FROM tram WHERE id = :id");
+                db.AddParameter("id", Id);
+                db.Execute();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
+
+        public static void Insert(string type, int nummer, Status status, string rfid)
+        {
+            Database db = new Database();
+
+            try
+            {
+                if (Tram.GetByNummer(nummer) != null)
+                {
+                    throw new Exception("Tram met dit nummer bestaat al.");
+                }
+
+                db.CreateCommand("INSERT INTO tram(type, nummer, status, rfidcode) VALUES (:type, :nummer, :status, :rfid)");
+                db.AddParameter("type", type);
+                db.AddParameter("nummer", nummer);
+                db.AddParameter("status", status.ToString());
+                db.AddParameter("rfid", rfid);
+                db.Execute();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
+
         public static Tram GetByNummer(int parNummer)
         {
             Tram tram = null;

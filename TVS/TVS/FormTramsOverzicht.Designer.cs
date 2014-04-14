@@ -33,6 +33,8 @@
             this.ColumnNummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnStatus = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.ColumnSpoornummer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.buttonAddTram = new System.Windows.Forms.Button();
+            this.buttonDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTrams)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,6 +50,7 @@
             this.ColumnStatus,
             this.ColumnSpoornummer});
             this.dataGridViewTrams.Location = new System.Drawing.Point(12, 12);
+            this.dataGridViewTrams.MultiSelect = false;
             this.dataGridViewTrams.Name = "dataGridViewTrams";
             this.dataGridViewTrams.Size = new System.Drawing.Size(727, 621);
             this.dataGridViewTrams.TabIndex = 0;
@@ -78,11 +81,33 @@
             this.ColumnSpoornummer.ReadOnly = true;
             this.ColumnSpoornummer.Width = 200;
             // 
+            // buttonAddTram
+            // 
+            this.buttonAddTram.Location = new System.Drawing.Point(745, 12);
+            this.buttonAddTram.Name = "buttonAddTram";
+            this.buttonAddTram.Size = new System.Drawing.Size(196, 23);
+            this.buttonAddTram.TabIndex = 1;
+            this.buttonAddTram.Text = "Voeg tram toe";
+            this.buttonAddTram.UseVisualStyleBackColor = true;
+            this.buttonAddTram.Click += new System.EventHandler(this.buttonAddTram_Click);
+            // 
+            // buttonDelete
+            // 
+            this.buttonDelete.Location = new System.Drawing.Point(745, 41);
+            this.buttonDelete.Name = "buttonDelete";
+            this.buttonDelete.Size = new System.Drawing.Size(196, 23);
+            this.buttonDelete.TabIndex = 2;
+            this.buttonDelete.Text = "Verwijder tram";
+            this.buttonDelete.UseVisualStyleBackColor = true;
+            this.buttonDelete.Click += new System.EventHandler(this.buttonDelete_Click);
+            // 
             // FormTramsOverzicht
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(749, 645);
+            this.ClientSize = new System.Drawing.Size(953, 645);
+            this.Controls.Add(this.buttonDelete);
+            this.Controls.Add(this.buttonAddTram);
             this.Controls.Add(this.dataGridViewTrams);
             this.Name = "FormTramsOverzicht";
             this.Text = "Overzicht Trams";
@@ -98,6 +123,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNummer;
         private System.Windows.Forms.DataGridViewComboBoxColumn ColumnStatus;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnSpoornummer;
+        private System.Windows.Forms.Button buttonAddTram;
+        private System.Windows.Forms.Button buttonDelete;
 
     }
 }

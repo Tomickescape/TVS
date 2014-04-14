@@ -12,19 +12,27 @@ namespace TVS
 {
     public partial class FormTramsOverzicht : Form
     {
+        private FormCreateTram formCreateTram = null;
+
         public FormTramsOverzicht()
         {
             InitializeComponent();
 
             ColumnStatus.Items.AddRange(Enum.GetNames(typeof(Status)));           
 
+
+            dataGridViewTrams.CellValueChanged += dataGridViewTrams_CellValueChanged;
+            RefreshInterface();
+        }
+
+        private void RefreshInterface()
+        {
+            dataGridViewTrams.Rows.Clear();
+
             foreach (Tram tram in Tram.GetAll())
             {
                 AddTram(tram);
             }
-
-            dataGridViewTrams.CellValueChanged += dataGridViewTrams_CellValueChanged;
-           
         }
 
         void dataGridViewTrams_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -51,6 +59,54 @@ namespace TVS
             int index = dataGridViewTrams.Rows.Add(tram.Type, tram.Nummer, tram.Status.ToString(), segment != null ? segment.Spoor.Nummer.ToString() : "");
 
             dataGridViewTrams.Rows[index].Tag = tram;
+        }
+
+        private void buttonAddTram_Click(object sender, EventArgs e)
+        {
+            formCreateTram = new FormCreateTram();
+            formCreateTram.Show();
+
+            formCreateTram.Disposed += form_Disposed;
+        }
+
+        void form_Disposed(object sender, EventArgs e)
+        {
+            RefreshInterface();
+        }
+
+        private void buttonDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow row = null;
+
+            try
+            {
+                if (dataGridViewTrams.SelectedRows.Count > 0)
+                {
+                    row = dataGridViewTrams.SelectedRows[0];
+                }
+                else if (dataGridViewTrams.SelectedCells.Count > 0)
+                {
+                    row = dataGridViewTrams.SelectedCells[0].OwningRow;
+                }
+                else
+                {
+                    throw new Exception("Geen rij of cel geselecteerd.");
+                }
+
+                Tram tram = row.Tag as Tram;
+
+                if (tram == null)
+                {
+                    throw new Exception("Tram niet gevonden.");
+                }
+
+                tram.Delete();
+                RefreshInterface();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

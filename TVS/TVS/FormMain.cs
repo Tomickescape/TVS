@@ -17,6 +17,7 @@ namespace TVS
 
     public partial class FormMain : Form
     {
+        private FormTramsOverzicht _formTramsOverzicht = null;
         private Timer _simulationTimer = new Timer();
         private ButtonAdvanced _buttonAdvancedSelected = null;
         string gescandeRFIDCode;
@@ -356,14 +357,25 @@ namespace TVS
         //laat een lijst met trams zien in een nieuw form
         private void buttonTramOverview_Click(object sender, EventArgs e)
         {
-            FormTramsOverzicht overview = new FormTramsOverzicht();
-            overview.Show();
-            overview.FormClosed += overview_FormClosed;
+            _formTramsOverzicht = new FormTramsOverzicht();
+            _formTramsOverzicht.Show();
+            _formTramsOverzicht.FormClosed += overview_FormClosed;
         }
 
         //herlaad de interface 
         void overview_FormClosed(object sender, FormClosedEventArgs e)
         {
+            if (listViewReservations.Items.Count > 0)
+            {
+                foreach (ListViewItem item in listViewReservations.Items)
+                {
+                    if (Tram.GetByNummer(int.Parse(item.SubItems[0].Text)) == null)
+                    {
+                        item.Remove();
+                    }
+                }
+            }
+
             Output("Overzicht gesloten.");
             RefreshInterface();
         }

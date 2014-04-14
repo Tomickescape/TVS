@@ -82,5 +82,17 @@ namespace TVS.Properties {
                 this["login_last_username"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string login_last_password {
+            get {
+                return ((string)(this["login_last_password"]));
+            }
+            set {
+                this["login_last_password"] = value;
+            }
+        }
     }
 }

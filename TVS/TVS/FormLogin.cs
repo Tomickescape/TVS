@@ -18,10 +18,18 @@ namespace TVS
         {
             InitializeComponent();
             tbGebruikersnaam.Text = Properties.Settings.Default.login_last_username;
+            tbWachtwoord.Text = Properties.Settings.Default.login_last_password;
             if (tbGebruikersnaam.Text.Length > 0)
             {
                 tbGebruikersnaam.TabIndex = 100;
             }
+
+            if (tbWachtwoord.Text.Length > 0)
+            {
+                checkBoxRememberPassword.Checked = true;
+                tbWachtwoord.TabIndex = 101;
+            }
+            
         }
 
         private void Inloggen()
@@ -44,13 +52,21 @@ namespace TVS
                 if (db.Read())
                 {
                     Properties.Settings.Default.login_last_username = gebruikersnaam;
+
+                    if (!checkBoxRememberPassword.Checked)
+                    {
+                        tbWachtwoord.Text = "";
+                    }
+
+                    Properties.Settings.Default.login_last_password = tbWachtwoord.Text.Trim();
                     Properties.Settings.Default.Save();
+
+
                     formMain = new FormMain();
                     formMain.Show();
                     formMain.FormClosing += FormMainFormClosing;
                     formMain.buttonLogout.Click += btUitloggen_Click;
                     this.Hide();
-                    tbWachtwoord.Text = "";
                 }
                 else
                 {
@@ -59,7 +75,7 @@ namespace TVS
             }
             catch(Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine(ex.Source + "\r\n" + ex.Message);
+                MessageBox.Show(ex.Message);
             }
             finally
             {

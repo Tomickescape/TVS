@@ -32,6 +32,9 @@
             this.buttonBlock = new System.Windows.Forms.Button();
             this.buttonPlaceTram = new System.Windows.Forms.Button();
             this.GB_Reservering = new System.Windows.Forms.GroupBox();
+            this.listViewReservations = new System.Windows.Forms.ListView();
+            this.columnHeaderTram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderSpoor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.LBL_tramnummer = new System.Windows.Forms.Label();
             this.TB_lijn10_1 = new System.Windows.Forms.TextBox();
             this.TB_lijn10_2 = new System.Windows.Forms.TextBox();
@@ -71,9 +74,6 @@
             this.buttonTramOverview = new System.Windows.Forms.Button();
             this.buttonRunSimulation = new System.Windows.Forms.Button();
             this.buttonReservateTram = new System.Windows.Forms.Button();
-            this.listViewReservations = new System.Windows.Forms.ListView();
-            this.columnHeaderTram = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeaderSpoor = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.buttonClean = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.labelOutput = new System.Windows.Forms.ToolStripStatusLabel();
@@ -285,6 +285,7 @@
             this.buttonSpoor_36 = new TVS.ButtonSpoor();
             this.buttonSpoor_37 = new TVS.ButtonSpoor();
             this.buttonSpoor_38 = new TVS.ButtonSpoor();
+            this.LBL_RFID = new System.Windows.Forms.Label();
             this.GB_Reservering.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.statusStrip1.SuspendLayout();
@@ -321,6 +322,30 @@
             this.GB_Reservering.TabIndex = 96;
             this.GB_Reservering.TabStop = false;
             this.GB_Reservering.Text = "Reserveringen";
+            // 
+            // listViewReservations
+            // 
+            this.listViewReservations.CheckBoxes = true;
+            this.listViewReservations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeaderTram,
+            this.columnHeaderSpoor});
+            this.listViewReservations.Location = new System.Drawing.Point(6, 21);
+            this.listViewReservations.Name = "listViewReservations";
+            this.listViewReservations.Size = new System.Drawing.Size(183, 273);
+            this.listViewReservations.TabIndex = 0;
+            this.listViewReservations.UseCompatibleStateImageBehavior = false;
+            this.listViewReservations.View = System.Windows.Forms.View.Details;
+            this.listViewReservations.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listViewReservations_ItemChecked);
+            // 
+            // columnHeaderTram
+            // 
+            this.columnHeaderTram.Text = "Tram";
+            this.columnHeaderTram.Width = 91;
+            // 
+            // columnHeaderSpoor
+            // 
+            this.columnHeaderSpoor.Text = "Spoor";
+            this.columnHeaderSpoor.Width = 84;
             // 
             // LBL_tramnummer
             // 
@@ -825,30 +850,6 @@
             this.buttonReservateTram.Text = "Reserveer tram";
             this.buttonReservateTram.UseVisualStyleBackColor = true;
             this.buttonReservateTram.Click += new System.EventHandler(this.buttonReservateTram_Click);
-            // 
-            // listViewReservations
-            // 
-            this.listViewReservations.CheckBoxes = true;
-            this.listViewReservations.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderTram,
-            this.columnHeaderSpoor});
-            this.listViewReservations.Location = new System.Drawing.Point(6, 21);
-            this.listViewReservations.Name = "listViewReservations";
-            this.listViewReservations.Size = new System.Drawing.Size(183, 273);
-            this.listViewReservations.TabIndex = 0;
-            this.listViewReservations.UseCompatibleStateImageBehavior = false;
-            this.listViewReservations.View = System.Windows.Forms.View.Details;
-            this.listViewReservations.ItemChecked += new System.Windows.Forms.ItemCheckedEventHandler(this.listViewReservations_ItemChecked);
-            // 
-            // columnHeaderTram
-            // 
-            this.columnHeaderTram.Text = "Tram";
-            this.columnHeaderTram.Width = 91;
-            // 
-            // columnHeaderSpoor
-            // 
-            this.columnHeaderSpoor.Text = "Spoor";
-            this.columnHeaderSpoor.Width = 84;
             // 
             // buttonClean
             // 
@@ -3754,11 +3755,21 @@
             this.buttonSpoor_38.Spoornummer = 38;
             this.buttonSpoor_38.TabIndex = 0;
             // 
+            // LBL_RFID
+            // 
+            this.LBL_RFID.AutoSize = true;
+            this.LBL_RFID.Location = new System.Drawing.Point(0, 658);
+            this.LBL_RFID.Name = "LBL_RFID";
+            this.LBL_RFID.Size = new System.Drawing.Size(39, 16);
+            this.LBL_RFID.TabIndex = 103;
+            this.LBL_RFID.Text = "RFID";
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1348, 700);
+            this.Controls.Add(this.LBL_RFID);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.buttonClean);
             this.Controls.Add(this.buttonReservateTram);
@@ -4286,6 +4297,7 @@
         private System.Windows.Forms.Button buttonClean;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel labelOutput;
+        private System.Windows.Forms.Label LBL_RFID;
     }
 }
 

@@ -15,15 +15,13 @@ namespace TVS
         private Segment _segment;
         private bool _isSegmentLoaded = false;
 
-        private int _lijnId;
-        private Lijn _lijn;
-
         private int _remiseId;
 
+        private List<int> _lijnen = new List<int>(); 
 
-        private Tram(int id, string type, int nummer, Status status, string rFIDCode, int lijnId, int remiseId, int segmentId)
+
+        private Tram(int id, string type, int nummer, Status status, string rfidCode, int remiseId, int segmentId)
         {
-            _lijnId = lijnId;
             _segmentId = segmentId;
             _remiseId = remiseId;
 
@@ -31,26 +29,27 @@ namespace TVS
             Type = type;
             Nummer = nummer;
             Status = status;
-            RFIDCode = rFIDCode;
+            RfidCode = rfidCode;
+
+            switch (type)
+            {
+                case "11g":
+                    _lijnen.Add(5);
+                    break;
+                case "12g":
+                    _lijnen.Add(16);
+                    _lijnen.Add(24);
+                    break;
+            }
         }
 
         public int Id { get; private set; }
         public string Type { get; private set; }
         public int Nummer { get; private set; }
         public Status Status { get; private set; }
-        public string RFIDCode { get; private set; }
+        public string RfidCode { get; private set; }
+        public List<int> Lijnen { get { return new List<int>(_lijnen);} }
 
-        public Lijn Lijn
-        {
-            get
-            {
-                if (_lijn == null)
-                {
-                    _lijn = Lijn.GetById(_lijnId);
-                }
-                return _lijn;
-            }
-        }
         public Remise Remise
         {
             get
@@ -130,10 +129,9 @@ namespace TVS
                     string type = (dr.GetValueByColumn<string>("type"));
                     int nummer = (dr.GetValueByColumn<int>("nummer"));
                     string rfidcode = (dr.GetValueByColumn<string>("rfidcode"));
-                    int lijnId = (dr.GetValueByColumn<int>("lijn_id"));
                     int remiseId = (dr.GetValueByColumn<int>("remise_id"));
                     int segmentId = (dr.GetValueByColumn<int>("segment_id"));
-                    tram = new Tram(id, type, nummer, status, rfidcode, lijnId, remiseId, segmentId);
+                    tram = new Tram(id, type, nummer, status, rfidcode, remiseId, segmentId);
 
                 }
 
@@ -150,6 +148,28 @@ namespace TVS
             return tram;
         }
 
+        public void ChangeSegment(Segment segment)
+        {
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("UPDATE tram SET segment_id = :segmentId WHERE id = :id");
+                db.AddParameter("segmentId", segment != null ? segment.Id : 0);
+                db.AddParameter("id", Id);
+                db.Open();
+                db.Execute();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
+
         public static Tram GetByNummer(int parNummer)
         {
             Tram tram = null;
@@ -160,6 +180,35 @@ namespace TVS
             {
                 db.CreateCommand("SELECT id FROM tram WHERE nummer = :nummer");
                 db.AddParameter("nummer", parNummer);
+
+                while (db.Read())
+                {
+                    tram = Tram.GetById(db.GetValueByColumn<int>("id"));
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+
+            return tram;
+        }
+
+        public static Tram GetByRfid(string rfid)
+        {
+            Tram tram = null;
+
+            Database db = new Database();
+
+            try
+            {
+                db.CreateCommand("SELECT id FROM tram WHERE rfidcode = :rfidcode");
+                db.AddParameter("rfidcode", rfid);
 
                 while (db.Read())
                 {

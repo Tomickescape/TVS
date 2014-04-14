@@ -35,6 +35,10 @@ namespace TVS
                 {
                     BackColor = Color.Blue;
                 }
+                else if (Segment.Geblokkeerd)
+                {
+                    BackColor = Color.Gray;
+                }
                 else if (Segment.Special == "permanent")
                 {
                     BackColor = Color.Black;
@@ -42,10 +46,6 @@ namespace TVS
                 else if (Segment.Special == "uitrijding")
                 {
                     BackColor = Color.DarkGray;
-                }
-                else if (Segment.Geblokkeerd)
-                {
-                    BackColor = Color.Gray;
                 }
                 else
                 {

@@ -8,6 +8,9 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Phidgets;
+using Phidgets.Events;
+using System.IO;
 
 namespace TVS
 {
@@ -16,10 +19,13 @@ namespace TVS
     {
         private Timer _simulationTimer = new Timer();
         private ButtonAdvanced _buttonAdvancedSelected = null;
-
+        string gescandeRFIDCode;
+        private RFID rfid;
+        
         public FormMain()
         {
             InitializeComponent();
+            RFIDInitialize();
 
             foreach (ButtonAdvanced tb in GetAllButtonAdvanced())
             {
@@ -27,7 +33,7 @@ namespace TVS
             }
 
             _simulationTimer.Tick += _simulationTimer_Tick;
-            _simulationTimer.Interval = 100;
+            _simulationTimer.Interval = 3000;
 
             RefreshInterface();
 
@@ -59,9 +65,21 @@ namespace TVS
                 }
             }
 
-            Output("Tram: " + tram.Nummer + " op " + segment.Spoor.Nummer + " . " + segment.Nummer);
+            Output("Tram: " + tram.Nummer + "(" + tram.Type + ") op " + segment.Spoor.Nummer + " . " + segment.Nummer);
             segment.ChangeTram(tram);
             RefreshInterface();
+        }
+
+        private void EnableTimer()
+        {
+            buttonRunSimulation.Text = "Stop simulatie";
+            _simulationTimer.Enabled = true;
+        }
+
+        private void DisableTimer()
+        {
+            buttonRunSimulation.Text = "Start simulatie";
+            _simulationTimer.Enabled = false;
         }
 
         void _simulationTimer_Tick(object sender, EventArgs e)
@@ -84,8 +102,11 @@ namespace TVS
                             {
                                 tram = subTram;
                                 selectedSegment = Spoor.GetBySpoornummer(int.Parse(item.SubItems[1].Text)).FirstSegmentAvailableForTram(tram);
-                                item.Remove();
                             }
+                        }
+                        if (selectedSegment == null)
+                        {
+                            item.Remove();
                         }
                     }
 
@@ -93,23 +114,15 @@ namespace TVS
                     {
                         tram = trams[rand.Next(trams.Count - 1)];
                     }
+
                     List<ButtonSpoor> buttons = GetAllButtonAdvanced().FindAll(x => x is ButtonSpoor).Cast<ButtonSpoor>().ToList();
+                    selectedSegment = GetRandomSegment(buttons, tram);
 
-
-                    while (selectedSegment == null)
+                    if (selectedSegment == null)
                     {
-                        if (buttons.Count == 0)
-                        {
-                            throw new Exception("Geen plekken beschikbaar.");
-                        }
 
-                        int buttonIndex = rand.Next(buttons.Count - 1);
-
-                        selectedSegment = buttons[buttonIndex].Spoor.FirstSegmentAvailableForTram(tram);
-
-                        buttons.RemoveAt(buttonIndex);
+                        throw new Exception("Geen plekken beschikbaar.");
                     }
-
                     PlaceTram(selectedSegment, tram);
                 }
                 else
@@ -119,11 +132,45 @@ namespace TVS
             }
             catch (Exception ex)
             {
-                _simulationTimer.Stop();
-                RefreshInterface();
+                DisableTimer();
                 Output(ex);
             }
 
+        }
+
+        private Segment GetRandomSegment(List<ButtonSpoor> buttons, Tram tram)
+        {
+            Segment selectedSegment = null;
+            Random rand = new Random();
+
+            if (tram.Lijnen.Count > 0)
+            {
+                foreach (ButtonSpoor button in new List<ButtonSpoor>(buttons))
+                {
+                    Spoor spoor = button.Spoor;
+                    if (tram.Lijnen.Find(x => x == spoor.Lijnnummer1) == 0 &&
+                        tram.Lijnen.Find(x => x == spoor.Lijnnummer2) == 0)
+                    {
+                        buttons.Remove(button);
+                    }
+                }
+            }
+
+            while (selectedSegment == null)
+            {
+                if (buttons.Count == 0)
+                {
+                    return null;
+                }
+
+                int buttonIndex = rand.Next(buttons.Count - 1);
+
+                selectedSegment = buttons[buttonIndex].Spoor.FirstSegmentAvailableForTram(tram);
+
+                buttons.RemoveAt(buttonIndex);
+            }
+
+            return selectedSegment;
         }
 
         private List<ButtonAdvanced> GetAllButtonAdvanced()
@@ -142,15 +189,6 @@ namespace TVS
 
         private void RefreshInterface()
         {
-            if (!_simulationTimer.Enabled)
-            {
-                buttonRunSimulation.Text = "Start simulatie";
-            }
-            else
-            {
-                buttonRunSimulation.Text = "Stop simulatie";
-            }
-
             foreach (ButtonAdvanced buttonAdvanced in GetAllButtonAdvanced())
             {
                 buttonAdvanced.Reload();
@@ -183,20 +221,32 @@ namespace TVS
         {
             try
             {
-                if (_buttonAdvancedSelected == null)
+                if (_buttonAdvancedSelected == null || (!(_buttonAdvancedSelected is ButtonSegment) && !(_buttonAdvancedSelected is ButtonSpoor)))
                 {
-                    throw new Exception("Geen spoor geselecteerd.");
+                    throw new Exception("Geen spoor of segment geselecteerd.");
                 }
+
+                Segment segmentSelected = null;
 
                 if (_buttonAdvancedSelected is ButtonSegment)
                 {
-                    ((ButtonSegment)_buttonAdvancedSelected).Segment.ToggleGeblokkeerd();
+                    segmentSelected = ((ButtonSegment)_buttonAdvancedSelected).Segment;
                 }
                 else if (_buttonAdvancedSelected is ButtonSpoor)
                 {
-                    ((ButtonSpoor)_buttonAdvancedSelected).Spoor.ToggleGeblokkeerd();
-                    
+                    Spoor spoor = ((ButtonSpoor) _buttonAdvancedSelected).Spoor;
+
+                    foreach (Segment segment in spoor.Segments)
+                    {
+                        if (segmentSelected == null || segment.Nummer > segmentSelected.Nummer)
+                        {
+                            segmentSelected = segment;
+                        }
+                    }
                 }
+                    
+                segmentSelected.ToggleGeblokkeerd();
+
                 RefreshInterface();
             }
             catch (Exception ex)
@@ -225,27 +275,59 @@ namespace TVS
                 }
 
                 if(_buttonAdvancedSelected is ButtonSegment) 
-                {                    
-                    ButtonSegment buttonSegment = (ButtonSegment)_buttonAdvancedSelected;
-                    if (buttonSegment.Segment.Geblokkeerd) 
+                {
+                    Segment segment = ((ButtonSegment)_buttonAdvancedSelected).Segment;
+
+                    if (tram.Lijnen.Count > 0)
+                    {
+                        Spoor spoor = segment.Spoor;
+                        if (tram.Lijnen.Find(x => x == spoor.Lijnnummer1) == 0 &&
+                            tram.Lijnen.Find(x => x == spoor.Lijnnummer2) == 0)
+                        {
+                            throw new Exception(tram.Type + " mag niet op dit spoor.");
+                        }
+                    }
+
+                    if (segment.Geblokkeerd) 
                     {
                         throw new Exception("Segment is geblokkeerd.");
                     }
-                    if (buttonSegment.Segment.Special == "permanent")
+                    if (segment.Special == "permanent")
                     {
                         throw new Exception("Segment is permanent dicht.");
                     }
 
-                    if (!buttonSegment.Segment.CheckUitrij())
+                    if (!segment.CheckUitrij(tram))
                     {
                         throw new Exception("Segment is uitrij en is momenteel geblokkeerd.");
                     }
 
-                    PlaceTram(buttonSegment.Segment, tram);
+                    PlaceTram(segment, tram);
+                    if (segment.Nummer > 1)
+                    {
+                        foreach (Segment forSegment in segment.Spoor.Segments)
+                        {
+                            if (forSegment.Nummer < segment.Nummer && forSegment.Tram == null)
+                            {
+                                forSegment.ChangeGeblokkeerd(true);
+                            }
+                        }   
+                        RefreshInterface();
+                    }
                 }
                 else 
                 {
-                    ButtonSpoor buttonSpoor = (ButtonSpoor)_buttonAdvancedSelected;
+                    ButtonSpoor buttonSpoor = (ButtonSpoor)_buttonAdvancedSelected; 
+                    
+                    if (tram.Lijnen.Count > 0)
+                    {
+                        Spoor spoor = buttonSpoor.Spoor;
+                        if (tram.Lijnen.Find(x => x == spoor.Lijnnummer1) == 0 &&
+                            tram.Lijnen.Find(x => x == spoor.Lijnnummer2) == 0)
+                        {
+                            throw new Exception(tram.Type + " mag niet op dit spoor.");
+                        }
+                    }
                     if (buttonSpoor.Spoor.Geblokkeerd)
                     {
                         throw new Exception("Spoor is geblokkeerd.");
@@ -283,7 +365,14 @@ namespace TVS
         private void buttonRunSimulation_Click(object sender, EventArgs e)
         {
             Output("Simulatie gestart.");
-            _simulationTimer.Enabled = !_simulationTimer.Enabled;
+            if (_simulationTimer.Enabled)
+            {
+                DisableTimer();
+            }
+            else
+            {
+                EnableTimer();
+            }
         }
 
         private void buttonReservateTram_Click(object sender, EventArgs e)
@@ -304,12 +393,29 @@ namespace TVS
                     throw new Exception("Tram is al geplaatst.");
                 }
 
-                if (!(_buttonAdvancedSelected is ButtonSpoor))
+                if (!(_buttonAdvancedSelected is ButtonSpoor) && !(_buttonAdvancedSelected is ButtonSegment))
                 {
-                    throw new Exception("Geen spoor geselecteerd.");
+                    throw new Exception("Geen spoor of segment geselecteerd.");
                 }
 
-                Spoor spoor = ((ButtonSpoor) _buttonAdvancedSelected).Spoor;
+                Spoor spoor = null;
+                if (_buttonAdvancedSelected is ButtonSegment)
+                {
+                    spoor = ((ButtonSegment) _buttonAdvancedSelected).Segment.Spoor;
+                }
+                else
+                {
+                    spoor = ((ButtonSpoor)_buttonAdvancedSelected).Spoor;
+                }
+
+                if (tram.Lijnen.Count > 0)
+                {
+                    if (tram.Lijnen.Find(x => x == spoor.Lijnnummer1) == 0 &&
+                        tram.Lijnen.Find(x => x == spoor.Lijnnummer2) == 0)
+                    {
+                        throw new Exception(tram.Type + " mag niet op dit spoor.");
+                    }
+                }
 
                 foreach (ListViewItem subItem in listViewReservations.Items)
                 {
@@ -379,5 +485,77 @@ namespace TVS
             }
             
         }
+
+
+        //RFID
+
+        public void RFIDInitialize()
+        {
+            rfid = new RFID();
+            rfid.open();
+            rfid.waitForAttachment();
+            rfid.Attach += new AttachEventHandler(rfid_Attach);
+            rfid.Detach += new DetachEventHandler(rfid_Detach);
+            rfid.Tag += new TagEventHandler(rfid_Tag);
+            rfid.Antenna = true;
+            rfid.LED = true;
+            LBL_RFID.ForeColor = Color.Transparent;
+            LBL_RFID.BackColor = Color.Lime;
+
+        }
+
+        public void rfid_Attach(object sender, AttachEventArgs e)
+        {
+
+            RFID atached = (RFID)sender;
+            LBL_RFID.BackColor = Color.Lime;
+            rfid.Tag += new TagEventHandler(rfid_Tag);
+            rfid.Antenna = true;
+            rfid.LED = true;
+        }
+
+        public void rfid_Detach(object sender, DetachEventArgs e)
+        {
+            RFID detached = (RFID)sender;
+            LBL_RFID.BackColor = Color.Red;
+        }
+        public void rfid_Tag(object sender, TagEventArgs e)
+        {
+            gescandeRFIDCode = e.Tag.ToString();
+
+            try
+            {
+                Tram tram = Tram.GetByRfid(gescandeRFIDCode);
+                if (tram == null)
+                {
+                    throw new Exception("Tram niet gevonden.");
+                }
+
+                if (tram.Segment == null)
+                {
+                    List<ButtonSpoor> buttons =
+                        GetAllButtonAdvanced().FindAll(x => x is ButtonSpoor).Cast<ButtonSpoor>().ToList();
+                    Segment segment = GetRandomSegment(buttons, tram);
+
+                    if (segment == null)
+                    {
+                        throw new Exception("Geen beschikbare segment gevonden.");
+                    }
+
+                    PlaceTram(segment, tram);
+                }
+                else
+                {
+                    tram.ChangeSegment(null);
+                    Output("Tram " + tram.Nummer + "(" + tram.Type + ") afgemeld.");
+                    RefreshInterface();
+                }
+            }
+            catch (Exception ex)
+            {
+                Output(ex);
+            }
+        }
+
     }
 }

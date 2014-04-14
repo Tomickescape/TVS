@@ -11,11 +11,12 @@ namespace TVS
     public class Spoor
     {
 
-        public Spoor(int id, bool geblokkeerd, int nummer)
+        public Spoor(int id, int nummer, int lijnnummer1, int lijnnummer2)
         {
             Id = id;
-            Geblokkeerd = geblokkeerd;
             Nummer = nummer;
+            Lijnnummer1 = lijnnummer1;
+            Lijnnummer2 = lijnnummer2;
         }
 
         public int Id { get; private set; }
@@ -28,9 +29,56 @@ namespace TVS
             }
         }
 
+        public int Lijnnummer1 { get; set; }
+        public int Lijnnummer2 { get; set; }
 
-        public bool Geblokkeerd { get; set; }
+        public bool Geblokkeerd
+        {
+            get
+            {
+                foreach (Segment segment in Segments)
+                {
+                    if (!segment.Geblokkeerd)
+                    {
+                        return false;
+                    }
+                }
+                return true;
+            }
+        }
+
         public int Nummer { get; set; }
+
+        public void AddTram(Tram tram)
+        {
+            Segment segment = FirstSegmentAvailableForTram(tram);
+
+            if (segment == null)
+            {
+                throw new Exception("Geen segment beschikbaar op dit spoor.");
+            }
+            AddTram(segment, tram);
+        }
+
+        public void AddTram(Segment parSegment, Tram tram)
+        {
+            if (parSegment.Geblokkeerd)
+            {
+                throw new Exception("Segment is geblokkeerd.");
+            }
+            if (parSegment.CheckUitrij(tram))
+            {
+                throw new Exception("Segment is uitrij, vul eerst de langsliggende sporen.");
+            }
+
+            foreach (Segment segment in Segments)
+            {
+                if (segment.Nummer < parSegment.Nummer && segment.Tram == null)
+                {
+                    segment.ChangeGeblokkeerd(true);
+                }
+            }
+        }
 
         public void ToggleGeblokkeerd()
         {
@@ -41,9 +89,17 @@ namespace TVS
         {
             Segment eersteSegment = null;
 
+            if (tram.Lijnen.Count > 0)
+            {
+                if (tram.Lijnen.Find(x => x == Lijnnummer1) == 0 && tram.Lijnen.Find(x => x == Lijnnummer2) == 0)
+                {
+                    return null;
+                }
+            }
+
             foreach (Segment segment in Segments)
             {
-                if (!segment.Geblokkeerd && segment.Special != "permanent" && segment.CheckUitrij())
+                if (!segment.Geblokkeerd && segment.Special != "permanent" && segment.CheckUitrij(tram))
                 {
                     if (segment.Tram == null || (segment.Tram.Id == tram.Id))
                     {
@@ -59,31 +115,17 @@ namespace TVS
 
         public void ChangeGeblokkeerd(bool geblokkeerd)
         {
-            Database db = new Database();
-            try
-            {
-                db.CreateCommand("UPDATE spoor SET status = :status WHERE id = :id");
-                db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
-                db.AddParameter("Id", Id);
-                db.Open();
-                db.Execute();
-                db.Close();
+            Segment segmentSelected = null;
 
-                foreach (Segment segment in Segments)
+            foreach (Segment segment in Segments)
+            {
+                if (segmentSelected == null || segment.Nummer > segmentSelected.Nummer)
                 {
-                    segment.ChangeGeblokkeerd(geblokkeerd);
+                    segmentSelected = segment;
                 }
+            }
 
-                Geblokkeerd = geblokkeerd;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            finally
-            {
-                db.Close();
-            }
+            segmentSelected.ChangeGeblokkeerdAndLowerNummers(!Geblokkeerd);
         }
 
         public static Spoor GetBySpoornummer(int nummer)
@@ -103,9 +145,8 @@ namespace TVS
                 if (dr.HasRows)
                 {
                     dr.Read();
-                    bool blokkeerStatus = dr.GetValueByColumn<string>("status") == "geblokkeerd";
 
-                    spoor = new Spoor(dr.GetValueByColumn<int>("id"), blokkeerStatus, dr.GetValueByColumn<int>("nummer"));
+                    spoor = new Spoor(dr.GetValueByColumn<int>("id"), dr.GetValueByColumn<int>("nummer"), dr.GetValueByColumn<int>("lijnnummer1"), dr.GetValueByColumn<int>("lijnnummer2"));
                 }
             }
             catch (Exception ex)
@@ -137,9 +178,8 @@ namespace TVS
                 if (dr.HasRows)
                 {
                     dr.Read();
-                    bool geblokkeerd = dr.GetValueByColumn<string>("status") == "geblokkeerd";
 
-                    spoor = new Spoor(dr.GetValueByColumn<int>("id"), geblokkeerd, dr.GetValueByColumn<int>("nummer"));
+                    spoor = new Spoor(dr.GetValueByColumn<int>("id"), dr.GetValueByColumn<int>("nummer"),dr.GetValueByColumn<int>("lijnnummer1"), dr.GetValueByColumn<int>("lijnnummer2"));
                 }
             }
             catch (Exception ex)

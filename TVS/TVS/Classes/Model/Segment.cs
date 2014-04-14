@@ -65,6 +65,11 @@ namespace TVS
 
         public bool CheckUitrij()
         {
+            return CheckUitrij(null);
+        }
+
+        public bool CheckUitrij(Tram parTram)
+        {
             if (Special == "uitrijding")
             {
                 int nummer = Spoor.Nummer;
@@ -86,11 +91,19 @@ namespace TVS
                 {
                     if (spoor != null)
                     {
-                        if (spoor.Segments.Find(x =>
-                            x.Nummer == Nummer && x.Tram == null
-                            ) != null)
+                        Segment segment = spoor.Segments.Find(x => x.Nummer == Nummer);
+
+                        if (segment != null)
                         {
-                            return false;
+                            Tram tram = segment.Tram;
+                            if (tram == null)
+                            {
+                                return false;
+                            }
+                            else if (parTram != null && parTram.Nummer == tram.Nummer)
+                            {
+                                return false;
+                            }
                         }
                     }
                 }
@@ -101,6 +114,7 @@ namespace TVS
 
         public void ChangeGeblokkeerd(bool geblokkeerd)
         {
+
             Database db = new Database();
             try
             {
@@ -108,6 +122,48 @@ namespace TVS
                 db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
                 db.AddParameter("id", Id);
                 db.Execute();
+
+
+                if (Tram != null)
+                {
+                    ChangeTram(null);
+                }
+
+                Geblokkeerd = geblokkeerd;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                db.Close();
+            }
+        }
+
+        public void ChangeGeblokkeerdAndLowerNummers(bool geblokkeerd)
+        {
+
+            Database db = new Database();
+            try
+            {                
+                db.CreateCommand("UPDATE segment SET status = :status WHERE spoor_id = :spoorId AND nummer " + (geblokkeerd ? "<" : ">") + "= :nummer");
+                db.AddParameter("status", geblokkeerd ? "geblokkeerd" : "vrij");
+                db.AddParameter("spoorId", Spoor.Id);
+                db.AddParameter("nummer", Nummer);
+                db.Execute();
+
+                if (geblokkeerd)
+                {
+                    Spoor spoor = Spoor;
+                    foreach (Segment segment in Spoor.Segments)
+                    {
+                        if (segment.Nummer < Nummer)
+                        {
+                            segment.ChangeTram(null);
+                        }
+                    }
+                }
 
                 if (Tram != null)
                 {
@@ -128,7 +184,7 @@ namespace TVS
 
         public void ToggleGeblokkeerd()
         {
-            ChangeGeblokkeerd(!Geblokkeerd);
+            ChangeGeblokkeerdAndLowerNummers(!Geblokkeerd);
         }
 
         public void ChangeTram(Tram tram)

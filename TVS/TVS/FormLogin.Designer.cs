@@ -104,7 +104,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(301, 99);
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDoubleClick_1);
             // 
             // checkBoxRememberPassword
             // 

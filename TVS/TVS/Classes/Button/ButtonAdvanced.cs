@@ -13,11 +13,12 @@ namespace TVS
 
         public ButtonAdvanced()
         {
-            this.FlatStyle = FlatStyle.Flat;
+            this.FlatStyle = FlatStyle.Flat; // flatstyle?
         }
 
         public bool Selected { get; private set; }
 
+        //zet de knop op wel of niet geselecteerd
         public void ToggleSelect()
         {
             if (Selected)
@@ -29,7 +30,7 @@ namespace TVS
                 Deselect();
             }
         }
-
+        //waarom staan de select en deselect niet gewoon in de ifelse?
         public void Select()
         {
             Selected = true;
@@ -41,7 +42,7 @@ namespace TVS
             Selected = false;
             Reload();
         }
-
+        //methode is nodige en word ergens anders geoverride
         public virtual void Reload()
         {
             

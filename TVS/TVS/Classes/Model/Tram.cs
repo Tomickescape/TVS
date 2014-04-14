@@ -31,7 +31,7 @@ namespace TVS
             Status = status;
             RfidCode = rfidCode;
 
-            switch (type)
+            switch (type) // wat doet dit?
             {
                 case "11g":
                     _lijnen.Add(5);
@@ -94,6 +94,7 @@ namespace TVS
             }
         }
 
+        // haal een tram op aan de hand van het ID nummer
         public static Tram GetById(int parId)
         {
             Tram tram = null;
@@ -228,6 +229,7 @@ namespace TVS
             return tram;
         }
 
+        //haal alle trams op en geeft een lijst van trams terug
         public static List<Tram> GetAll()
         {
             List<Tram> trams = new List<Tram>();

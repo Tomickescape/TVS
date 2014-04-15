@@ -6,10 +6,10 @@
       <Value Profile="(Default)">127.0.0.1:1521</Value>
     </Setting>
     <Setting Name="db_user" Type="System.String" Scope="User">
-      <Value Profile="(Default)">rene</Value>
+      <Value Profile="(Default)">tomick</Value>
     </Setting>
     <Setting Name="db_pass" Type="System.String" Scope="User">
-      <Value Profile="(Default)">rene</Value>
+      <Value Profile="(Default)">mick123</Value>
     </Setting>
     <Setting Name="db_name" Type="System.String" Scope="User">
       <Value Profile="(Default)">xe</Value>

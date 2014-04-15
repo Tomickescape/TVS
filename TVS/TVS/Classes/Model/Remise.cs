@@ -19,6 +19,8 @@ namespace TVS
         public int Id { get; private set; }
         public int Nummer { get; private set; }
 
+
+        //haal een remise op aan de hand van een ID
         public Remise GetById(int id)
         {
             Remise remise = null;

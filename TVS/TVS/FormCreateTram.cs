@@ -21,6 +21,7 @@ namespace TVS
             comboBoxStatus.SelectedIndex = 0;
         }
 
+        //voeg de tram aan de database toe
         private void buttonAdd_Click(object sender, EventArgs e)
         {
             string type;
@@ -29,9 +30,9 @@ namespace TVS
             string rfid;
 
             type = comboBoxType.Text;
-            int.TryParse(textBoxNummer.Text.Trim(), out nummer);
+            int.TryParse(textBoxNummer.Text.Trim(), out nummer); 
             Enum.TryParse(comboBoxStatus.Text, out status);
-            rfid = textBoxRfid.Text.Trim();
+            rfid = textBoxRfid.Text.Trim(); 
 
             try
             {

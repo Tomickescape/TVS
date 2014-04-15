@@ -58,15 +58,11 @@
     <Compile Include="Classes\Model\Lijn.cs" />
     <Compile Include="Classes\Model\Log.cs" />
     <Compile Include="Classes\Model\Remise.cs" />
-    <Compile Include="Classes\Model\RFID.cs" />
     <Compile Include="Classes\Model\Segment.cs" />
     <Compile Include="Classes\Model\Spoor.cs" />
     <Compile Include="Classes\Model\Tram.cs" />
     <Compile Include="Classes\Status.cs" />
     <Compile Include="Classes\Button\ButtonAdvanced.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Classes\Button\ButtonLijn.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Classes\Button\ButtonSegment.cs">

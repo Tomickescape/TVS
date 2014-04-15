@@ -25,6 +25,9 @@ namespace TVS
         public Tram Tram { get { return Tram.GetById(_tramId); } }
         public Segment Segment { get { return Segment.GetById(_segmentId); } }
 
+
+        //haal alle loggegevens op en returned een list hiervan
+
         public static List<Log> GetAll()
         {
             List<Log> logs = new List<Log>();

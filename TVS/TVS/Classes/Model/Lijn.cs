@@ -19,6 +19,7 @@ namespace TVS
         public int Id { get; private set; }
         public int Nummer { get; private set; }
 
+        //Haal de gegevens op aan de hand van het IDnummer en geeft een instantie van die lijn terug.
         public Lijn GetById(int id)
         {
             Lijn lijn = null;
@@ -46,6 +47,9 @@ namespace TVS
 
             return lijn;
         }
+
+        //Haal de gegevens op aan de hand van het lijnnummer en geeft een instantie van die lijn terug.
+
         public Lijn GetByNummer(int nummer)
         {
             Lijn lijn = null;

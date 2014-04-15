@@ -18,6 +18,7 @@ namespace TVS
         {
             try
             {
+                //haal alle gegevens uit het settings bestand, username ,password etc.
                 conn = new OracleConnection();
                 conn.ConnectionString = "User Id=" + Properties.Settings.Default.db_user + ";Password=" +
                                         Properties.Settings.Default.db_pass + ";Data Source=" + "//" +
@@ -30,10 +31,12 @@ namespace TVS
             }
         }
 
+
         public bool HasRows { get { return DataReader.HasRows; } }
 
         public OracleDataReader DataReader { get; private set; }
 
+        //opn de connection als die nog niet open is.
         public void Open()
         {
             if (conn.State != ConnectionState.Open)
@@ -42,6 +45,8 @@ namespace TVS
             }
         }
 
+
+        //sluit de connectie als deze nog niet gesloten is
         public void Close()
         {
             if (conn.State != ConnectionState.Closed)
@@ -50,6 +55,7 @@ namespace TVS
             }
         }
 
+        //maak een commando aan
         public void CreateCommand(string commandText)
         {
             cmd = conn.CreateCommand();
@@ -57,6 +63,7 @@ namespace TVS
             cmd.CommandText = commandText;
         }
 
+        //geef deze parameters door 
         public void AddParameter(string parameterName, object value)
         {
             OracleParameter parameter = new OracleParameter();
@@ -66,6 +73,8 @@ namespace TVS
             cmd.Parameters.Add(parameter);
         }
 
+
+        //voer het commando uit
         public void Execute()
         {
             if (cmd == null)
@@ -79,6 +88,7 @@ namespace TVS
             DataReader = cmd.ExecuteReader();
         }
 
+
         public bool Read()
         {
             if (DataReader == null)
@@ -88,7 +98,7 @@ namespace TVS
 
             return DataReader.Read();
         }
-
+        //haalt de waarde op door middel van het gegeven column door middel van het gespecificeerde type
         public T GetValueByColumn<T>(string column)
         {
             return DataReader.GetValueByColumn<T>(column);

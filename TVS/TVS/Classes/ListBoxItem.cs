@@ -8,7 +8,6 @@ namespace TVS.Classes
 {
     public class ListBoxItem
     {
-
         public ListBoxItem(string text, object value)
         {
             Text = text;

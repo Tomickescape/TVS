@@ -30,7 +30,7 @@ namespace TVS
         {
             if (Segment != null)
             {
-
+                //veranderd de kleur van knoppen met verschillende statussen
                 if (Selected)
                 {
                     BackColor = Color.Blue;
@@ -52,6 +52,7 @@ namespace TVS
                     BackColor = Color.White;
                 }
 
+                //voegt het tramnummer in als text als dit segment een gevulde property heeft
                 if (Segment.Tram != null)
                 {
                     Text = Segment.Tram.Nummer.ToString();

@@ -1,0 +1,15 @@
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\bin\Debug\TVS.exe.config
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\bin\Debug\TVS.exe
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\bin\Debug\TVS.pdb
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\bin\Debug\Oracle.DataAccess.dll
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\bin\Debug\Phidget21.NET.dll
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.csprojResolveAssemblyReference.cache
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.FormCreateTram.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.FormLogin.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.FormMain.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.FormLog.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.FormTramsOverzicht.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.Properties.Resources.resources
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.csproj.GenerateResource.Cache
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.exe
+C:\Users\Tomick\Documents\GitHub\TVS\TVS\TVS\obj\Debug\TVS.pdb

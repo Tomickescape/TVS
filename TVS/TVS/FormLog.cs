@@ -19,22 +19,31 @@ namespace TVS
             
             RefreshInterface();
         }
-
+        
         public void RefreshInterface()
         {
-            dataGridViewLogs.Rows.Clear();
-
-            foreach (Log log in Log.GetAll())
+            try
             {
-                Segment segment = log.Segment;
+                dataGridViewLogs.Rows.Clear();
 
-                int index = dataGridViewLogs.Rows.Add(log.Created.ToString(), log.Tram.Type, log.Tram.Nummer.ToString(), (segment != null ? segment.Nummer.ToString() : ""), (segment != null ? segment.Spoor.Nummer.ToString() : ""));
-                DataGridViewRow row = dataGridViewLogs.Rows[index];
-                if (segment == null)
+                foreach (Log log in Log.GetAll())
                 {
-                    row.DefaultCellStyle.BackColor = Color.Red;
-                    row.DefaultCellStyle.ForeColor = Color.White;
+                    Segment segment = log.Segment;
+
+                    int index = dataGridViewLogs.Rows.Add(log.Created.ToString(), log.Tram.Nummer.ToString(), log.Tram.Type, (segment != null ? segment.Nummer.ToString() : ""), (segment != null ? segment.Spoor.Nummer.ToString() : ""));
+                    
+                    DataGridViewRow row = dataGridViewLogs.Rows[index];
+                    //als het segment leeg is dan maak de regels rood, dit is dan uitrij
+                    if (segment == null)
+                    {
+                        row.DefaultCellStyle.BackColor = Color.Red;
+                        row.DefaultCellStyle.ForeColor = Color.White;
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+
             }
         }
     }

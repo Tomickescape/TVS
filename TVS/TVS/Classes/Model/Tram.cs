@@ -31,7 +31,7 @@ namespace TVS
             Status = status;
             RfidCode = rfidCode;
 
-            switch (type) // wat doet dit?
+            switch (type) // hier wordt een lijn aan een tram gebonden
             {
                 case "11g":
                     _lijnen.Add(5);
@@ -177,7 +177,7 @@ namespace TVS
             try
             {
                 db.CreateCommand("UPDATE tram SET segment_id = :segmentId WHERE id = :id");
-                db.AddParameter("segmentId", segment != null ? segment.Id : 0);
+                db.AddParameter("segmentId", segment != null ? segment.Id : 0); 
                 db.AddParameter("id", Id);
                 db.Open();
                 db.Execute();
@@ -193,6 +193,7 @@ namespace TVS
                 db.Close();
             }
         }
+
 
         public void Delete()
         {
@@ -214,12 +215,15 @@ namespace TVS
             }
         }
 
+
+        //voegt een nieuwe tram toe
         public static void Insert(string type, int nummer, Status status, string rfid)
         {
             Database db = new Database();
 
             try
             {
+                //kijkt eerst of de tram niet al bestaat aan de hand van het tramnummer
                 if (Tram.GetByNummer(nummer) != null)
                 {
                     throw new Exception("Tram met dit nummer bestaat al.");
@@ -242,6 +246,7 @@ namespace TVS
             }
         }
 
+        //Haal de gegevens op aan de hand van het tramnummer en geeft van de tram alle gegevens terug.
         public static Tram GetByNummer(int parNummer)
         {
             Tram tram = null;
@@ -271,6 +276,7 @@ namespace TVS
             return tram;
         }
 
+        //Haal de gegevens op aan de hand van de RFIDcode en geeft van de TRAM alle gegevens terug.
         public static Tram GetByRfid(string rfid)
         {
             Tram tram = null;

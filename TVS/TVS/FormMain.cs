@@ -29,21 +29,22 @@ namespace TVS
             InitializeComponent();
             RFIDInitialize();
 
-            
+            //zorgt ervoor dat de knoppen selecteerbaar zijn
             foreach (ButtonAdvanced tb in GetAllButtonAdvanced())
             {
                 tb.Click += buttonAdvanced_Click;
             }
 
             _simulationTimer.Tick += _simulationTimer_Tick;
-            _simulationTimer.Interval = 3000;
+            _simulationTimer.Interval = 1000;
 
             RefreshInterface();
 
-            AutoCompleteStringCollection strings = new AutoCompleteStringCollection();  //auto dinges snap ik helemaal niet
+            
+            AutoCompleteStringCollection strings = new AutoCompleteStringCollection();  
             foreach (Tram tram in Tram.GetAll())
             {
-                strings.Add(tram.Nummer.ToString());  //nummer.tostring = alleen het nummer?
+                strings.Add(tram.Nummer.ToString());  
             }
             textBoxTramNummer.AutoCompleteCustomSource = strings;
         }
@@ -58,8 +59,10 @@ namespace TVS
             Output(ex.Message);
         }
 
+
         private void PlaceTram(Segment segment, Tram tram)
         {
+            //checked of de tram in de lijst van reserveringen staat, zoja verwijderd de tram uit de lijst
             foreach (ListViewItem item in listViewReservations.Items)
             {
                 if (item.SubItems[0].Text == tram.Nummer.ToString())
@@ -92,13 +95,13 @@ namespace TVS
             try
             {
                 Segment selectedSegment = null;
-                List<Tram> trams = Tram.GetAll().FindAll(x => x.Segment == null); //? achter de getall methode   //zolang er nog een segment leeg is?
+                List<Tram> trams = Tram.GetAll().FindAll(x => x.Segment == null); 
                 if (trams.Count > 0) //als de lijst van trams leeg is
                 {
 
                     Tram tram = null; 
 
-                    foreach (ListViewItem item in listViewReservations.Items)  //listviewreservation?
+                    foreach (ListViewItem item in listViewReservations.Items) 
                     {
                         foreach (Tram subTram in trams) //voor elke tram in de opgehaalde lijst
                         {
@@ -119,7 +122,8 @@ namespace TVS
                         tram = trams[rand.Next(trams.Count - 1)]; //?
                     }
 
-                    List<ButtonSpoor> buttons = GetAllButtonAdvanced().FindAll(x => x is ButtonSpoor).Cast<ButtonSpoor>().ToList();  //?
+                    //kijkt of het een buttonspoor is, dan zet hij elke item om naar een buttonspoor en tot slot cast hij het door naar list van buttonsporen.
+                    List<ButtonSpoor> buttons = GetAllButtonAdvanced().FindAll(x => x is ButtonSpoor).Cast<ButtonSpoor>().ToList();  
                     selectedSegment = GetRandomSegment(buttons, tram);
 
                     if (selectedSegment == null) 
@@ -142,12 +146,13 @@ namespace TVS
 
         }
 
-        //?
+     
         private Segment GetRandomSegment(List<ButtonSpoor> buttons, Tram tram)
         {
             Segment selectedSegment = null;
             Random rand = new Random();
 
+            //kijkt op welke lijnen hij mag en voegt alleen de juiste lijnen toe
             if (tram.Lijnen.Count > 0)
             {
                 foreach (ButtonSpoor button in new List<ButtonSpoor>(buttons))
@@ -181,7 +186,7 @@ namespace TVS
         private List<ButtonAdvanced> GetAllButtonAdvanced()
         {
             List<ButtonAdvanced> list = new List<ButtonAdvanced>();
-            foreach (Control control in Controls) // wat is een control collectie?
+            foreach (Control control in Controls)
             {
                 ButtonAdvanced tb = control as ButtonAdvanced;
                 if (tb != null)
@@ -202,10 +207,11 @@ namespace TVS
 
             if (_formLog != null)
             {
+                //als de loginterface bestaat geopend is, refresh deze ook
                 _formLog.RefreshInterface();
             }
         }
-        //
+    
         void buttonAdvanced_Click(object sender, EventArgs e)
         {
             if (_buttonAdvancedSelected != null)
@@ -228,6 +234,7 @@ namespace TVS
             _buttonAdvancedSelected = tb;
         }
 
+
         private void buttonBlock_Click(object sender, EventArgs e)
         {
             try
@@ -247,11 +254,24 @@ namespace TVS
                 {
                     Spoor spoor = ((ButtonSpoor) _buttonAdvancedSelected).Spoor;
 
-                    foreach (Segment segment in spoor.Segments)
+                    if (!spoor.Geblokkeerd)
                     {
-                        if (segmentSelected == null || segment.Nummer > segmentSelected.Nummer)
+                        foreach (Segment segment in spoor.Segments)
                         {
-                            segmentSelected = segment;
+                            if (segmentSelected == null || segment.Nummer > segmentSelected.Nummer)
+                            {
+                                segmentSelected = segment;
+                            }
+                        }
+                    }
+                    else
+                    {
+                        foreach (Segment segment in spoor.Segments)
+                        {
+                            if (segmentSelected == null || segment.Nummer < segmentSelected.Nummer)
+                            {
+                                segmentSelected = segment;
+                            }
                         }
                     }
                 }
@@ -266,7 +286,7 @@ namespace TVS
             }
 
         }
-
+        //plaats de tram het spoor op het eerste vrije segment
         private void buttonPlaceTram_Click(object sender, EventArgs e)
         {
             try
@@ -399,13 +419,13 @@ namespace TVS
                 EnableTimer();
             }
         }
-        //reserve een tram
+        //reserveer een tram
         private void buttonReservateTram_Click(object sender, EventArgs e)
         {
             try
             {
                 int tramnummer;
-                int.TryParse(textBoxTramNummer.Text.Trim(), out tramnummer); // probeer van de tekst een integer te maken  //wordt niet gecatched? 
+                int.TryParse(textBoxTramNummer.Text.Trim(), out tramnummer); // probeer van de tekst een integer te maken  
 
                 Tram tram = Tram.GetByNummer(tramnummer);
                 if (tram == null) // tram bestaat niet, getbynumber heeft dus geen tram kunnen retourneren
@@ -427,7 +447,7 @@ namespace TVS
                 Spoor spoor = null;
                 if (_buttonAdvancedSelected is ButtonSegment) // als er een segment selecteerd is
                 {
-                    spoor = ((ButtonSegment) _buttonAdvancedSelected).Segment.Spoor; //?
+                    spoor = ((ButtonSegment) _buttonAdvancedSelected).Segment.Spoor; //haalt het spoor van het segment op
                 }
                 else
                 {
@@ -437,13 +457,14 @@ namespace TVS
                 if (tram.Lijnen.Count > 0) //als de lijnen van deze tram groter dan 0 is
                 {
                     if (tram.Lijnen.Find(x => x == spoor.Lijnnummer1) == 0 &&
-                        tram.Lijnen.Find(x => x == spoor.Lijnnummer2) == 0) //?
+                        tram.Lijnen.Find(x => x == spoor.Lijnnummer2) == 0) 
                     {
                         throw new Exception(tram.Type + " mag niet op dit spoor.");
                     }
                 }
 
-                foreach (ListViewItem subItem in listViewReservations.Items) //wederom listviewitems?
+                //kijkt of de tram niet al gereserveerd is
+                foreach (ListViewItem subItem in listViewReservations.Items) 
                 {
                     if (subItem.SubItems[0].Text == tram.Nummer.ToString())
                     {
@@ -452,7 +473,7 @@ namespace TVS
                 }
 
                 ListViewItem item = new ListViewItem(tram.Nummer.ToString());
-                item.SubItems.Add(spoor.Nummer.ToString()); //?
+                item.SubItems.Add(spoor.Nummer.ToString()); //voeg het spoornummer toe in de listview
                 listViewReservations.Items.Add(item);
             }
             catch (Exception ex)
@@ -476,7 +497,8 @@ namespace TVS
 
             try
             {
-                db.CreateCommand("UPDATE tram SET segment_id = 0"); // zet de segment waarden van de trams op 0 //moet dit niet null zijjn?
+                // zet de segment waarden van de trams op 0 
+                db.CreateCommand("UPDATE tram SET segment_id = 0"); 
                 db.Execute();
 
                 Output("Alles schoongemaakt.");

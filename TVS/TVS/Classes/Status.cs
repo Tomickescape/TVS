@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace TVS
 {
-  
+  //verzameling van de statussen (enumerations)
        public enum Status { Gereed, Defect, Onderhoud }
     
 }

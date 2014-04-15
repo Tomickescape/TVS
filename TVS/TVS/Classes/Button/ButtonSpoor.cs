@@ -25,6 +25,7 @@ namespace TVS
             }
         }
 
+        //vult het spoornummer van de knop in en blijft kijken of hij geselecteerd is, al dit zo is wordt de tekst lichtblauw of blauw
         public override void Reload()
         {
             Text = Spoor.Nummer.ToString();

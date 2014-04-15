@@ -21,6 +21,7 @@ namespace TVS
 
         public int Id { get; private set; }
 
+
         public List<Segment> Segments
         {
             get
@@ -32,6 +33,7 @@ namespace TVS
         public int Lijnnummer1 { get; set; }
         public int Lijnnummer2 { get; set; }
 
+        
         public bool Geblokkeerd
         {
             get
@@ -57,18 +59,22 @@ namespace TVS
 
             if (tram.Lijnen.Count > 0)
             {
-                if (tram.Lijnen.Find(x => x == Lijnnummer1) == 0 && tram.Lijnen.Find(x => x == Lijnnummer2) == 0)
+                //hij gaat kijken of een tram op een vaste lijn moet ja of nee en vervolgens of hij wel op dat spoor mag staan.
+                if (tram.Lijnen.Find(x => x == Lijnnummer1) == 0 && tram.Lijnen.Find(x => x == Lijnnummer2) == 0)  
                 {
                     return null;
                 }
             }
 
+
             foreach (Segment segment in Segments)
             {
+                //is het segment geblokkeerd en is hij wel of niet permanent en kijkt of het wel of geen uitrijsegment is
                 if (!segment.Geblokkeerd && segment.Special != "permanent" && segment.CheckUitrij(tram))
                 {
                     if (segment.Tram == null || (segment.Tram.Id == tram.Id))
                     {
+                        //zorgt ervoor dat altijd het eerste segment wordt gevuld
                         if (eersteSegment == null || segment.Nummer < eersteSegment.Nummer)
                         {
                             eersteSegment = segment;
@@ -79,6 +85,7 @@ namespace TVS
             return eersteSegment;
         }
 
+        //blokkeer het spoor en alle segmenten die er onder vallen
         public void ChangeGeblokkeerd(bool geblokkeerd)
         {
             Segment segmentSelected = null;
@@ -94,6 +101,7 @@ namespace TVS
             segmentSelected.ChangeGeblokkeerdAndLowerNummers(!Geblokkeerd);
         }
 
+        //Haal de gegevens op aan de hand van het spoornummer en geeft van het spoor alle gegevens terug.
         public static Spoor GetBySpoornummer(int nummer)
         {
             Spoor spoor = null;
@@ -127,6 +135,7 @@ namespace TVS
             return spoor;
         }
 
+        //Haal de gegevens op aan de hand van het ID en geeft van het spoor alle gegevens terug.
         public static Spoor GetById(int id)
         {
             Spoor spoor = null;

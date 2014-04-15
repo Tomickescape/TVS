@@ -23,6 +23,7 @@ namespace TVS
         public int Nummer { get; set; }
         public bool Geblokkeerd { get; set; }
 
+        
         public Spoor Spoor
         {
             get
@@ -63,10 +64,7 @@ namespace TVS
 
         public string Special { get; private set; }
 
-        public bool CheckUitrij()
-        {
-            return CheckUitrij(null);
-        }
+
 
         public bool CheckUitrij(Tram parTram)
         {
@@ -92,14 +90,18 @@ namespace TVS
                     if (spoor != null)
                     {
                         Segment segment = spoor.Segments.Find(x => x.Nummer == Nummer);
+                        //Loopt alle segmenten van dit spoor na en kijkt of het nummer overeen komt met het nummer van deze instantie
 
                         if (segment != null)
                         {
                             Tram tram = segment.Tram;
+
+                            // kijkt of er een tram op het segment staat
                             if (tram == null)
                             {
                                 return false;
                             }
+                            // kijkt of het tram niet identiek is aan de huidige tram die op dat segment staat
                             else if (parTram != null && parTram.Nummer == tram.Nummer)
                             {
                                 return false;
@@ -108,10 +110,9 @@ namespace TVS
                     }
                 }
             }
-
             return true;
         }
-
+        //veranderd de blokkeer status
         public void ChangeGeblokkeerd(bool geblokkeerd)
         {
 
@@ -141,6 +142,7 @@ namespace TVS
             }
         }
 
+        //blokkeer het segment en alles wat er onder zit
         public void ChangeGeblokkeerdAndLowerNummers(bool geblokkeerd)
         {
 
@@ -182,22 +184,26 @@ namespace TVS
             }
         }
 
+        
         public void ToggleGeblokkeerd()
         {
-            ChangeGeblokkeerdAndLowerNummers(!Geblokkeerd);
+            ChangeGeblokkeerdAndLowerNummers(!Geblokkeerd); //geeft het tegenovergestelde van de huidige status van geblokkeerd mee
         }
 
+
+           //zet een andere tram op het segment
         public void ChangeTram(Tram tram)
         {
             Database db = new Database();
 
             try
             {
+                //haal de bestaande tram van het segment af
                 if (Tram != null)
                 {
                     Tram.ChangeSegment(null);
                 }
-
+                //zet de nieuwe tram op het huidige segment
                 if (tram != null)
                 {
                     tram.ChangeSegment(this);
@@ -213,6 +219,8 @@ namespace TVS
             }
         }
 
+        //Haal de gegevens op aan de hand van het IDnummer en geeft de instantie van dat segment terug
+
         public static Segment GetById(int id)
         {
             Segment segment = null;
@@ -221,8 +229,7 @@ namespace TVS
 
             try
             {
-                db.CreateCommand(
-                    "SELECT * FROM segment WHERE id = :id");
+                db.CreateCommand("SELECT * FROM segment WHERE id = :id");
                 db.AddParameter("id", id);
                 if (db.Read())
                 {
@@ -243,6 +250,7 @@ namespace TVS
             return segment;
         }
 
+        //Haal de gegevens op aan de hand van het spoornummer en segmentnummer geef de instantie van dat segment terug.
         public static Segment GetBySpoornummerAndSegmentnummer(int spoornummer, int segmentnummer)
         {
             Segment segment = null;
@@ -277,6 +285,7 @@ namespace TVS
             return segment;
         }
 
+        //Haal de gegevens op aan de hand van het het spoornummer en geeft een lijst van de bijbehornde segmenten terug
         public static List<Segment> GetBySpoornummer(int nummer)
         {
             List<Segment> segments = new List<Segment>();

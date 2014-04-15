@@ -21,7 +21,7 @@ namespace TVS
             //zorgt ervoor dat de laatste gebruikersnaam en wachtwoord in al worden ingevuld
             tbGebruikersnaam.Text = Properties.Settings.Default.login_last_username;
             tbWachtwoord.Text = Properties.Settings.Default.login_last_password;
-            //?
+            //tabindex is de positie wat geselecteerd word als 'tab' wordt ingeduwd
             if (tbGebruikersnaam.Text.Length > 0)
             {
                 tbGebruikersnaam.TabIndex = 100;
@@ -70,8 +70,8 @@ namespace TVS
                     //opent het hoofdscherm nadat de inlog succesvol is en sluit dit form.
                     formMain = new FormMain();
                     formMain.Show();
-                    formMain.FormClosing += FormMainFormClosing; //?
-                    formMain.buttonLogout.Click += btUitloggen_Click;  //?
+                    formMain.FormClosing += FormMainFormClosing; 
+                    formMain.buttonLogout.Click += btUitloggen_Click;  
                     this.Hide();
                 }
                 else
@@ -113,7 +113,6 @@ namespace TVS
         }
 
 
-        //bestaat niet meer?
         void btUitloggen_Click(object sender, EventArgs e)
         {
             formMain.Hide();
